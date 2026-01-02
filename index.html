@@ -125,7 +125,7 @@
         }
         .main-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         .main-header .top-line {
             font-size: 38px;
@@ -137,7 +137,7 @@
             font-size: 48px;
             font-weight: bold;
             color: #ffff00;
-            margin: 0.2rem 0;
+            margin: 0.3rem 0;
             line-height: 0.8;
             text-shadow: 0 0 12px #ffff00;
         }
@@ -148,9 +148,10 @@
             margin: 0;
         }
         .content p {
-            margin-bottom: 1rem;
-            font-size: 16px;
+            margin-bottom: 1.2rem;
+            font-size: 17px;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
         /* SPRZĘT - wersja ściśnięta */
@@ -199,54 +200,30 @@
             opacity: 0.8;
         }
 
-        /* O MNIE */
-        .profile-card {
-            max-width: 640px;
-            margin: 0 auto 1.5rem;
-            padding: 1rem;
-            border: 2px solid #00ff00;
-            background: rgba(0, 20, 0, 0.65);
-            box-shadow: 0 0 15px #00ff00;
-        }
-        .profile-card h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .profile-table {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .separator {
-            margin: 0.6rem 0;
-        }
-
-        .sidebar {
-            width: 200px;
-            padding: 20px 10px;
-            background-color: rgba(17, 0, 68, 0.95);
-            border-left: 3px solid #ffff00;
-            text-align: center;
-            border-radius: 8px;
-        }
-        .sidebar img {
-            margin: 12px 0;
-            border: 2px solid #ffff00;
-            border-radius: 4px;
-            image-rendering: pixelated;
-        }
+        /* Stopka wyśrodkowana */
         footer {
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 12px;
+            text-align: center;
+            padding: 12px;
+            margin-top: 30px;
+            background-color: rgba(17, 0, 68, 0.95);
+            border-top: 3px solid #ffff00;
+            color: #00ff00;
+            font-size: 13px;
+            border-radius: 8px;
         }
 
         @media (max-width: 768px) {
-            .container { width: 90%; padding: 10px; }
-            .main { flex-direction: column; }
-            .menu, .content, .sidebar { width: 100%; padding: 10px; }
-            .gear-title { font-size: 1.8rem; }
-            .gear-subtitle { font-size: 1.3rem; }
-            .gear-list { font-size: 0.95rem; line-height: 1.4; margin: 0.4rem 0; }
+            .container { width: 90%; margin: 10px; }
+            .main { flex-direction: column; min-height: auto; }
+            .menu, .content, .sidebar {
+                width: 100%;
+                border: none;
+                padding: 15px;
+            }
+            .menu { border-bottom: 3px solid #ffff00; }
+            .sidebar { border-top: 3px solid #ffff00; }
+            .sidebar img { width: 60px; margin: 10px 0; }
+            footer { font-size: 11px; }
         }
     </style>
 </head>
@@ -276,7 +253,7 @@
             </div>
 
             <div class="content">
-                <!-- Główna -->
+                <!-- Strona główna -->
                 <div id="main" class="page-content">
                     <div class="main-header">
                         <div class="top-line">smukly network</div>
@@ -310,13 +287,12 @@
                     </div>
                 </div>
 
-                <!-- SPRZĘT - wersja ściśnięta -->
+                <!-- SPRZĘT -->
                 <div id="sprzet" class="page-content">
                     <div class="gear-section">
                         <div class="gear-title">Sprzęt w Pokoju</div>
 
                         <div class="gear-subtitle">Komputery i akcesoria</div>
-
                         <div class="gear-list">
                             <strong>Główny Komputer:</strong><br>OMEN Laptop 15-ek0xxx · 16GB RAM · 477GB SSD + 2TB SSD
                         </div>
@@ -339,7 +315,6 @@
                         <hr class="thin-divider">
 
                         <div class="gear-subtitle">Sprzęt Audio</div>
-
                         <div class="gear-list">
                             <strong>Wzmacniacz:</strong> Sony STR-DE197
                         </div>
@@ -368,7 +343,6 @@
                         <hr class="thin-divider">
 
                         <div class="gear-subtitle">Sprzęt Wideo</div>
-
                         <div class="gear-list">
                             <strong>Blu-ray Player:</strong> Disc Sony BDP-S370
                         </div>
