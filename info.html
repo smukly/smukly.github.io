@@ -106,78 +106,32 @@
             color: #000;
             box-shadow: 0 0 15px #ffff00;
         }
-        
-        /* --- STYLIZACJA SYSTEM INFO --- */
         .content {
             flex: 1;
-            padding: 30px 60px;
-            font-family: 'VT323', monospace;
-        }
-
-        .system-info-title {
-            text-align: center;
-            color: #ffff00;
-            font-size: 42px;
-            letter-spacing: 6px;
-            margin: 0 0 10px 0;
-        }
-
-        .separator {
-            border: none;
-            border-top: 2px solid #00ff00;
-            margin-bottom: 40px;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .info-tile {
-            border: 2px solid #00ff00;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
+            padding: 30px 40px;
+            color: #00ff00;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 120px;
         }
 
-        .tile-label {
-            color: #ffff00;
-            font-size: 24px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .tile-value {
-            color: #00ff00;
-            font-size: 28px;
-        }
-
-        .value-red {
-            color: #ff0000;
-            text-shadow: 0 0 5px #ff0000;
-        }
-
-        .quote-container {
-            border: 2px dashed #ffff00;
+        /* RUBRYKA POSZERZONA NA CAŁY ŚRODEK */
+        .info-box {
+            border: 1px solid #00ff00;
+            background: rgba(0, 255, 0, 0.05);
             padding: 30px;
+            width: 100%;
+            box-sizing: border-box;
             text-align: center;
-            margin-top: 20px;
-            background: rgba(0, 0, 0, 0.2);
         }
-
-        .quote-text {
+        .status-online {
             color: #00ff00;
-            font-size: 24px;
-            line-height: 1.5;
-            margin: 0;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff00;
+            font-size: 1.5rem;
+            margin-top: 20px;
         }
 
-        /* --- SIDEBAR & FOOTER --- */
         .sidebar {
             width: 200px;
             padding: 20px 10px;
@@ -190,6 +144,7 @@
             margin: 12px 0;
             border: 2px solid #ffff00;
             border-radius: 4px;
+            image-rendering: pixelated;
             max-width: 170px;
         }
         footer {
@@ -205,9 +160,7 @@
 <body>
     <div class="container">
         <header><h1>SMUKLY NETWORK</h1></header>
-        <div class="ticker-wrapper">
-            <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
-        </div>
+        <div class="ticker-wrapper"><div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div></div>
         <div class="main">
             <div class="menu">
                 <a href="index.html">STRONA GŁÓWNA</a>
@@ -219,37 +172,15 @@
                 <a href="blog.html">BLOG</a>
                 <a href="info.html" class="active">INFO 24/7</a>
             </div>
-            
             <div class="content">
-                <h2 class="system-info-title">SYSTEM INFO 24/7</h2>
-                <hr class="separator">
-
-                <div class="info-grid">
-                    <div class="info-tile">
-                        <span class="tile-label">CZAS SYSTEMOWY:</span>
-                        <span class="tile-value" id="live-clock">00:00:00</span>
-                    </div>
-                    <div class="info-tile">
-                        <span class="tile-label">STATUS SIECI:</span>
-                        <span class="tile-value">POŁĄCZONO (v.2.0)</span>
-                    </div>
-                    <div class="info-tile">
-                        <span class="tile-label">SERWER MC:</span>
-                        <span class="tile-value value-red">OFFLINE</span>
-                    </div>
-                    <div class="info-tile">
-                        <span class="tile-label">LOKALIZACJA:</span>
-                        <span class="tile-value">POLAND / <br>SMUKLY_NET</span>
-                    </div>
-                </div>
-
-                <div class="quote-container">
-                    <p class="quote-text">
-                        "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
+                <div class="info-box">
+                    <h2 style="color: #ffff00; font-family: 'VT323', monospace; font-size: 40px; margin-top: 0; border-bottom: 2px solid #ffff00; padding-bottom: 10px;">STATUS SYSTEMU</h2>
+                    <p style="font-size: 1.2rem; margin-top: 20px;">
+                        Strona <strong>smukly network</strong> jest dostępna 24 godziny na dobę 7 dni w tygodniu.
                     </p>
+                    <div class="status-online">● SYSTEM ONLINE</div>
                 </div>
             </div>
-
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
                 <img src="https://anlucas.neocities.org/hash_now.gif">
@@ -262,17 +193,5 @@
         </div>
         <footer>© 2026 smukly network - nie błądź w świecie</footer>
     </div>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('live-clock').textContent = `${hours}:${minutes}:${seconds}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
 </body>
 </html>
