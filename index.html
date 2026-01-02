@@ -154,48 +154,53 @@
             letter-spacing: 0.5px;
         }
 
-        /* Styl dla zakładki MUZYKA */
+        /* MUZYKA – mniejszy tekst i przyciski */
         .music-section {
             text-align: center;
             max-width: 720px;
             margin: 0 auto;
         }
         .music-title {
-            font-size: 4.5rem;
-            margin: 1.5rem 0;
-            text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
-            letter-spacing: 6px;
+            font-size: 3.8rem; /* trochę mniejszy */
+            margin: 1.2rem 0;
+            text-shadow: 0 0 18px #00ff00, 0 0 35px #00ff00;
+            letter-spacing: 5px;
             animation: glow 4s infinite alternate;
         }
         @keyframes glow {
-            0% { text-shadow: 0 0 10px #00ff00; }
-            100% { text-shadow: 0 0 30px #00ff00, 0 0 50px #00ff00; }
+            0% { text-shadow: 0 0 8px #00ff00; }
+            100% { text-shadow: 0 0 25px #00ff00, 0 0 45px #00ff00; }
+        }
+        .music-desc {
+            font-size: 1.25rem; /* mniejszy opis */
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
         .platform-link {
             display: inline-block;
-            margin: 1.5rem 2rem;
-            font-size: 2rem;
-            padding: 0.8rem 1.8rem;
+            margin: 1rem 1.8rem;
+            font-size: 1.8rem; /* mniejsze przyciski */
+            padding: 0.7rem 1.5rem;
             border: 3px solid #ffff00;
             border-radius: 8px;
-            background: rgba(255, 255, 0, 0.1);
+            background: rgba(255, 255, 0, 0.08);
             color: #ffff00;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
         }
         .platform-link:hover {
-            background: rgba(255, 255, 0, 0.3);
-            box-shadow: 0 0 20px #ffff00;
-            transform: scale(1.08);
+            background: rgba(255, 255, 0, 0.25);
+            box-shadow: 0 0 18px #ffff00;
+            transform: scale(1.07);
         }
         .platform-note {
-            font-size: 1.3rem;
-            margin-top: 0.5rem;
-            opacity: 0.9;
+            font-size: 1.1rem; /* mniejszy dopisek */
+            margin-top: 0.4rem;
+            opacity: 0.85;
         }
 
-        /* Pozostałe style (SPRZĘT, O MNIE itd.) bez zmian */
+        /* Pozostałe style (bez zmian) */
         .gear-section { max-width: 780px; margin: 0 auto; }
         .gear-title { font-size: 2.2rem; text-align: center; margin: 0.8rem 0 1.5rem 0; text-shadow: 0 0 10px #ffff00; }
         .gear-subtitle { font-size: 1.5rem; margin: 1.5rem 0 0.6rem 0; color: #ffffaa; text-shadow: 0 0 6px #ffff00; border-bottom: 1px solid #00ff00; }
@@ -218,8 +223,10 @@
             .container { width: 90%; padding: 10px; }
             .main { flex-direction: column; }
             .menu, .content, .sidebar { width: 100%; padding: 10px; }
-            .music-title { font-size: 3.2rem; }
-            .platform-link { font-size: 1.6rem; margin: 1rem 1.5rem; padding: 0.6rem 1.2rem; }
+            .music-title { font-size: 3rem; }
+            .music-desc { font-size: 1.1rem; }
+            .platform-link { font-size: 1.5rem; margin: 0.8rem 1.2rem; padding: 0.6rem 1.2rem; }
+            .platform-note { font-size: 1rem; }
         }
     </style>
 </head>
@@ -348,12 +355,12 @@
                     </div>
                 </div>
 
-                <!-- MUZYKA -->
+                <!-- MUZYKA – poprawiona wersja -->
                 <div id="muzyka" class="page-content">
                     <div class="music-section">
                         <h1 class="music-title">MUZYKA</h1>
-                        <p style="font-size: 1.4rem; margin-bottom: 2.5rem; opacity: 0.9;">
-                            słuchaj moich bitów i projektów poniżej
+                        <p class="music-desc">
+                            słuchaj moich utworów i obczaj nowe projekty poniżej
                         </p>
 
                         <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" 
