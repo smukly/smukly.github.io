@@ -123,69 +123,115 @@
         .page-content.active {
             display: block;
         }
-
-        /* SERWER MC - NOWY STYL */
-        .mc-alert-box {
-            border: 3px double #ff0000;
-            background: rgba(50, 0, 0, 0.7);
-            padding: 25px;
-            margin-top: 20px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        .main-header {
             text-align: center;
+            margin-bottom: 2.5rem;
         }
-        .mc-warning-header {
-            color: #ff0000;
-            font-size: 24px;
+        .main-header .top-line {
+            font-size: 38px;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px #00ff00;
+            margin: 0;
+        }
+        .main-header .dash {
+            font-size: 48px;
             font-weight: bold;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: blinker 1.5s linear infinite;
-        }
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
-        .mc-status-text {
-            color: #ffffff;
-            font-size: 19px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .mc-details {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 15px;
             color: #ffff00;
+            margin: 0.3rem 0;
+            line-height: 0.8;
+            text-shadow: 0 0 12px #ffff00;
+        }
+        .main-header .bottom-line {
+            font-size: 34px;
+            letter-spacing: 7px;
+            text-shadow: 0 0 8px #00ff00;
+            margin: 0;
+        }
+        .content p {
+            margin-bottom: 1.2rem;
             font-size: 17px;
-            text-align: left;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* MUZYKA – poprawiona wersja z linkami nad napisem */
+        .music-section {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .music-title {
+            font-size: 3.8rem;
+            margin: 1.2rem 0;
+            text-shadow: 0 0 18px #00ff00, 0 0 35px #00ff00;
+            letter-spacing: 5px;
+            animation: glow 4s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 8px #00ff00; }
+            100% { text-shadow: 0 0 25px #00ff00, 0 0 45px #00ff00; }
+        }
+        .music-desc {
+            font-size: 1.25rem;
+            margin: 1rem 0 2rem 0;
+            opacity: 0.9;
+        }
+        .platform-links {
+            margin-bottom: 2rem;
+        }
+        .platform-link {
             display: inline-block;
+            margin: 0.8rem 1.5rem;
+            font-size: 1.8rem;
+            padding: 0.7rem 1.5rem;
+            border: 3px solid #ffff00;
+            border-radius: 8px;
+            background: rgba(255, 255, 0, 0.08);
+            color: #ffff00;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .platform-link:hover {
+            background: rgba(255, 255, 0, 0.25);
+            box-shadow: 0 0 18px #ffff00;
+            transform: scale(1.07);
+        }
+        .platform-note {
+            font-size: 1.1rem;
+            margin-top: 0.4rem;
+            opacity: 0.85;
+            display: block;
         }
 
-        /* O MNIE */
-        .profile-card {
-            max-width: 640px;
-            margin: 0 auto 1.5rem;
-            padding: 1rem;
-            border: 2px solid #00ff00;
-            background: rgba(0, 20, 0, 0.65);
-            box-shadow: 0 0 15px #00ff00;
-        }
-        .profile-table { width: 100%; font-size: 1rem; line-height: 1.6; }
-        .separator { margin: 0.6rem 0; border: 0; border-top: 1px solid #00ff00; opacity: 0.5; }
-
-        /* MUZYKA */
-        .music-section { text-align: center; max-width: 720px; margin: 0 auto; }
-        .music-title { font-size: 3.8rem; margin: 0.5rem 0; text-shadow: 0 0 18px #00ff00; letter-spacing: 5px; }
-        .platform-link { display: inline-block; margin: 0.8rem 1.5rem; font-size: 1.8rem; padding: 0.7rem 1.5rem; border: 3px solid #ffff00; border-radius: 8px; color: #ffff00; text-decoration: none; font-weight: bold; }
-
-        /* SPRZĘT */
+        /* Pozostałe style */
         .gear-section { max-width: 780px; margin: 0 auto; }
-        .gear-title { font-size: 2.2rem; text-align: center; color: #ffff00; }
-        .gear-list { border-left: 2px solid #00ff00; padding-left: 10px; margin-bottom: 10px; }
+        .gear-title { font-size: 2.2rem; text-align: center; margin: 0.8rem 0 1.5rem 0; text-shadow: 0 0 10px #ffff00; }
+        .gear-subtitle { font-size: 1.5rem; margin: 1.5rem 0 0.6rem 0; color: #ffffaa; text-shadow: 0 0 6px #ffff00; border-bottom: 1px solid #00ff00; }
+        .gear-list { font-size: 1.05rem; line-height: 1.5; margin: 0.6rem 0 1rem 0; padding-left: 0.8rem; border-left: 2px solid #00ff00; }
+        .gear-list strong { color: #ffff00; text-shadow: 0 0 4px #ffff00; }
+        .thin-divider { margin: 1.2rem 0; height: 1px; opacity: 0.7; }
+        .thick-divider { margin: 2rem 0 1.5rem; height: 3px; opacity: 0.85; }
+        .studio-note { font-size: 1.2rem; text-align: center; margin-top: 2rem; opacity: 0.8; }
+
+        .profile-card { max-width: 640px; margin: 0 auto 1.5rem; padding: 1rem; border: 2px solid #00ff00; background: rgba(0, 20, 0, 0.65); box-shadow: 0 0 15px #00ff00; }
+        .profile-card h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .profile-table { font-size: 1rem; line-height: 1.6; }
+        .separator { margin: 0.6rem 0; }
 
         .sidebar { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-left: 3px solid #ffff00; text-align: center; border-radius: 8px; }
-        .sidebar img { margin: 12px 0; border: 2px solid #ffff00; border-radius: 4px; image-rendering: pixelated; width: 88px; }
+        .sidebar img { margin: 12px 0; border: 2px solid #ffff00; border-radius: 4px; image-rendering: pixelated; }
         footer { padding: 10px; margin-top: 20px; font-size: 12px; text-align: center; }
 
+        @media (max-width: 768px) {
+            .container { width: 90%; padding: 10px; }
+            .main { flex-direction: column; }
+            .menu, .content, .sidebar { width: 100%; padding: 10px; }
+            .music-title { font-size: 3rem; }
+            .music-desc { font-size: 1.1rem; }
+            .platform-link { font-size: 1.5rem; margin: 0.8rem 1.2rem; padding: 0.6rem 1.2rem; }
+            .platform-note { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -210,61 +256,151 @@
                 <a data-target="info">INFO 24/7</a>
             </div>
             <div class="content">
+                <!-- Główna -->
                 <div id="main" class="page-content">
+                    <div class="main-header">
+                        <div class="top-line">smukly network</div>
+                        <div class="dash">-</div>
+                        <div class="bottom-line">sieć bez granic</div>
+                    </div>
                     <p>yooo tu smukly.</p>
-                    <p>Ta oto strona to moja baza — strefa w, której można znaleźć informacje jak i również moją twórczość.</p>
+                    <p>Ta oto strona to moja baza — strefa w, której można znaleźć informacje jak i również moją twórczość</p>
+                    <p>Projekty muzyczne — albumy, utwory czy przyszłe projekty<br>Gry i sprzęt — w co pogrywam i na czym, oraz trochę info o serwerze mc</p>
+                    <p>Po lewej stronie znajdziesz zakładki które przeniosą cię do miejsca którym jest owa zakładka jakby logiczne.</p>
                     <p>Miłej zabawy i dziena za odwiedziny!</p>
                 </div>
 
+                <!-- O MNIE -->
                 <div id="o-mnie" class="page-content">
                     <div class="profile-card">
+                        <h2>smukly.exe</h2>
                         <table class="profile-table">
                             <tr><td>Imię:</td><td>Justyn</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
                             <tr><td>Styl życia:</td><td>Żyję przeszłością by zapomnieć o teraźniejszości</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
                             <tr><td>Cel:</td><td>Odbycie mentalnego przeistoczenia oraz dostanie się do nieba</td></tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            <tr><td>Zajawka:</td><td>Retro, gierki na Xbox 360, tworzenie muzyki i innych treści</td></tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            <tr><td>Inspiracje:</td><td>The Doors, Jezus Chrystus</td></tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            <tr><td>Ulubiona gra:</td><td>GTA IV</td></tr>
                         </table>
                     </div>
                 </div>
 
-                <div id="serwer-mc" class="page-content">
-                    <div class="mc-alert-box">
-                        <div class="mc-warning-header">⚠️ SYSTEM ALERT: OFFLINE ⚠️</div>
-                        <div class="mc-status-text">
-                            Serwer zostaje <strong>zawieszony do 16.01.2026r.</strong><br>
-                            z powodu problemów technicznych hosta.
-                        </div>
-                        <div class="mc-details">
-                            [LOG]: Re-inicjalizacja systemu...<br>
-                            [INFO]: Wznowiony zostanie na nowym silniku od 0.<br>
-                            [DATA]: Zachowany zostanie ten sam seed i pluginy,<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;które miały być od początku.
-                        </div>
-                    </div>
-                </div>
-
+                <!-- SPRZĘT -->
                 <div id="sprzet" class="page-content">
                     <div class="gear-section">
                         <div class="gear-title">Sprzęt w Pokoju</div>
+                        <div class="gear-subtitle">Komputery i akcesoria</div>
                         <div class="gear-list">
-                            <strong>Główny Komputer:</strong><br>OMEN Laptop 15-ek0xxx
+                            <strong>Główny Komputer:</strong><br>OMEN Laptop 15-ek0xxx · 16GB RAM · 477GB SSD + 2TB SSD
                         </div>
+                        <div class="gear-list">
+                            <strong>Komputer Poboczny:</strong><br>(jakiś staruch) · 8GB RAM · 237GB SSD
+                        </div>
+                        <div class="gear-list">
+                            <strong>Mysz:</strong> Trust GXT 929W
+                        </div>
+                        <div class="gear-list">
+                            <strong>Klawiatura:</strong> Mad Dog GK850W
+                        </div>
+                        <div class="gear-list">
+                            <strong>Fony:</strong> Nokia 500, LG P700, Nokia 6310
+                        </div>
+                        <div class="gear-list">
+                            <strong>Konsola:</strong> Xbox 360 (Falcon)
+                        </div>
+                        <hr class="thin-divider">
+                        <div class="gear-subtitle">Sprzęt Audio</div>
+                        <div class="gear-list">
+                            <strong>Wzmacniacz:</strong> Sony STR-DE197
+                        </div>
+                        <div class="gear-list">
+                            <strong>CD Player:</strong> Pioneer DV-444
+                        </div>
+                        <div class="gear-list">
+                            <strong>Mikser:</strong> Sansui RG-700
+                        </div>
+                        <div class="gear-list">
+                            <strong>Magnetofon:</strong> Technics RS-M226
+                        </div>
+                        <div class="gear-list">
+                            <strong>Gramofon:</strong> Grundig PS 3500
+                        </div>
+                        <div class="gear-list">
+                            <strong>Głośniki:</strong> Canton Quinto 510
+                        </div>
+                        <div class="gear-list">
+                            <strong>Głośniki v2:</strong> Canton Fonum 251 DC
+                        </div>
+                        <div class="gear-list">
+                            <strong>SubWoofer:</strong> Canton AS 22 SC
+                        </div>
+                        <hr class="thin-divider">
+                        <div class="gear-subtitle">Sprzęt Wideo</div>
+                        <div class="gear-list">
+                            <strong>Blu-ray Player:</strong> Disc Sony BDP-S370
+                        </div>
+                        <div class="gear-list">
+                            <strong>VHS Player:</strong> Panasonic NV-HD600
+                        </div>
+                        <div class="gear-list">
+                            <strong>Projektor:</strong> Led Lcd Xiwsby T07
+                        </div>
+                        <div class="gear-list">
+                            <strong>Kamera:</strong> Sony Cyber-shot DSC-HX300
+                        </div>
+                        <hr class="thick-divider">
+                        <div class="gear-title">Studio SUL</div>
+                        <p class="studio-note">*rozpiska wkrótce*</p>
                     </div>
                 </div>
 
+                <!-- MUZYKA – linki nad napisem -->
                 <div id="muzyka" class="page-content">
                     <div class="music-section">
+                        <div class="platform-links">
+                            <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" 
+                               target="_blank" class="platform-link">SPOTIFY</a>
+                            <span class="platform-note">(smukly na Spotify)</span>
+
+                            <br><br>
+
+                            <a href="https://www.youtube.com/channel/UC28NIMWUi0qdJq14J9PnDPg" 
+                               target="_blank" class="platform-link">YOUTUBE</a>
+                            <span class="platform-note">(kanał smukly)</span>
+                        </div>
+
                         <h1 class="music-title">MUZYKA</h1>
-                        <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=chZXyZtyT7Sv3ayWRKNZ7Q" target="_blank" class="platform-link">SPOTIFY</a>
-                        <br><br>
-                        <a href="https://www.youtube.com/channel/UC28NIMWUi0qdJq14J9PnDPg" target="_blank" class="platform-link">YOUTUBE</a>
+                        <p class="music-desc">
+                            słuchaj moich utworów i obczaj nowe projekty poniżej
+                        </p>
                     </div>
                 </div>
 
-                <div id="discord" class="page-content"><h2>DISCORD</h2><p>Wkrótce...</p></div>
-                <div id="blog" class="page-content"><h2>BLOG</h2><p>Wkrótce...</p></div>
-                <div id="info" class="page-content"><h2>INFO 24/7</h2><p>Wkrótce...</p></div>
+                <!-- Pozostałe -->
+                <div id="serwer-mc" class="page-content">
+                    <h2>SERWER MC</h2>
+                    <p>Info o serwerze Minecraft...</p>
+                </div>
+
+                <div id="discord" class="page-content">
+                    <h2>DISCORD</h2>
+                    <p>Zaproszenie / opis...</p>
+                </div>
+
+                <div id="blog" class="page-content">
+                    <h2>BLOG</h2>
+                    <p>Najnowsze wpisy...</p>
+                </div>
+
+                <div id="info" class="page-content">
+                    <h2>INFO 24/7</h2>
+                    <p>Manifest / informacje stałe...</p>
+                </div>
             </div>
 
             <div class="sidebar">
@@ -272,6 +408,7 @@
                 <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
                 <img src="https://anlucas.neocities.org/lilrib.gif" alt="Lil Rib">
                 <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
+                <img src="https://anlucas.neocities.org/zxcert.png" alt="ZX Cert">
             </div>
         </div>
 
@@ -301,6 +438,7 @@
 
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
+                    e.preventDefault();
                     const targetId = link.getAttribute('data-target');
                     activatePage(targetId);
                     sessionStorage.setItem('currentPage', targetId);
