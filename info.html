@@ -2,6 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info - smukly network</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -21,48 +22,39 @@
                 <a href="info.html" class="active">INFO 24/7</a>
             </div>
             <div class="content">
+                <div class="main-header">
+                    <div class="top-line">smukly network</div>
+                    <div class="dash">-</div>
+                    <div class="bottom-line">sieć bez granic</div>
+                </div>
                 <h2 style="color: #ffff00; text-align: center; border-bottom: 2px solid #00ff00;">SYSTEM INFO 24/7</h2>
                 <div class="info-grid">
-                    <div class="info-box">
-                        <span class="info-label">CZAS SYSTEMOWY:</span>
-                        <div id="clock" style="font-size: 20px;">00:00:00</div>
-                    </div>
-                    <div class="info-box">
-                        <span class="info-label">STATUS SIECI:</span>
-                        <span style="color: #00ff00; font-weight: bold;">POŁĄCZONO (v.2.0)</span>
-                    </div>
-                    <div class="info-box">
-                        <span class="info-label">SERWER MC:</span>
-                        <span style="color: #ff0000; font-weight: bold;">OFFLINE</span>
-                    </div>
-                    <div class="info-box">
-                        <span class="info-label">LOKALIZACJA:</span>
-                        <span>POLAND / SMUKLY_NET</span>
-                    </div>
+                    <div class="info-box"><span style="color:#ffff00;">CZAS SYSTEMOWY:</span> <div id="clock">00:00:00</div></div>
+                    <div class="info-box"><span style="color:#ffff00;">STATUS SIECI:</span> <span style="color: #00ff00;">POŁĄCZONO (v.2.0)</span></div>
+                    <div class="info-box"><span style="color:#ffff00;">SERWER MC:</span> <span style="color: #ff0000;">OFFLINE</span></div>
+                    <div class="info-box"><span style="color:#ffff00;">LOKALIZACJA:</span> <span>POLAND / SMUKLY_NET</span></div>
+                </div>
+                <div style="margin-top: 30px; border: 1px dashed #ffff00; padding: 15px; font-style: italic; opacity: 0.8;">
+                    "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
                 </div>
             </div>
             <div class="sidebar">
-                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
-                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
-                <img src="https://anlucas.neocities.org/lilrib.gif" alt="Lil Rib">
-                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Error">
-                <img src="https://anlucas.neocities.org/zxcert.png" alt="ZX Cert">
-                <div style="margin-top: 15px;"><img src="https://anlucas.neocities.org/happynewyear.gif" alt="New Year" style="border:none;"></div>
+                <img src="https://anlucas.neocities.org/face.gif">
+                <img src="https://anlucas.neocities.org/hash_now.gif">
+                <img src="https://anlucas.neocities.org/lilrib.gif">
+                <img src="https://anlucas.neocities.org/Winamp.gif">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
+                <img src="https://anlucas.neocities.org/zxcert.png">
+                <div style="margin-top: 15px;"><img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;"></div>
             </div>
         </div>
     </div>
     <script>
         function updateClock() {
             const now = new Date();
-            const timeStr = now.getHours().toString().padStart(2, '0') + ":" + 
-                            now.getMinutes().toString().padStart(2, '0') + ":" + 
-                            now.getSeconds().toString().padStart(2, '0');
-            const clockEl = document.getElementById('clock');
-            if(clockEl) clockEl.innerText = timeStr;
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
         }
-        setInterval(updateClock, 1000);
-        updateClock();
+        setInterval(updateClock, 1000); updateClock();
     </script>
 </body>
 </html>
