@@ -1,4 +1,4 @@
-/* RESET I CZCIONKI */
+/* RESET I TŁO */
 * { box-sizing: border-box; }
 
 body {
@@ -15,9 +15,6 @@ body {
         radial-gradient(circle at center, transparent 40%, #000 70%);
     background-size: 100% 100%, 100% 100%, 100% 100%, 200% 200%;
     animation: tunnel-move 30s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 @keyframes tunnel-move {
@@ -25,53 +22,50 @@ body {
     100% { background-position: 0 1000px, 0 1000px, 0 0, center center; }
 }
 
-/* KONTENER GŁÓWNY - SZEROKOŚĆ Z TWOJEGO PROJEKTU */
+/* KONTENER - TWOJA SZEROKOŚĆ 1100PX */
 .container {
     width: 1100px;
-    margin: 40px 0;
+    margin: 40px auto;
     padding: 20px;
     border: 4px solid #ffff00;
-    background-color: rgba(12, 0, 51, 0.95);
+    background-color: rgba(12, 0, 51, 0.92);
     box-shadow: 0 0 40px #00ff00;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
-/* NAGŁÓWEK */
+/* BANNER GÓRNY */
 header {
     background: linear-gradient(to bottom, #6600cc, #330066);
-    padding: 30px;
+    padding: 20px;
     text-align: center;
-    border: 3px solid #ffff00;
+    border-bottom: 4px solid #ffff00;
     margin-bottom: 20px;
-    border-radius: 10px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 80px;
+    font-size: 70px;
     font-family: 'VT323', monospace;
     color: #ffffaa;
-    text-shadow: 0 0 15px #ffffff, 0 0 30px #ffcc00;
-    letter-spacing: 15px;
-    text-transform: uppercase;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffcc00;
+    letter-spacing: 12px;
 }
 
-/* TICKER */
+/* PASEK TICKER */
 .ticker-wrapper {
     background-color: #000;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 8px 0;
     margin-bottom: 20px;
-    border: 1px solid #333;
 }
 
 .ticker {
     display: inline-block;
     color: #00ff00;
-    font-size: 16px;
+    font-size: 14px;
     white-space: nowrap;
     padding-left: 100%;
-    animation: ticker-move 20s linear infinite;
+    animation: ticker-move 15s linear infinite;
 }
 
 @keyframes ticker-move {
@@ -79,96 +73,71 @@ header h1 {
     100% { transform: translateX(-100%); }
 }
 
-/* UKŁAD */
-.main { display: flex; gap: 15px; }
+/* GŁÓWNY UKŁAD STRONY */
+.main {
+    display: flex;
+    gap: 10px;
+}
 
-/* MENU */
-.menu { 
-    width: 220px; 
+/* MENU BOCZNE */
+.menu {
+    width: 200px;
     flex-shrink: 0;
-    border-right: 2px solid #ffff00;
-    padding-right: 15px;
+    padding: 20px 10px;
+    background-color: rgba(17, 0, 68, 0.95);
+    border-right: 3px solid #ffff00;
 }
 
 .menu a {
     display: block;
-    margin-bottom: 12px;
-    padding: 15px;
-    background: linear-gradient(to bottom, #ff9900, #ffcc00);
-    color: #000;
+    margin: 15px 0;
+    padding: 12px;
+    background: linear-gradient(to right, #ff9900, #ffcc00);
+    color: black;
     font-weight: bold;
     text-decoration: none;
     border: 2px solid #ffff66;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
-    font-size: 14px;
-    text-transform: uppercase;
 }
 
-.menu a:hover { filter: brightness(1.2); transform: scale(1.02); }
-.menu a.active { background: #fff; box-shadow: 0 0 15px #fff; }
+.menu a:hover { transform: scale(1.05); }
+.menu a.active { background: white; color: black; }
 
-/* TREŚĆ (DOPASOWUJE SIĘ DO ŚRODKA) */
-.content { 
-    flex: 1; 
-    padding: 0 30px; 
-}
-
-/* STYL DLA TABELI INFO (Z TWOJEGO SCREENA "O MNIE") */
-.info-table {
-    border: 2px solid #00ff00;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
-}
-
-.info-row {
-    display: flex;
-    border-bottom: 1px solid #004400;
-    padding: 15px 0;
-}
-
-.info-label {
-    width: 150px;
-    color: #ffff00;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.info-value {
+/* ŚRODKOWA TREŚĆ */
+.content {
     flex: 1;
-    color: #00ff00;
-    font-size: 18px;
+    padding: 30px;
 }
 
-/* SIDEBAR - TWOJE GIFY 88x31 */
-.sidebar { 
-    width: 200px; 
+.main-header { text-align: center; margin-bottom: 30px; }
+.main-header h2 { font-size: 40px; color: #00ff00; text-shadow: 0 0 10px #00ff00; }
+
+/* SIDEBAR - UKŁAD DWUKOLUMNOWY DLA TWOICH GIFÓW */
+.sidebar {
+    width: 210px;
     flex-shrink: 0;
+    padding: 20px 10px;
+    background-color: rgba(17, 0, 68, 0.95);
+    border-left: 3px solid #ffff00;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: wrap; /* To ustawia gify obok siebie */
+    gap: 8px;
     justify-content: center;
-    align-content: flex-start;
 }
 
-.sidebar img { 
-    width: 88px; 
-    height: 31px; 
+.sidebar img {
+    width: 88px;   /* Rozmiar buttona ze screena */
+    height: 31px;  /* Rozmiar buttona ze screena */
     border: 1px solid #ffff00;
-    image-rendering: pixelated;
 }
 
-.sidebar img.large-gif {
+/* Wyjątek dla Happy New Year */
+.sidebar img.special {
     width: 80px;
     height: 80px;
     margin-top: 20px;
+    border: 2px solid white;
 }
 
-/* STOPKA */
-footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #ffff00;
-    font-size: 14px;
-}
+footer { padding: 20px; text-align: center; color: #ffff00; }
