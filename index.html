@@ -2,21 +2,98 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>smukly.network</title>
+    <title>kaptur.network</title>
     <style>
-     body {
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #00ffff;  /* albo #00ff00 jeśli chcesz zielony tekst */
-    font-family: "Courier New", Courier, monospace;
-
-    /* TWÓJ FAJNY GRID */
-    background-image:
-        linear-gradient(rgba(0, 255, 0, 0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 0, 0.07) 1px, transparent 1px);
-    background-size: 20px 20px;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJ0lEQVQYlWNgYGD4z0ABMBqOhmYGYgYgZgBiBiBmAGIWIGYAYgYgZgBiBgA/0gLHsytYdwAAAABJRU5ErkJggg==');
+            background-repeat: repeat;
+        }
+        .container {
+            width: 960px;
+            margin: 20px auto;
+            border: 4px solid #ffff00;
+            background-color: #0c0033;
+            box-shadow: 0 0 20px #ffff00;
+        }
+        header {
+            background: linear-gradient(to bottom, #6600cc, #330066);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #ffff00;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            color: #ffff00;
+            text-shadow: 0 0 10px #ff00ff;
+            letter-spacing: 5px;
+        }
+        .nowe-wpisy {
+            text-align: center;
+            color: #00ff00;
+            font-size: 14px;
+            padding: 10px;
+        }
+        .main {
+            display: flex;
+            min-height: 500px;
+        }
+        .menu {
+            width: 200px;
+            padding: 20px 10px;
+            background-color: #110044;
+            border-right: 3px solid #ffff00;
+        }
+        .menu a {
+            display: block;
+            margin: 15px 0;
+            padding: 10px;
+            background: linear-gradient(to right, #ff9900, #ffcc00);
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid #ffff66;
+            border-radius: 8px;
+            box-shadow: 3px 3px 5px #000;
+            text-align: center;
+        }
+        .menu a:hover {
+            background: linear-gradient(to right, #ffcc00, #ffff66);
+            transform: translateY(-2px);
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            color: #00ff00;
+        }
+        .content h2 {
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 20px 10px;
+            background-color: #110044;
+            border-left: 3px solid #ffff00;
+            text-align: center;
+        }
+        .sidebar img {
+            margin: 20px 0;
+            border: 2px solid #ffff00;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #110044;
+            border-top: 3px solid #ffff00;
+            color: #00ff00;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -40,9 +117,9 @@
                 <a href="#">MANIFEST</a>
             </div>
             <div class="content">
-                <h2>smukly.network - internetowa strefa niezależna</h2>
-                <p>yoo tu smukly.</p>
-                <p>smukly network to moja baza — miejsce, gdzie zbieram wszystko, co tworzę poza systemem.</p>
+                <h2>kaptur.network - internetowa strefa niezależna</h2>
+                <p>cześć, jestem chudy dredd.</p>
+                <p>kaptur network to moja baza — miejsce, gdzie zbieram wszystko, co tworzę poza systemem.</p>
                 <p>projekty muzyczne — albumy, mixtape, bity.<br>
                 gry i projekty kodowane na zajawie po nocach.<br>
                 gry i sprzęt — wszystko od podstaw, wszystko sam.</p>
@@ -62,7 +139,7 @@
             </div>
         </div>
         <footer>
-            smukly network 200X pozostał prawdziwy
+            kaptur network 200X pozostał prawdziwy
         </footer>
     </div>
 </body>
