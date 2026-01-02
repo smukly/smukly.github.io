@@ -40,7 +40,7 @@
         }
         header {
             background: linear-gradient(to bottom, #6600cc, #330066);
-            padding: 20px;
+            padding: 30px;  /* więcej paddingu, żeby header był wyższy i napis lepiej rozlany */
             text-align: center;
             border-bottom: 4px solid #ffff00;
             margin-bottom: 20px;
@@ -48,15 +48,15 @@
         }
         header h1 {
             margin: 0;
-            font-size: 60px;  /* większy dla pixel retro efektu */
+            font-size: 70px;  /* powiększony i rozlany */
             font-family: 'VT323', monospace;
-            color: #ffff00;
+            color: #ffffaa;  /* lekko złoty żółty bazowy */
             text-shadow: 
-                0 0 10px #ffff00,
-                0 0 20px #ffff00,
-                0 0 30px #00ff00,
-                0 0 50px #00ff00;
-            letter-spacing: 10px;
+                0 0 10px #ffffff,   /* biały/srebrny wewnętrzny glow */
+                0 0 20px #ffcc00,   /* złoty neon */
+                0 0 30px #aa00ff,   /* fioletowy akcent, żeby kleiło się z headerem */
+                0 0 50px #00ffff;   /* lekki cyjan dla kontrastu z zielonym tłem */
+            letter-spacing: 12px;  /* bardziej rozstawiony */
         }
         .ticker-wrapper {
             background-color: #000;
