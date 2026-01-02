@@ -154,7 +154,60 @@
             letter-spacing: 0.5px;
         }
 
-        /* Styl dla sekcji O MNIE - mniejsza wersja */
+        /* --- STYL DLA PODSTRONY SPRZĘT --- */
+        .gear-section {
+            max-width: 780px;
+            margin: 0 auto 2.5rem;
+        }
+        .gear-title {
+            font-size: 2.4rem;
+            text-align: center;
+            margin: 1rem 0 2rem 0;
+            text-shadow: 0 0 12px #ffff00;
+            letter-spacing: 2px;
+        }
+        .gear-subtitle {
+            font-size: 1.6rem;
+            margin: 2.2rem 0 1rem 0;
+            color: #ffffaa;
+            text-shadow: 0 0 8px #ffff00;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 0.4rem;
+        }
+        .gear-list {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin: 0.6rem 0;
+        }
+        .gear-list strong {
+            color: #ffff00;
+            text-shadow: 0 0 5px #ffff00;
+        }
+        .thin-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #00ff00 20%, #00ff00 80%, transparent);
+            margin: 1.8rem 0;
+            box-shadow: 0 0 8px #00ff00;
+            opacity: 0.75;
+        }
+        .thick-divider {
+            border: none;
+            height: 3px;
+            background: #00ff00;
+            margin: 3rem 0;
+            box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00;
+            opacity: 0.9;
+        }
+        .studio-note {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 3rem;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        /* Styl dla sekcji O MNIE (pozostawiony bez zmian) */
         .profile-card {
             max-width: 640px;
             margin: 0 auto 2rem;
@@ -235,10 +288,9 @@
             .menu { border-bottom: 3px solid #ffff00; }
             .sidebar { border-top: 3px solid #ffff00; }
             .sidebar img { width: 60px; margin: 10px 0; }
-            .profile-card { padding: 1rem; }
-            .profile-table { font-size: 0.95rem; }
-            .profile-table td:first-child { width: 40%; }
-            .profile-card h2 { font-size: 1.8rem; }
+            .gear-title { font-size: 2rem; }
+            .gear-subtitle { font-size: 1.4rem; }
+            .gear-list { font-size: 1rem; }
         }
     </style>
 </head>
@@ -286,52 +338,81 @@
                 <div id="o-mnie" class="page-content">
                     <div class="profile-card">
                         <h2>smukly.exe</h2>
-                        
                         <table class="profile-table">
-                            <tr>
-                                <td>Imię:</td>
-                                <td>Justyn</td>
-                            </tr>
+                            <tr><td>Imię:</td><td>Justyn</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
-                            
-                            <tr>
-                                <td>Styl życia:</td>
-                                <td>Żyję przeszłością by zapomnieć o teraźniejszości</td>
-                            </tr>
+                            <tr><td>Styl życia:</td><td>Żyję przeszłością by zapomnieć o teraźniejszości</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
-                            
-                            <tr>
-                                <td>Cel:</td>
-                                <td>Odbycie mentalnego przeistoczenia oraz dostanie się do nieba</td>
-                            </tr>
+                            <tr><td>Cel:</td><td>Odbycie mentalnego przeistoczenia oraz dostanie się do nieba</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
-                            
-                            <tr>
-                                <td>Zajawka:</td>
-                                <td>Retro, gierki na Xbox 360, tworzenie muzyki i innych treści</td>
-                            </tr>
+                            <tr><td>Zajawka:</td><td>Retro, gierki na Xbox 360, tworzenie muzyki i innych treści</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
-                            
-                            <tr>
-                                <td>Inspiracje:</td>
-                                <td>The Doors, Jezus Chrystus</td>
-                            </tr>
+                            <tr><td>Inspiracje:</td><td>The Doors, Jezus Chrystus</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
-                            
-                            <tr>
-                                <td>Ulubiona gra:</td>
-                                <td>GTA IV</td>
-                            </tr>
+                            <tr><td>Ulubiona gra:</td><td>GTA IV</td></tr>
                         </table>
                     </div>
                 </div>
 
-                <!-- Pozostałe podstrony -->
+                <!-- SPRZĘT -->
                 <div id="sprzet" class="page-content">
-                    <h2>SPRZĘT</h2>
-                    <p>Treść do uzupełnienia...</p>
+                    <div class="gear-section">
+                        <div class="gear-title">Sprzęt w Pokoju</div>
+
+                        <div class="gear-subtitle">Komputery i akcesoria</div>
+                        <div class="gear-list">
+                            <strong>Główny Komputer:</strong><br>
+                            OMEN Laptop 15-ek0xxx<br>
+                            16GB RAM<br>
+                            477GB SSD + 2TB SSD
+                        </div>
+                        <div class="gear-list">
+                            <strong>Komputer Poboczny:</strong><br>
+                            (jakiś staruch)<br>
+                            8GB RAM<br>
+                            237GB SSD
+                        </div>
+                        <div class="gear-list">
+                            <strong>Mysz:</strong> Trust GXT 929W<br>
+                            <strong>Klawiatura:</strong> Mad Dog GK850W
+                        </div>
+                        <div class="gear-list">
+                            <strong>Fony:</strong> Nokia 500, LG P700, Nokia 6310<br>
+                            <strong>Konsola:</strong> Xbox 360 (Falcon)
+                        </div>
+
+                        <hr class="thin-divider">
+
+                        <div class="gear-subtitle">Sprzęt Audio</div>
+                        <div class="gear-list">
+                            Wzmacniacz: Sony STR-DE197<br>
+                            CD Player: Pioneer DV-444<br>
+                            Mikser: Sansui RG-700<br>
+                            Magnetofon: Technics RS-M226<br>
+                            Gramofon: Grundig PS 3500<br>
+                            Głośniki: Canton Quinto 510<br>
+                            Głośniki v2: Canton Fonum 251 DC<br>
+                            SubWoofer: Canton AS 22 SC
+                        </div>
+
+                        <hr class="thin-divider">
+
+                        <div class="gear-subtitle">Sprzęt Wideo</div>
+                        <div class="gear-list">
+                            Blu-ray Player: Disc Sony BDP-S370<br>
+                            VHS Player: Panasonic NV-HD600<br>
+                            Projektor: Led Lcd Xiwsby T07<br>
+                            Kamera: Sony Cyber-shot DSC-HX300
+                        </div>
+
+                        <hr class="thick-divider">
+
+                        <div class="gear-title">Studio SUL</div>
+                        <p class="studio-note">*rozpiska wkrótce*</p>
+                    </div>
                 </div>
 
+                <!-- Pozostałe zakładki (puste na razie) -->
                 <div id="muzyka" class="page-content">
                     <h2>MUZYKA</h2>
                     <p>Twoje projekty muzyczne...</p>
@@ -377,7 +458,6 @@
             const links = document.querySelectorAll('.menu a');
             const pages = document.querySelectorAll('.page-content');
 
-            // Funkcja aktywująca wybraną stronę
             function activatePage(targetId) {
                 links.forEach(l => l.classList.remove('active'));
                 pages.forEach(p => p.classList.remove('active'));
@@ -391,13 +471,9 @@
                 }
             }
 
-            // Sprawdzamy, czy mamy zapamiętaną stronę z sesji
             const savedPage = sessionStorage.getItem('currentPage') || 'main';
-
-            // Aktywujemy zapamiętaną stronę (lub główną jeśli nie ma)
             activatePage(savedPage);
 
-            // Po kliknięciu zapisujemy wybraną stronę w sessionStorage
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -408,6 +484,5 @@
             });
         });
     </script>
-
 </body>
 </html>
