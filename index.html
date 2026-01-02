@@ -154,14 +154,14 @@
             letter-spacing: 0.5px;
         }
 
-        /* MUZYKA – mniejszy tekst i przyciski */
+        /* MUZYKA – poprawiona wersja z linkami nad napisem */
         .music-section {
             text-align: center;
             max-width: 720px;
             margin: 0 auto;
         }
         .music-title {
-            font-size: 3.8rem; /* trochę mniejszy */
+            font-size: 3.8rem;
             margin: 1.2rem 0;
             text-shadow: 0 0 18px #00ff00, 0 0 35px #00ff00;
             letter-spacing: 5px;
@@ -172,14 +172,17 @@
             100% { text-shadow: 0 0 25px #00ff00, 0 0 45px #00ff00; }
         }
         .music-desc {
-            font-size: 1.25rem; /* mniejszy opis */
-            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            margin: 1rem 0 2rem 0;
             opacity: 0.9;
+        }
+        .platform-links {
+            margin-bottom: 2rem;
         }
         .platform-link {
             display: inline-block;
-            margin: 1rem 1.8rem;
-            font-size: 1.8rem; /* mniejsze przyciski */
+            margin: 0.8rem 1.5rem;
+            font-size: 1.8rem;
             padding: 0.7rem 1.5rem;
             border: 3px solid #ffff00;
             border-radius: 8px;
@@ -195,12 +198,13 @@
             transform: scale(1.07);
         }
         .platform-note {
-            font-size: 1.1rem; /* mniejszy dopisek */
+            font-size: 1.1rem;
             margin-top: 0.4rem;
             opacity: 0.85;
+            display: block;
         }
 
-        /* Pozostałe style (bez zmian) */
+        /* Pozostałe style */
         .gear-section { max-width: 780px; margin: 0 auto; }
         .gear-title { font-size: 2.2rem; text-align: center; margin: 0.8rem 0 1.5rem 0; text-shadow: 0 0 10px #ffff00; }
         .gear-subtitle { font-size: 1.5rem; margin: 1.5rem 0 0.6rem 0; color: #ffffaa; text-shadow: 0 0 6px #ffff00; border-bottom: 1px solid #00ff00; }
@@ -355,27 +359,25 @@
                     </div>
                 </div>
 
-                <!-- MUZYKA – poprawiona wersja -->
+                <!-- MUZYKA – linki nad napisem -->
                 <div id="muzyka" class="page-content">
                     <div class="music-section">
+                        <div class="platform-links">
+                            <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" 
+                               target="_blank" class="platform-link">SPOTIFY</a>
+                            <span class="platform-note">(smukly na Spotify)</span>
+
+                            <br><br>
+
+                            <a href="https://www.youtube.com/channel/UC28NIMWUi0qdJq14J9PnDPg" 
+                               target="_blank" class="platform-link">YOUTUBE</a>
+                            <span class="platform-note">(kanał smukly)</span>
+                        </div>
+
                         <h1 class="music-title">MUZYKA</h1>
                         <p class="music-desc">
                             słuchaj moich utworów i obczaj nowe projekty poniżej
                         </p>
-
-                        <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" 
-                           target="_blank" class="platform-link">
-                            SPOTIFY
-                        </a>
-                        <span class="platform-note">(smukly na Spotify)</span>
-
-                        <br><br>
-
-                        <a href="https://www.youtube.com/channel/UC28NIMWUi0qdJq14J9PnDPg" 
-                           target="_blank" class="platform-link">
-                            YOUTUBE
-                        </a>
-                        <span class="platform-note">(kanał smukly)</span>
                     </div>
                 </div>
 
