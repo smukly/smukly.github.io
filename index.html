@@ -154,7 +154,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* MUZYKA – poprawiona wersja z linkami nad napisem */
+        /* MUZYKA */
         .music-section {
             text-align: center;
             max-width: 720px;
@@ -162,7 +162,7 @@
         }
         .music-title {
             font-size: 3.8rem;
-            margin: 1.2rem 0;
+            margin: 0.5rem 0;
             text-shadow: 0 0 18px #00ff00, 0 0 35px #00ff00;
             letter-spacing: 5px;
             animation: glow 4s infinite alternate;
@@ -173,11 +173,11 @@
         }
         .music-desc {
             font-size: 1.25rem;
-            margin: 1rem 0 2rem 0;
+            margin: 0rem 0 3rem 0;
             opacity: 0.9;
         }
         .platform-links {
-            margin-bottom: 2rem;
+            margin-top: 2rem;
         }
         .platform-link {
             display: inline-block;
@@ -220,7 +220,7 @@
         .separator { margin: 0.6rem 0; }
 
         .sidebar { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-left: 3px solid #ffff00; text-align: center; border-radius: 8px; }
-        .sidebar img { margin: 12px 0; border: 2px solid #ffff00; border-radius: 4px; image-rendering: pixelated; }
+        .sidebar img { margin: 12px 0; border: 2px solid #ffff00; border-radius: 4px; image-rendering: pixelated; width: 88px; }
         footer { padding: 10px; margin-top: 20px; font-size: 12px; text-align: center; }
 
         @media (max-width: 768px) {
@@ -256,7 +256,6 @@
                 <a data-target="info">INFO 24/7</a>
             </div>
             <div class="content">
-                <!-- Główna -->
                 <div id="main" class="page-content">
                     <div class="main-header">
                         <div class="top-line">smukly network</div>
@@ -270,7 +269,6 @@
                     <p>Miłej zabawy i dziena za odwiedziny!</p>
                 </div>
 
-                <!-- O MNIE -->
                 <div id="o-mnie" class="page-content">
                     <div class="profile-card">
                         <h2>smukly.exe</h2>
@@ -290,7 +288,6 @@
                     </div>
                 </div>
 
-                <!-- SPRZĘT -->
                 <div id="sprzet" class="page-content">
                     <div class="gear-section">
                         <div class="gear-title">Sprzęt w Pokoju</div>
@@ -359,12 +356,15 @@
                     </div>
                 </div>
 
-                <!-- MUZYKA – linki nad napisem -->
                 <div id="muzyka" class="page-content">
                     <div class="music-section">
+                        <h1 class="music-title">MUZYKA</h1>
+                        <p class="music-desc">
+                            słuchaj moich utworów i obczaj nowe projekty poniżej
+                        </p>
+
                         <div class="platform-links">
-                            <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" 
-                               target="_blank" class="platform-link">SPOTIFY</a>
+                            <a href="#" target="_blank" class="platform-link">SPOTIFY</a>
                             <span class="platform-note">(smukly na Spotify)</span>
 
                             <br><br>
@@ -373,15 +373,9 @@
                                target="_blank" class="platform-link">YOUTUBE</a>
                             <span class="platform-note">(kanał smukly)</span>
                         </div>
-
-                        <h1 class="music-title">MUZYKA</h1>
-                        <p class="music-desc">
-                            słuchaj moich utworów i obczaj nowe projekty poniżej
-                        </p>
                     </div>
                 </div>
 
-                <!-- Pozostałe -->
                 <div id="serwer-mc" class="page-content">
                     <h2>SERWER MC</h2>
                     <p>Info o serwerze Minecraft...</p>
