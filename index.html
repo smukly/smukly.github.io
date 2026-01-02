@@ -100,16 +100,28 @@
             border-radius: 10px;
             box-shadow: 4px 4px 8px #000;
             text-align: center;
+            cursor: pointer;
         }
         .menu a:hover {
             background: linear-gradient(to right, #ffcc00, #ffff66);
             transform: translateY(-3px);
+        }
+        .menu a.active {
+            background: linear-gradient(to right, #ffff00, #ffffff);
+            color: #000;
+            box-shadow: 0 0 15px #ffff00;
         }
         .content {
             flex: 1;
             padding: 30px 40px;
             color: #00ff00;
             line-height: 1.6;
+        }
+        .page-content {
+            display: none;
+        }
+        .page-content.active {
+            display: block;
         }
         .sidebar {
             width: 200px;
@@ -157,6 +169,7 @@
     </style>
 </head>
 <body>
+
     <div class="container">
         <header>
             <h1>SMUKLY NETWORK</h1>
@@ -170,27 +183,66 @@
 
         <div class="main">
             <div class="menu">
-                <a href="#">STRONA GŁÓWNA</a>
-                <a href="#">O MNIE</a>
-                <a href="#">SPRZĘT</a>
-                <a href="#">MUZYKA</a>
-                <a href="#">SERWER MC</a>
-                <a href="#">BLOG</a>
-                <a href="#">DISCORD</a>
-                <a href="#">INFO 24/7</a>
+                <a data-target="main" class="active">STRONA GŁÓWNA</a>
+                <a data-target="o-mnie">O MNIE</a>
+                <a data-target="sprzet">SPRZĘT</a>
+                <a data-target="muzyka">MUZYKA</a>
+                <a data-target="serwer-mc">SERWER MC</a>
+                <a data-target="discord">DISCORD</a>
+                <a data-target="blog">BLOG</a>
+                <a data-target="info">INFO 24/7</a>
             </div>
 
             <div class="content">
-                <h2>
-                    <span>smukly network</span>
-                    <span>- sieć bez granic</span>
-                </h2>
-                <p>yooo tu smukly.</p>
-                <p>Ta oto strona to moja baza — strefa w, której można znaleźć informacje jak i również moją twórczość</p>
-                <p>Projekty muzyczne — albumy, utwory czy przyszłe projekty<br>
-                Gry i sprzęt — w co pogrywam i na czym, oraz trochę info o serwerze mc</p>
-                <p>Po lewej stronie znajdziesz zakładki które przeniosą cię do miejsca którym jest owa zakładka jakby logiczne.</p>
-                <p>Miłej zabawy i dziena za odwiedziny!</p>
+                <!-- Tutaj będą się przełączać treści -->
+
+                <div id="main" class="page-content active">
+                    <h2>
+                        <span>smukly network</span>
+                        <span>- sieć bez granic</span>
+                    </h2>
+                    <p>yooo tu smukly.</p>
+                    <p>Ta oto strona to moja baza — strefa w, której można znaleźć informacje jak i również moją twórczość</p>
+                    <p>Projekty muzyczne — albumy, utwory czy przyszłe projekty<br>
+                    Gry i sprzęt — w co pogrywam i na czym, oraz trochę info o serwerze mc</p>
+                    <p>Po lewej stronie znajdziesz zakładki które przeniosą cię do miejsca którym jest owa zakładka jakby logiczne.</p>
+                    <p>Miłej zabawy i dziena za odwiedziny!</p>
+                </div>
+
+                <div id="o-mnie" class="page-content">
+                    <h2>TU BĘDZIE O MNIE</h2>
+                    <p>Treść do uzupełnienia...</p>
+                </div>
+
+                <div id="sprzet" class="page-content">
+                    <h2>SPRZĘT</h2>
+                    <p>Tu będzie Twój sprzęt...</p>
+                </div>
+
+                <div id="muzyka" class="page-content">
+                    <h2>MUZYKA</h2>
+                    <p>Twoje projekty muzyczne...</p>
+                </div>
+
+                <div id="serwer-mc" class="page-content">
+                    <h2>SERWER MC</h2>
+                    <p>Info o serwerze Minecraft...</p>
+                </div>
+
+                <div id="discord" class="page-content">
+                    <h2>DISCORD</h2>
+                    <p>Zaproszenie / opis...</p>
+                </div>
+
+                <div id="blog" class="page-content">
+                    <h2>BLOG</h2>
+                    <p>Najnowsze wpisy...</p>
+                </div>
+
+                <div id="info" class="page-content">
+                    <h2>INFO 24/7</h2>
+                    <p>Manifest / informacje stałe...</p>
+                </div>
             </div>
 
             <div class="sidebar">
@@ -206,5 +258,30 @@
             © 2026 smukly network - nie błądź w świecie
         </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.menu a');
+            const pages = document.querySelectorAll('.page-content');
+
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Usuwamy aktywny stan ze wszystkich linków
+                    links.forEach(l => l.classList.remove('active'));
+                    // Dodajemy aktywny do klikniętego
+                    link.classList.add('active');
+
+                    // Ukrywamy wszystkie strony
+                    pages.forEach(p => p.classList.remove('active'));
+                    // Pokazujemy wybraną
+                    const targetId = link.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
