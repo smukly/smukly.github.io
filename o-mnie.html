@@ -28,8 +28,8 @@
             0% { background-position: 0 0, 0 0, 0 0, center center; }
             100% { background-position: 0 1000px, 0 1000px, 0 0, center center; }
         }
-
-        /* Ustawienie szerokości kontenera na 1100px - zgodnie ze stroną główną */
+        
+        /* Kontener 1100px - identyczny jak na stronie głównej */
         .container {
             width: 1100px; 
             padding: 20px;
@@ -39,7 +39,7 @@
             backdrop-filter: blur(4px);
             border-radius: 10px;
         }
-
+        
         header {
             background: linear-gradient(to bottom, #6600cc, #330066);
             padding: 20px;
@@ -56,7 +56,7 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffcc00, 0 0 30px #aa00ff, 0 0 50px #00ffff;
             letter-spacing: 12px;
         }
-
+        
         .ticker-wrapper {
             background-color: #000;
             overflow: hidden;
@@ -77,12 +77,12 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
-
+        
         .main {
             display: flex;
             min-height: 500px;
         }
-
+        
         .menu {
             width: 200px;
             padding: 20px 10px;
@@ -112,45 +112,48 @@
             color: #000;
             box-shadow: 0 0 15px #ffff00;
         }
-
-        /* Środkowa część - flex: 1 sprawia, że zajmuje całą dostępną przestrzeń */
+        
         .content {
             flex: 1;
             padding: 30px 40px;
             color: #00ff00;
             line-height: 1.6;
+            display: flex;
+            align-items: center; /* Centrowanie karty w pionie */
+            justify-content: center;
         }
-
+        
+        /* Karta profilu - szeroka, ale bez rozciągania góra/dół */
         .profile-card {
-            max-width: 800px; /* Zwiększono, by lepiej wykorzystać przestrzeń */
-            margin: 0 auto;
-            padding: 20px;
+            width: 100%; /* Wypełnia całą szerokość sekcji content */
+            max-width: 620px; 
+            padding: 15px 25px;
             border: 2px solid #00ff00;
             background: rgba(0, 20, 0, 0.65);
             box-shadow: 0 0 15px #00ff00;
         }
+        
         .profile-table {
             width: 100%;
             font-size: 18px;
-            line-height: 1.8;
             border-collapse: collapse;
         }
         .profile-table td {
-            padding: 10px 0;
+            padding: 4px 0; /* Minimalny padding, by tabela nie rosła w pionie */
             vertical-align: top;
         }
         .profile-table td:first-child {
-            width: 160px;
+            width: 150px;
             color: #ffff00;
             font-weight: bold;
         }
         .separator {
-            margin: 10px 0;
+            margin: 8px 0;
             border: 0;
             border-top: 1px solid #00ff00;
             opacity: 0.5;
         }
-
+        
         .sidebar {
             width: 200px;
             padding: 20px 10px;
@@ -166,7 +169,7 @@
             image-rendering: pixelated;
             max-width: 170px;
         }
-
+        
         footer {
             padding: 10px;
             margin-top: 20px;
