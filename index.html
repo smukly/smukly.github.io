@@ -59,7 +59,6 @@
             padding: 8px 0;
             margin-bottom: 20px;
             border-radius: 8px;
-            position: relative;
         }
         .ticker {
             display: inline-block;
@@ -73,123 +72,66 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
-        .main {
-            display: flex;
-            min-height: 500px;
-        }
-        .menu {
-            width: 200px;
-            padding: 20px 10px;
-            background-color: rgba(17, 0, 68, 0.95);
-            border-right: 3px solid #ffff00;
-            border-radius: 8px;
-        }
-        .menu a {
-            display: block;
-            margin: 15px 0;
-            padding: 12px;
-            background: linear-gradient(to right, #ff9900, #ffcc00);
-            color: black;
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid #ffff66;
-            border-radius: 10px;
-            box-shadow: 4px 4px 8px #000;
-            text-align: center;
-            cursor: pointer;
-        }
-        .menu a:hover {
-            background: linear-gradient(to right, #ffcc00, #ffff66);
-            transform: translateY(-3px);
-        }
-        .menu a.active {
-            background: linear-gradient(to right, #ffff00, #ffffff);
-            color: #000;
-            box-shadow: 0 0 15px #ffff00;
-        }
-        .content {
-            flex: 1;
-            padding: 30px 40px;
-            color: #00ff00;
-            line-height: 1.6;
-        }
-        .page-content {
-            display: none;
-        }
-        .page-content.active {
-            display: block;
-        }
+        .main { display: flex; min-height: 500px; }
+        .menu { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-right: 3px solid #ffff00; border-radius: 8px; }
+        .menu a { display: block; margin: 15px 0; padding: 12px; background: linear-gradient(to right, #ff9900, #ffcc00); color: black; font-weight: bold; text-decoration: none; border: 2px solid #ffff66; border-radius: 10px; text-align: center; cursor: pointer; }
+        .menu a:hover { transform: translateY(-2px); box-shadow: 2px 2px 5px #000; }
+        .menu a.active { background: linear-gradient(to right, #ffff00, #ffffff); box-shadow: 0 0 15px #ffff00; }
+        
+        .content { flex: 1; padding: 30px 40px; color: #00ff00; line-height: 1.6; }
+        .page-content { display: none; }
+        .page-content.active { display: block; }
 
-        /* DISCORD - STYLIZACJA */
-        .discord-construction {
-            text-align: center;
-            border: 2px solid #ffff00;
-            background: rgba(255, 255, 0, 0.05);
-            padding: 40px 20px;
-            margin-top: 50px;
-        }
-        .discord-text {
-            font-size: 28px;
-            color: #ffffaa;
-            text-shadow: 0 0 8px #ffff00;
-            margin-bottom: 20px;
-        }
-        .discord-emoji {
-            font-size: 45px;
-            color: #00ff00;
-            display: block;
-            margin-top: 10px;
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* O MNIE */
-        .profile-card {
-            max-width: 640px;
-            margin: 0 auto 1.5rem;
-            padding: 1rem;
-            border: 2px solid #00ff00;
-            background: rgba(0, 20, 0, 0.65);
-            box-shadow: 0 0 15px #00ff00;
-        }
+        /* O MNIE - TABELA */
+        .profile-card { max-width: 640px; margin: 0 auto; padding: 1rem; border: 2px solid #00ff00; background: rgba(0, 20, 0, 0.65); box-shadow: 0 0 15px #00ff00; }
         .profile-table { width: 100%; font-size: 1rem; line-height: 1.6; }
         .separator { margin: 0.6rem 0; border: 0; border-top: 1px solid #00ff00; opacity: 0.5; }
 
         /* SERWER MC */
-        .mc-alert-box {
-            border: 3px double #ff0000;
-            background: rgba(50, 0, 0, 0.7);
-            padding: 25px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .mc-warning-header { color: #ff0000; font-size: 24px; animation: blinker 1.5s linear infinite; }
+        .mc-alert-box { border: 3px double #ff0000; background: rgba(50, 0, 0, 0.7); padding: 25px; text-align: center; box-shadow: 0 0 20px rgba(255,0,0,0.4); }
+        .mc-warning-header { color: #ff0000; font-size: 24px; animation: blinker 1.5s linear infinite; font-weight: bold; }
         @keyframes blinker { 50% { opacity: 0; } }
 
+        /* DISCORD */
+        .discord-construction { text-align: center; border: 2px solid #ffff00; padding: 40px; background: rgba(255,255,0,0.05); }
+        .discord-emoji { font-size: 45px; display: block; margin-top: 15px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        /* BLOG */
+        .blog-post-link { border: 2px solid #00ff00; background: rgba(0, 255, 0, 0.1); padding: 15px; cursor: pointer; color: #00ff00; transition: 0.3s; }
+        .blog-post-link:hover { background: rgba(0, 255, 0, 0.3); }
+        .blog-article { display: none; }
+        .blog-article.active { display: block; }
+        .blog-back-btn { display: inline-block; margin-top: 20px; background: #ffff00; color: #000; padding: 5px 15px; cursor: pointer; font-weight: bold; }
+
+        /* SPRZĘT */
+        .gear-section { max-width: 780px; margin: 0 auto; }
+        .gear-title { font-size: 2.2rem; text-align: center; color: #ffff00; text-shadow: 0 0 10px #ffff00; margin-bottom: 20px; }
+        .gear-subtitle { font-size: 1.5rem; color: #ffffaa; border-bottom: 1px solid #00ff00; margin-top: 20px; }
+        .gear-list { border-left: 2px solid #00ff00; padding-left: 12px; margin: 10px 0; }
+
         /* MUZYKA */
-        .music-section { text-align: center; max-width: 720px; margin: 0 auto; }
-        .music-title { font-size: 3.8rem; text-shadow: 0 0 18px #00ff00; }
-        .platform-link { display: inline-block; margin: 0.8rem 1.5rem; font-size: 1.8rem; padding: 0.7rem 1.5rem; border: 3px solid #ffff00; border-radius: 8px; color: #ffff00; text-decoration: none; font-weight: bold; }
+        .music-section { text-align: center; }
+        .platform-link { display: inline-block; margin: 15px; padding: 15px 35px; border: 3px solid #ffff00; color: #ffff00; text-decoration: none; font-weight: bold; font-size: 1.8rem; background: rgba(255,255,0,0.1); transition: 0.3s; }
+        .platform-link:hover { background: rgba(255,255,0,0.3); box-shadow: 0 0 20px #ffff00; }
 
-        .sidebar { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-left: 3px solid #ffff00; text-align: center; border-radius: 8px; }
-        .sidebar img { margin: 12px 0; border: 2px solid #ffff00; border-radius: 4px; width: 88px; }
-        footer { padding: 10px; margin-top: 20px; font-size: 12px; text-align: center; }
+        /* INFO 24/7 */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .info-box { border: 1px solid #00ff00; padding: 15px; background: rgba(0,255,0,0.05); }
+        .info-label { color: #ffff00; font-weight: bold; display: block; margin-bottom: 5px; }
+        .status-online { color: #00ff00; font-weight: bold; }
+        .status-offline { color: #ff0000; font-weight: bold; }
 
+        .sidebar { width: 200px; padding: 20px 10px; border-left: 3px solid #ffff00; text-align: center; background-color: rgba(17, 0, 68, 0.95); }
+        .sidebar img { margin: 12px 0; border: 2px solid #ffff00; width: 88px; image-rendering: pixelated; }
+        footer { padding: 15px; text-align: center; font-size: 12px; border-top: 2px solid #ffff00; margin-top: 20px; color: #ffff00; }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>SMUKLY NETWORK</h1>
-        </header>
-        <div class="ticker-wrapper">
-            <div class="ticker">
-                wkrótce nowe wpisy na stronie: smukly network
-            </div>
-        </div>
+        <header><h1>SMUKLY NETWORK</h1></header>
+        <div class="ticker-wrapper"><div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div></div>
+        
         <div class="main">
             <div class="menu">
                 <a data-target="main">STRONA GŁÓWNA</a>
@@ -201,10 +143,18 @@
                 <a data-target="blog">BLOG</a>
                 <a data-target="info">INFO 24/7</a>
             </div>
+
             <div class="content">
-                <div id="main" class="page-content">
+                <div id="main" class="page-content active">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2 style="font-size: 38px; color:#00ff00; margin:0;">smukly network</h2>
+                        <div style="font-size: 48px; color:#ffff00; line-height:0.8;">-</div>
+                        <h2 style="font-size: 34px; color:#00ff00; margin:0;">sieć bez granic</h2>
+                    </div>
                     <p>yooo tu smukly.</p>
                     <p>Ta oto strona to moja baza — strefa w, której można znaleźć informacje jak i również moją twórczość.</p>
+                    <p>Projekty muzyczne — albumy, utwory czy przyszłe projekty. Gry i sprzęt — w co pogrywam i na czym, oraz trochę info o serwerze mc.</p>
+                    <p>Po lewej stronie znajdziesz zakładki które przeniosą cię do miejsca którym jest owa zakładka jakby logiczne.</p>
                     <p>Miłej zabawy i dziena za odwiedziny!</p>
                 </div>
 
@@ -214,13 +164,61 @@
                             <tr><td>Imię:</td><td>Justyn</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
                             <tr><td>Styl życia:</td><td>Żyję przeszłością by zapomnieć o teraźniejszości</td></tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            <tr><td>Cel:</td><td>Odbycie mentalnego przeistoczenia oraz dostanie się do nieba</td></tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            <tr><td>Zajawka:</td><td>Retro, gierki na Xbox 360, tworzenie muzyki i innych treści</td></tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            <tr><td>Inspiracje:</td><td>The Doors, Jezus Chrystus</td></tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            <tr><td>Ulubiona gra:</td><td>GTA IV</td></tr>
                         </table>
+                    </div>
+                </div>
+
+                <div id="sprzet" class="page-content">
+                    <div class="gear-section">
+                        <div class="gear-title">Sprzęt w Pokoju</div>
+                        <div class="gear-subtitle">Komputery i akcesoria</div>
+                        <div class="gear-list"><strong>Główny Komputer:</strong> OMEN Laptop 15-ek0xxx · 16GB RAM · 477GB SSD + 2TB SSD</div>
+                        <div class="gear-list"><strong>Konsola:</strong> Xbox 360 (Falcon)</div>
+                        <div class="gear-list"><strong>Mysz/Klawiatura:</strong> Trust GXT 929W / Mad Dog GK850W</div>
+                        <div class="gear-subtitle">Sprzęt Audio</div>
+                        <div class="gear-list"><strong>Wzmacniacz:</strong> Sony STR-DE197 / Pioneer DV-444 (CD)</div>
+                        <div class="gear-list"><strong>Głośniki:</strong> Canton Quinto 510 / Canton Fonum 251 DC</div>
+                        <div class="gear-list"><strong>Magnetofon:</strong> Technics RS-M226 / Gramofon: Grundig PS 3500</div>
+                        <div class="gear-subtitle">Sprzęt Wideo</div>
+                        <div class="gear-list"><strong>VHS Player:</strong> Panasonic NV-HD600</div>
+                        <div class="gear-list"><strong>Projektor:</strong> Led Lcd Xiwsby T07</div>
+                        <div class="gear-list"><strong>Kamera:</strong> Sony Cyber-shot DSC-HX300</div>
+                    </div>
+                </div>
+
+                <div id="muzyka" class="page-content">
+                    <div class="music-section">
+                        <h1 style="font-size: 3.8rem; text-shadow: 0 0 15px #00ff00;">MUZYKA</h1>
+                        <p>Słuchaj moich utworów tutaj:</p>
+                        <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=chZXyZtyT7Sv3ayWRKNZ7Q" target="_blank" class="platform-link">SPOTIFY</a><br>
+                        <a href="https://www.youtube.com/channel/UC28NIMWUi0qdJq14J9PnDPg" class="platform-link" target="_blank">YOUTUBE</a>
+                    </div>
+                </div>
+
+                <div id="serwer-mc" class="page-content">
+                    <div class="mc-alert-box">
+                        <div class="mc-warning-header">⚠️ SYSTEM ALERT: OFFLINE ⚠️</div>
+                        <p style="color:#fff; font-size: 1.2rem; margin: 15px 0;">
+                            Serwer zostaje <strong>zawieszony do 16.01.2026r.</strong><br>
+                            z powodu problemów technicznych hosta.
+                        </p>
+                        <p style="color:#ffff00; font-size: 1rem;">
+                            Wznowiony zostanie na nowym silniku od 0 lecz z tym samym seedem i pluginami, które miały być od początku.
+                        </p>
                     </div>
                 </div>
 
                 <div id="discord" class="page-content">
                     <div class="discord-construction">
-                        <div class="discord-text">
+                        <div style="font-size: 26px; color: #ffffaa; text-shadow: 0 0 10px #ffff00;">
                             DISCORD SERVER:<br>
                             Na daną chwilę w procesie wytwarzania...
                         </div>
@@ -228,65 +226,97 @@
                     </div>
                 </div>
 
-                <div id="serwer-mc" class="page-content">
-                    <div class="mc-alert-box">
-                        <div class="mc-warning-header">⚠️ SYSTEM ALERT: OFFLINE ⚠️</div>
-                        <p style="color:#fff">Serwer zawieszony do 16.01.2026r.</p>
+                <div id="blog" class="page-content">
+                    <div id="blog-list">
+                        <div class="blog-header" style="font-size: 24px; color: #ffff00; margin-bottom: 25px;">Witaj na moim Blogu! Poniżej znajdziesz najświeższe wpisy.</div>
+                        <div class="blog-post-link" onclick="showArticle('post-1')">
+                            <strong>02.01.2026 : Pierwszy Wpis</strong>
+                        </div>
+                    </div>
+                    <div id="post-1" class="blog-article">
+                        <h2 style="color:#ffff00; border-bottom: 2px solid #ffff00; padding-bottom: 10px;">Pierwszy Wpis</h2>
+                        <p>A oto moja własna część internetu pod przykrywką smukly network.</p>
+                        <p>Stworzyłem to ponieważ zawsze chciałem mieć swoją stronkę i miejsce do publikacji czego dusza zapragnie ale nigdy nie miałem czasu i chęci lecz teraz to się zmienia.</p>
+                        <p>Ten Blog to miejsce w którym będe publikować moje przemyślenia, dyskusje wewnętrzne lub porady, poprostu zeszyt internetowy, który będzie aktualizowany w miarę możliwości co jakiś czas w miesiącu.</p>
+                        <p>Nie znajdziecie tu żadnych nowinkowych memów czy najonwszych sztuk piękna i technologi aktualnego świata bo to ściek i szkoda marnować życia na to, więc spokojnie.</p>
+                        <p>Więc miłego przeglądania stronki i do zobaczenia w kolejnym Blogu.<br>Pozdro</p>
+                        <div class="blog-back-btn" onclick="showBlogList()">[ POWRÓT ]</div>
                     </div>
                 </div>
 
-                <div id="muzyka" class="page-content">
-                    <div class="music-section">
-                        <h1 class="music-title">MUZYKA</h1>
-                        <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=chZXyZtyT7Sv3ayWRKNZ7Q" target="_blank" class="platform-link">SPOTIFY</a>
+                <div id="info" class="page-content">
+                    <h2 style="color: #ffff00; text-align: center; border-bottom: 2px solid #00ff00;">SYSTEM INFO 24/7</h2>
+                    <div class="info-grid" style="margin-top: 20px;">
+                        <div class="info-box">
+                            <span class="info-label">CZAS SYSTEMOWY:</span>
+                            <div id="clock" style="font-size: 20px;">00:00:00</div>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-label">STATUS SIECI:</span>
+                            <span class="status-online">POŁĄCZONO (v.2.0)</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-label">MC SERVER:</span>
+                            <span class="status-offline">ZAWIESZONY</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-label">LOKALIZACJA:</span>
+                            <span>POLAND / SMUKLY_NET</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px; border: 1px dashed #ffff00; padding: 15px; font-style: italic; opacity: 0.8;">
+                        "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów. 24 godziny na dobę, 7 dni w tygodniu - bez zbędnego syfu."
                     </div>
                 </div>
-
-                <div id="sprzet" class="page-content"><h2>SPRZĘT</h2><p>Wkrótce...</p></div>
-                <div id="blog" class="page-content"><h2>BLOG</h2><p>Wkrótce...</p></div>
-                <div id="info" class="page-content"><h2>INFO 24/7</h2><p>Wkrótce...</p></div>
             </div>
 
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif" alt="Face">
-                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
-                <img src="https://anlucas.neocities.org/lilrib.gif" alt="Lil Rib">
+                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash">
+                <img src="https://anlucas.neocities.org/lilrib.gif" alt="Rib">
                 <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
             </div>
         </div>
-
-        <footer>
-            © 2026 smukly network - nie błądź w świecie
-        </footer>
+        <footer>© 2026 smukly network - nie błądź w świecie</footer>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('.menu a');
-            const pages = document.querySelectorAll('.page-content');
+        // Nawigacja
+        const links = document.querySelectorAll('.menu a');
+        const pages = document.querySelectorAll('.page-content');
 
-            function activatePage(targetId) {
-                links.forEach(l => l.classList.remove('active'));
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                const targetId = link.getAttribute('data-target');
                 pages.forEach(p => p.classList.remove('active'));
-                const link = document.querySelector(`[data-target="${targetId}"]`);
-                const page = document.getElementById(targetId);
-                if (link && page) {
-                    link.classList.add('active');
-                    page.classList.add('active');
-                }
-            }
-
-            const savedPage = sessionStorage.getItem('currentPage') || 'main';
-            activatePage(savedPage);
-
-            links.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const targetId = link.getAttribute('data-target');
-                    activatePage(targetId);
-                    sessionStorage.setItem('currentPage', targetId);
-                });
+                links.forEach(l => l.classList.remove('active'));
+                document.getElementById(targetId).classList.add('active');
+                link.classList.add('active');
+                if(targetId === 'blog') showBlogList();
             });
         });
+
+        // Blog
+        function showArticle(id) {
+            document.getElementById('blog-list').style.display = 'none';
+            document.getElementById(id).classList.add('active');
+        }
+        function showBlogList() {
+            document.getElementById('blog-list').style.display = 'block';
+            document.querySelectorAll('.blog-article').forEach(a => a.classList.remove('active'));
+        }
+
+        // Zegar w INFO 24/7
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ":" + 
+                            now.getMinutes().toString().padStart(2, '0') + ":" + 
+                            now.getSeconds().toString().padStart(2, '0');
+            const clockEl = document.getElementById('clock');
+            if(clockEl) clockEl.innerText = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
     </script>
 </body>
 </html>
