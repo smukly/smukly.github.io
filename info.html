@@ -106,27 +106,67 @@
             color: #000;
             box-shadow: 0 0 15px #ffff00;
         }
+        
+        /* STYLE DLA SYSTEM INFO Z OBRAZKA */
         .content {
             flex: 1;
             padding: 30px 40px;
             color: #00ff00;
-            line-height: 1.6;
+            font-family: 'VT323', monospace;
         }
 
-        /* RUBRYKA IDENTYCZNA JAK WE WPISACH */
-        .info-box {
-            border: 1px solid #00ff00;
-            background: rgba(0, 255, 0, 0.05);
-            padding: 25px;
-            width: 100%;
-            box-sizing: border-box;
+        .info-title {
             text-align: center;
+            color: #ffff00;
+            font-size: 36px;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
         }
-        .status-online {
+
+        .info-line {
+            border: none;
+            border-top: 2px solid #00ff00;
+            margin-bottom: 30px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            border: 2px solid #00ff00;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            min-height: 100px;
+        }
+
+        .card-label {
+            color: #ffff00;
+            font-size: 22px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-value {
             color: #00ff00;
-            font-weight: bold;
-            text-shadow: 0 0 10px #00ff00;
-            font-size: 1.5rem;
+            font-size: 24px;
+            display: block;
+        }
+
+        .value-red {
+            color: #ff0000;
+        }
+
+        .quote-box {
+            border: 2px dashed #ffff00;
+            padding: 20px;
+            text-align: center;
+            font-size: 22px;
+            line-height: 1.4;
+            color: #00ff00;
             margin-top: 20px;
         }
 
@@ -142,7 +182,6 @@
             margin: 12px 0;
             border: 2px solid #ffff00;
             border-radius: 4px;
-            image-rendering: pixelated;
             max-width: 170px;
         }
         footer {
@@ -158,7 +197,9 @@
 <body>
     <div class="container">
         <header><h1>SMUKLY NETWORK</h1></header>
-        <div class="ticker-wrapper"><div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div></div>
+        <div class="ticker-wrapper">
+            <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
+        </div>
         <div class="main">
             <div class="menu">
                 <a href="index.html">STRONA GŁÓWNA</a>
@@ -170,15 +211,35 @@
                 <a href="blog.html">BLOG</a>
                 <a href="info.html" class="active">INFO 24/7</a>
             </div>
+            
             <div class="content">
-                <div class="info-box">
-                    <h2 style="color: #ffff00; font-family: 'VT323', monospace; font-size: 40px; margin-top: 0; border-bottom: 2px solid #ffff00; padding-bottom: 10px;">STATUS SYSTEMU</h2>
-                    <p style="font-size: 1.2rem; margin-top: 20px;">
-                        Strona <strong>smukly network</strong> jest dostępna 24 godziny na dobę 7 dni w tygodniu.
-                    </p>
-                    <div class="status-online">● SYSTEM ONLINE</div>
+                <div class="info-title">SYSTEM INFO 24/7</div>
+                <hr class="info-line">
+
+                <div class="grid-container">
+                    <div class="info-card">
+                        <span class="card-label">CZAS SYSTEMOWY:</span>
+                        <span class="card-value" id="clock">22:11:24</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="card-label">STATUS SIECI:</span>
+                        <span class="card-value">POŁĄCZONO (v.2.0)</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="card-label">SERWER MC:</span>
+                        <span class="card-value value-red">OFFLINE</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="card-label">LOKALIZACJA:</span>
+                        <span class="card-value">POLAND / <br>SMUKLY_NET</span>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
                 </div>
             </div>
+
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
                 <img src="https://anlucas.neocities.org/hash_now.gif">
@@ -186,10 +247,25 @@
                 <img src="https://anlucas.neocities.org/Winamp.gif">
                 <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
                 <img src="https://anlucas.neocities.org/zxcert.png">
-                <div style="margin-top: 15px;"><img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;"></div>
+                <div style="margin-top: 15px;">
+                    <img src="https://anlucas.neocities.org/happynewyear.gif" style="display: block; margin: 0 auto; border: none;">
+                </div>
             </div>
         </div>
         <footer>© 2026 smukly network - nie błądź w świecie</footer>
     </div>
+
+    <script>
+        // Skrypt do aktualizacji zegara w czasie rzeczywistym
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.getHours().toString().padStart(2, '0') + ':' + 
+                               now.getMinutes().toString().padStart(2, '0') + ':' + 
+                               now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
