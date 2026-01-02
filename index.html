@@ -158,39 +158,46 @@
         .profile-card {
             max-width: 720px;
             margin: 0 auto 2rem;
-            padding: 1.5rem;
+            padding: 1.8rem;
             border: 3px solid #00ff00;
-            background: rgba(0, 20, 0, 0.6);
-            box-shadow: 0 0 20px #00ff00;
+            background: rgba(0, 20, 0, 0.65);
+            box-shadow: 0 0 25px #00ff00;
             border-radius: 8px;
         }
         .profile-card h2 {
             text-align: center;
-            margin: 0 0 1.5rem 0;
-            font-size: 2.4rem;
-            text-shadow: 0 0 12px #00ff00;
-            letter-spacing: 3px;
+            margin: 0 0 2rem 0;
+            font-size: 2.8rem;
+            text-shadow: 0 0 14px #00ff00;
+            letter-spacing: 4px;
         }
         .profile-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
         .profile-table td:first-child {
-            width: 38%;
+            width: 35%;
             text-align: right;
-            padding-right: 1.2rem;
+            padding-right: 1.4rem;
             color: #ffff00;
             font-weight: bold;
-            text-shadow: 0 0 6px #ffff00;
+            text-shadow: 0 0 7px #ffff00;
         }
         .profile-table td:last-child {
             text-align: left;
-            padding-left: 1rem;
-            border-left: 2px solid #00ff00;
+            padding-left: 1.2rem;
         }
         .profile-table tr {
-            line-height: 2.1;
+            line-height: 2.3;
+        }
+        .separator {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #00ff00 20%, #00ff00 80%, transparent);
+            margin: 1.2rem 0;
+            box-shadow: 0 0 10px #00ff00;
+            opacity: 0.85;
         }
 
         .sidebar {
@@ -223,24 +230,15 @@
 
         @media (max-width: 768px) {
             .container { width: 90%; margin: 10px; }
-            header h1 { font-size: 50px; letter-spacing: 8px; }
             .main { flex-direction: column; min-height: auto; }
-            .menu, .content, .sidebar {
-                width: 100%;
-                border: none;
-                padding: 15px;
-            }
+            .menu, .content, .sidebar { width: 100%; border: none; padding: 15px; }
             .menu { border-bottom: 3px solid #ffff00; }
             .sidebar { border-top: 3px solid #ffff00; }
-            .sidebar img { width: 60px; height: auto; margin: 10px 0; }
-            .ticker { font-size: 12px; }
-            .main-header .top-line { font-size: 32px; }
-            .main-header .dash { font-size: 40px; }
-            .main-header .bottom-line { font-size: 28px; }
-            .content p { font-size: 15px; }
-            .profile-card { padding: 1rem; }
+            .sidebar img { width: 60px; margin: 10px 0; }
+            .profile-card { padding: 1.2rem; }
             .profile-table { font-size: 1rem; }
             .profile-table td:first-child { width: 45%; }
+            .profile-card h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -277,11 +275,9 @@
                         <div class="dash">-</div>
                         <div class="bottom-line">sieć bez granic</div>
                     </div>
-
                     <p>yooo tu smukly.</p>
                     <p>Ta oto strona to moja baza — strefa w, której można znaleźć informacje jak i również moją twórczość</p>
-                    <p>Projekty muzyczne — albumy, utwory czy przyszłe projekty<br>
-                    Gry i sprzęt — w co pogrywam i na czym, oraz trochę info o serwerze mc</p>
+                    <p>Projekty muzyczne — albumy, utwory czy przyszłe projekty<br>Gry i sprzęt — w co pogrywam i na czym, oraz trochę info o serwerze mc</p>
                     <p>Po lewej stronie znajdziesz zakładki które przeniosą cię do miejsca którym jest owa zakładka jakby logiczne.</p>
                     <p>Miłej zabawy i dziena za odwiedziny!</p>
                 </div>
@@ -296,22 +292,32 @@
                                 <td>Imię:</td>
                                 <td>Justyn</td>
                             </tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            
                             <tr>
                                 <td>Styl życia:</td>
                                 <td>Żyję przeszłością by zapomnieć o teraźniejszości</td>
                             </tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            
                             <tr>
                                 <td>Cel:</td>
                                 <td>Odbycie mentalnego przeistoczenia oraz dostanie się do nieba</td>
                             </tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            
                             <tr>
                                 <td>Zajawka:</td>
                                 <td>Retro, gierki na Xbox 360, tworzenie muzyki i innych treści</td>
                             </tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            
                             <tr>
                                 <td>Inspiracje:</td>
                                 <td>The Doors, Jezus Chrystus</td>
                             </tr>
+                            <tr><td colspan="2"><hr class="separator"></td></tr>
+                            
                             <tr>
                                 <td>Ulubiona gra:</td>
                                 <td>GTA IV</td>
