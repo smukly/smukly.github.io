@@ -1,4 +1,4 @@
-/* RESET I GŁÓWNE USTAWIENIA */
+/* RESET */
 * { box-sizing: border-box; }
 
 body {
@@ -76,7 +76,6 @@ header h1 {
 
 .main { 
     display: flex; 
-    min-height: 600px;
 }
 
 .menu { 
@@ -102,13 +101,10 @@ header h1 {
     text-align: center;
 }
 
-.menu a:hover { background: linear-gradient(to right, #ffcc00, #ffff66); transform: translateY(-3px); }
-
 .content { 
     flex: 1; 
     padding: 30px 40px; 
     color: #00ff00; 
-    line-height: 1.6; 
 }
 
 .main-header { text-align: center; margin-bottom: 2.5rem; }
@@ -116,33 +112,34 @@ header h1 {
 .main-header .separator { width: 100%; border: none; border-top: 2px solid #00ff00; margin: 15px 0; }
 .main-header .bottom-line { font-family: 'VT323', monospace; font-size: 34px; color: #00ff00; letter-spacing: 6px; text-transform: uppercase; margin: 0; }
 
-/* SIDEBAR - UKŁAD DWUKOLUMNOWY DLA GIFÓW */
+/* SIDEBAR - DWIE KOLUMNY GIFÓW */
 .sidebar { 
-    width: 220px; 
-    padding: 15px 5px; 
+    width: 210px; 
+    padding: 20px 10px; 
     background-color: rgba(17, 0, 68, 0.95); 
     border-left: 3px solid #ffff00; 
     border-radius: 8px;
     flex-shrink: 0;
-    /* To sprawia, że gify są obok siebie */
+    
+    /* Układ siatki: 2 kolumny */
     display: flex;
     flex-wrap: wrap;
+    gap: 10px; /* Odstęp między gifami */
     justify-content: center;
-    gap: 8px;
-    align-content: flex-start;
 }
 
 .sidebar img { 
-    border: 2px solid #ffff00; 
-    border-radius: 2px; 
-    image-rendering: pixelated; 
-    width: 88px; /* Stała szerokość, żeby mieściły się dwa obok siebie */
-    height: auto;
+    width: 88px;   /* Standardowa szerokość buttonów retro */
+    height: 31px;  /* Standardowa wysokość buttonów retro */
+    border: 1px solid #ffff00; 
+    image-rendering: pixelated; /* Zachowuje ostrość gifów */
 }
 
-/* Specjalna klasa dla długich gifów, jeśli chcesz by zajmowały całą szerokość */
+/* Wyjątek dla długiego gifa na dole */
 .sidebar img.full-width {
-    width: 184px;
+    width: 186px;
+    height: auto;
+    border: none;
 }
 
 footer { padding: 10px; margin-top: 20px; font-size: 12px; text-align: center; color: #ffff00; font-weight: bold; }
