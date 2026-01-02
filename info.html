@@ -113,19 +113,21 @@
             line-height: 1.6;
         }
 
-        /* INFO SECTION STYLES */
-        .info-status {
-            border: 2px solid #ffff00;
-            background: rgba(255, 255, 0, 0.05);
-            padding: 30px;
+        /* RUBRYKA IDENTYCZNA JAK WE WPISACH */
+        .info-box {
+            border: 1px solid #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+            padding: 25px;
+            width: 100%;
+            box-sizing: border-box;
             text-align: center;
-            border-radius: 8px;
         }
         .status-online {
             color: #00ff00;
             font-weight: bold;
             text-shadow: 0 0 10px #00ff00;
             font-size: 1.5rem;
+            margin-top: 20px;
         }
 
         .sidebar {
@@ -156,9 +158,7 @@
 <body>
     <div class="container">
         <header><h1>SMUKLY NETWORK</h1></header>
-        <div class="ticker-wrapper">
-            <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
-        </div>
+        <div class="ticker-wrapper"><div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div></div>
         <div class="main">
             <div class="menu">
                 <a href="index.html">STRONA GŁÓWNA</a>
@@ -171,24 +171,22 @@
                 <a href="info.html" class="active">INFO 24/7</a>
             </div>
             <div class="content">
-                <div class="info-status">
-                    <h2 style="color: #ffff00; font-family: 'VT323', monospace; font-size: 40px; margin-top: 0;">STATUS SYSTEMU</h2>
-                    <p style="font-size: 1.2rem;">
+                <div class="info-box">
+                    <h2 style="color: #ffff00; font-family: 'VT323', monospace; font-size: 40px; margin-top: 0; border-bottom: 2px solid #ffff00; padding-bottom: 10px;">STATUS SYSTEMU</h2>
+                    <p style="font-size: 1.2rem; margin-top: 20px;">
                         Strona <strong>smukly network</strong> jest dostępna 24 godziny na dobę 7 dni w tygodniu.
                     </p>
                     <div class="status-online">● SYSTEM ONLINE</div>
                 </div>
             </div>
             <div class="sidebar">
-                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
-                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
-                <img src="https://anlucas.neocities.org/lilrib.gif" alt="Lil Rib">
-                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
-                <img src="https://anlucas.neocities.org/zxcert.png" alt="ZX Cert">
-                <div style="margin-top: 15px;">
-                    <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="display: block; margin: 0 auto; border: none;">
-                </div>
+                <img src="https://anlucas.neocities.org/face.gif">
+                <img src="https://anlucas.neocities.org/hash_now.gif">
+                <img src="https://anlucas.neocities.org/lilrib.gif">
+                <img src="https://anlucas.neocities.org/Winamp.gif">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
+                <img src="https://anlucas.neocities.org/zxcert.png">
+                <div style="margin-top: 15px;"><img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;"></div>
             </div>
         </div>
         <footer>© 2026 smukly network - nie błądź w świecie</footer>
