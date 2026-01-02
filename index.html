@@ -154,6 +154,43 @@
             letter-spacing: 0.5px;
         }
 
+        /* O MNIE - STYLIZACJA TABELI */
+        .profile-card {
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            padding: 20px;
+            border: 2px solid #00ff00;
+            background: rgba(0, 20, 0, 0.65);
+            box-shadow: 0 0 15px #00ff00;
+        }
+        .profile-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+        }
+        .profile-table td {
+            padding: 12px;
+            vertical-align: top;
+        }
+        .label-cell {
+            color: #ffff00;
+            font-weight: bold;
+            width: 150px;
+            text-shadow: 0 0 5px #ffff00;
+            border-right: 2px solid #00ff00; /* Linia rozdzielająca */
+        }
+        .value-cell {
+            padding-left: 20px !important;
+        }
+        .separator-row td {
+            padding: 0;
+        }
+        .separator-row hr {
+            border: 0;
+            border-top: 1px solid rgba(0, 255, 0, 0.3);
+            margin: 5px 0;
+        }
+
         /* MUZYKA */
         .music-section {
             text-align: center;
@@ -204,7 +241,7 @@
             display: block;
         }
 
-        /* Pozostałe style */
+        /* SPRZĘT */
         .gear-section { max-width: 780px; margin: 0 auto; }
         .gear-title { font-size: 2.2rem; text-align: center; margin: 0.8rem 0 1.5rem 0; text-shadow: 0 0 10px #ffff00; }
         .gear-subtitle { font-size: 1.5rem; margin: 1.5rem 0 0.6rem 0; color: #ffffaa; text-shadow: 0 0 6px #ffff00; border-bottom: 1px solid #00ff00; }
@@ -213,11 +250,6 @@
         .thin-divider { margin: 1.2rem 0; height: 1px; opacity: 0.7; }
         .thick-divider { margin: 2rem 0 1.5rem; height: 3px; opacity: 0.85; }
         .studio-note { font-size: 1.2rem; text-align: center; margin-top: 2rem; opacity: 0.8; }
-
-        .profile-card { max-width: 640px; margin: 0 auto 1.5rem; padding: 1rem; border: 2px solid #00ff00; background: rgba(0, 20, 0, 0.65); box-shadow: 0 0 15px #00ff00; }
-        .profile-card h2 { font-size: 2rem; margin-bottom: 1rem; }
-        .profile-table { font-size: 1rem; line-height: 1.6; }
-        .separator { margin: 0.6rem 0; }
 
         .sidebar { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-left: 3px solid #ffff00; text-align: center; border-radius: 8px; }
         .sidebar img { margin: 12px 0; border: 2px solid #ffff00; border-radius: 4px; image-rendering: pixelated; width: 88px; }
@@ -231,6 +263,7 @@
             .music-desc { font-size: 1.1rem; }
             .platform-link { font-size: 1.5rem; margin: 0.8rem 1.2rem; padding: 0.6rem 1.2rem; }
             .platform-note { font-size: 1rem; }
+            .label-cell { width: 100px; }
         }
     </style>
 </head>
@@ -271,19 +304,36 @@
 
                 <div id="o-mnie" class="page-content">
                     <div class="profile-card">
-                        <h2>smukly.exe</h2>
                         <table class="profile-table">
-                            <tr><td>Imię:</td><td>Justyn</td></tr>
-                            <tr><td colspan="2"><hr class="separator"></td></tr>
-                            <tr><td>Styl życia:</td><td>Żyję przeszłością by zapomnieć o teraźniejszości</td></tr>
-                            <tr><td colspan="2"><hr class="separator"></td></tr>
-                            <tr><td>Cel:</td><td>Odbycie mentalnego przeistoczenia oraz dostanie się do nieba</td></tr>
-                            <tr><td colspan="2"><hr class="separator"></td></tr>
-                            <tr><td>Zajawka:</td><td>Retro, gierki na Xbox 360, tworzenie muzyki i innych treści</td></tr>
-                            <tr><td colspan="2"><hr class="separator"></td></tr>
-                            <tr><td>Inspiracje:</td><td>The Doors, Jezus Chrystus</td></tr>
-                            <tr><td colspan="2"><hr class="separator"></td></tr>
-                            <tr><td>Ulubiona gra:</td><td>GTA IV</td></tr>
+                            <tr>
+                                <td class="label-cell">Imię:</td>
+                                <td class="value-cell">Justyn</td>
+                            </tr>
+                            <tr class="separator-row"><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="label-cell">Styl życia:</td>
+                                <td class="value-cell">Żyję przeszłością by zapomnieć o teraźniejszości</td>
+                            </tr>
+                            <tr class="separator-row"><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="label-cell">Cel:</td>
+                                <td class="value-cell">Odbycie mentalnego przeistoczenia oraz dostanie się do nieba</td>
+                            </tr>
+                            <tr class="separator-row"><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="label-cell">Zajawka:</td>
+                                <td class="value-cell">Retro, gierki na Xbox 360, tworzenie muzyki i innych treści</td>
+                            </tr>
+                            <tr class="separator-row"><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="label-cell">Inspiracje:</td>
+                                <td class="value-cell">The Doors, Jezus Chrystus</td>
+                            </tr>
+                            <tr class="separator-row"><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="label-cell">Ulubiona gra:</td>
+                                <td class="value-cell">GTA IV</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
