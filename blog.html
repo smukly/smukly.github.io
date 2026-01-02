@@ -10,39 +10,65 @@
             margin: 0; padding: 0; background-color: #000; color: #00ff00;
             font-family: "Courier New", Courier, monospace; min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
-            background-image: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0,255,0,0.1) 20px, rgba(0,255,0,0.2) 21px),
-                              repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,255,0,0.1) 20px, rgba(0,255,0,0.2) 21px),
-                              linear-gradient(to bottom, rgba(0,50,0,0.8), #000 70%),
-                              radial-gradient(circle at center, transparent 40%, #000 70%);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 200% 200%;
-            animation: tunnel-move 30s linear infinite;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0,255,0,0.05) 20px, rgba(0,255,0,0.1) 21px),
+                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,255,0,0.05) 20px, rgba(0,255,0,0.1) 21px);
         }
-        @keyframes tunnel-move { 0% { background-position: 0 0; } 100% { background-position: 0 1000px; } }
-        
         .container {
-            width: 1100px; padding: 20px; border: 4px solid #ffff00;
-            background-color: rgba(12, 0, 51, 0.92); box-shadow: 0 0 40px #00ff00;
-            backdrop-filter: blur(4px); border-radius: 10px;
+            width: 1100px; padding: 25px; border: 4px solid #ffff00;
+            background-color: #0c0033; box-shadow: 0 0 20px #00ff00;
+            border-radius: 15px;
         }
-        header { background: linear-gradient(to bottom, #6600cc, #330066); padding: 20px; text-align: center; border-bottom: 4px solid #ffff00; margin-bottom: 20px; border-radius: 8px; }
-        header h1 { margin: 0; font-size: 70px; font-family: 'VT323', monospace; color: #ffffaa; text-shadow: 0 0 10px #ffffff, 0 0 20px #ffcc00; letter-spacing: 12px; }
-        
-        .ticker-wrapper { background-color: #000; overflow: hidden; padding: 8px 0; margin-bottom: 20px; border-radius: 8px; }
-        .ticker { display: inline-block; color: #00ff00; font-size: 14px; white-space: nowrap; padding-left: 100%; animation: ticker-move 15s linear infinite; }
-        @keyframes ticker-move { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        header {
+            background: linear-gradient(to bottom, #440088, #220044);
+            padding: 20px; text-align: center; border: 3px solid #ffff00;
+            margin-bottom: 20px; border-radius: 12px;
+        }
+        header h1 { 
+            margin: 0; font-size: 65px; font-family: 'VT323', monospace; 
+            color: #fff; text-shadow: 0 0 10px #ffff00; letter-spacing: 8px;
+        }
+        .ticker-wrapper { 
+            background-color: #000; padding: 5px; margin-bottom: 20px; 
+            border-radius: 5px; overflow: hidden;
+        }
+        .ticker { 
+            display: inline-block; color: #00ff00; font-size: 14px; 
+            white-space: nowrap; animation: ticker-move 20s linear infinite; 
+        }
+        @keyframes ticker-move { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        .main { display: flex; min-height: 500px; }
-        .menu { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-right: 3px solid #ffff00; border-radius: 8px; }
-        .menu a { display: block; margin: 15px 0; padding: 12px; background: linear-gradient(to right, #ff9900, #ffcc00); color: black; font-weight: bold; text-decoration: none; border: 2px solid #ffff66; border-radius: 10px; text-align: center; }
-        .menu a.active { background: linear-gradient(to right, #ffff00, #ffffff); box-shadow: 0 0 15px #ffff00; }
+        .main { display: flex; gap: 20px; }
         
-        .content { flex: 1; padding: 30px 40px; color: #00ff00; }
-        .blog-entry { border: 2px dashed #ffff00; padding: 20px; margin-top: 20px; text-decoration: none; display: block; color: #00ff00; font-size: 20px; }
-        .blog-entry:hover { background-color: rgba(255, 255, 0, 0.1); }
+        .menu { 
+            width: 220px; padding: 15px; border: 3px solid #ffff00; 
+            border-radius: 15px; display: flex; flex-direction: column; gap: 12px;
+        }
+        .menu a { 
+            padding: 12px; background: linear-gradient(to bottom, #ff9900, #ffcc00);
+            color: #000; font-weight: bold; text-decoration: none;
+            border: 2px solid #000; border-radius: 10px; text-align: center;
+            box-shadow: 3px 3px 0px #000;
+        }
+        .menu a.active { background: #ffffaa; box-shadow: 0 0 15px #ffff00; }
 
-        .sidebar { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-left: 3px solid #ffff00; text-align: center; border-radius: 8px; }
-        .sidebar img { margin: 5px 0; border: 2px solid #ffff00; border-radius: 4px; max-width: 170px; display: block; margin-left: auto; margin-right: auto; }
-        footer { padding: 10px; margin-top: 20px; font-size: 12px; text-align: center; color: #ffff00; }
+        .content { flex: 1; padding: 10px 20px; }
+        .content h2 { 
+            color: #ffff00; font-family: 'VT323', monospace; font-size: 42px; 
+            border-bottom: 3px solid #ffff00; margin-bottom: 30px; padding-bottom: 5px;
+        }
+        .blog-entry-box { 
+            border: 2px dashed #ffff00; padding: 25px; 
+            text-decoration: none; display: block; color: #00ff00; font-size: 24px;
+        }
+
+        .sidebar { 
+            width: 150px; padding: 15px; border: 3px solid #ffff00; 
+            border-radius: 15px; text-align: center; display: flex; flex-direction: column; gap: 10px;
+        }
+        .sidebar img { border: 2px solid #ffff00; border-radius: 3px; width: 100%; }
+        
+        footer { text-align: center; color: #ffff00; margin-top: 25px; font-size: 14px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -61,8 +87,8 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
-                <h2 style="color: #ffff00; border-bottom: 2px solid #ffff00; padding-bottom: 10px; font-family: 'VT323', monospace; font-size: 35px;">BLOG / WPISY</h2>
-                <a href="pierwszy-wpis.html" class="blog-entry">
+                <h2>BLOG / WPISY</h2>
+                <a href="pierwszy-wpis.html" class="blog-entry-box">
                     > [2026-01-02] Pierwszy Wpis - Witajcie w sieci
                 </a>
             </div>
@@ -73,7 +99,7 @@
                 <img src="https://anlucas.neocities.org/Winamp.gif">
                 <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
                 <img src="https://anlucas.neocities.org/zxcert.png">
-                <div style="margin-top: 15px;"><img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;"></div>
+                <img src="https://anlucas.neocities.org/happynewyear.gif" style="border:none;">
             </div>
         </div>
         <footer>© 2026 smukly network - nie błądź w świecie</footer>
