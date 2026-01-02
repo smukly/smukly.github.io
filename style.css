@@ -1,4 +1,4 @@
-/* PODSTAWOWE STYLE */
+/* GŁÓWNE USTAWIENIA */
 body {
     margin: 0;
     padding: 0;
@@ -84,6 +84,7 @@ header h1 {
     background-color: rgba(17, 0, 68, 0.95);
     border-right: 3px solid #ffff00;
     border-radius: 8px;
+    flex-shrink: 0;
 }
 
 .menu a {
@@ -106,37 +107,44 @@ header h1 {
     color: #00ff00;
 }
 
-/* SIDEBAR - KLUCZ DO TWOJEGO UKŁADU */
+/* SIDEBAR - NAPRAWIONY UKŁAD W PARACH */
 .sidebar {
-    width: 200px;
+    width: 210px; /* Stała szerokość, żeby dwa gify (88px x 2) weszły z luzem */
     padding: 20px 5px;
     background-color: rgba(17, 0, 68, 0.95);
     border-left: 3px solid #ffff00;
     border-radius: 8px;
-    text-align: center; /* Centruje gify wewnątrz */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.sidebar img {
+.button-grid {
+    display: grid;
+    grid-template-columns: 88px 88px; /* Sztywne dwie kolumny po 88px */
+    gap: 10px; /* Odstęp między gifami */
+    justify-content: center;
+}
+
+.button-grid img {
     width: 88px;
     height: 31px;
-    margin: 4px 2px; /* Odstępy między gifami */
     border: 2px solid #ffff00;
     border-radius: 4px;
     image-rendering: pixelated;
-    display: inline-block; /* Pozwala im stawać obok siebie */
 }
 
-/* Specjalny gif Happy New Year na dole */
-.sidebar .special-container {
-    margin-top: 15px;
-    display: block;
-    width: 100%;
+/* HAPPY NEW YEAR NA DOLE */
+.happy-new-year-container {
+    margin-top: 30px;
+    text-align: center;
 }
 
-.sidebar .special-container img {
+.happy-new-year-container img {
     width: auto;
     height: auto;
-    max-width: 150px;
+    max-width: 150px; /* Napis nie będzie gigantyczny */
     border: none;
 }
 
