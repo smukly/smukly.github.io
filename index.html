@@ -52,14 +52,23 @@
             text-shadow: 0 0 15px #00ff00;
             letter-spacing: 5px;
         }
-        .nowe-wpisy {
-            text-align: center;
+        .ticker-wrapper {
+            background-color: #000;
+            overflow: hidden;
+            padding: 8px 0;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+        .ticker {
+            display: inline-block;
             color: #00ff00;
             font-size: 14px;
-            padding: 10px;
-            background-color: rgba(0,0,0,0.6);
-            border-radius: 8px;
-            margin-bottom: 20px;
+            animation: ticker-move 20s linear infinite;
+        }
+        @keyframes ticker-move {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
         .main {
             display: flex;
@@ -123,8 +132,12 @@
         <header>
             <h1>KAPTUR NETWORK</h1>
         </header>
-        <div class="nowe-wpisy">
-            już wkrótce nowe wpisy na stronie kaptur.network
+        <div class="ticker-wrapper">
+            <div class="ticker">
+                wkrótce nowe wpisy na stronie smuklym.network&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                wkrótce nowe wpisy na stronie smuklym.network&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                wkrótce nowe wpisy na stronie smuklym.network&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
         </div>
         <div class="main">
             <div class="menu">
@@ -151,7 +164,7 @@
                 albo po prostu przejdź się po download, aktualnościach i sprawdź co słychać.</p>
             </div>
             <div class="sidebar">
-                <!-- CAŁKOWICIE PUSTY SIDEBAR - miejsce na Twoje własne rzeczy -->
+                <!-- PUSTY SIDEBAR - miejsce na Twoje rzeczy -->
             </div>
         </div>
         <footer>
