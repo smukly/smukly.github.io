@@ -154,6 +154,21 @@
             letter-spacing: 0.5px;
         }
 
+        /* MUZYKA */
+        .music-section { text-align: center; max-width: 720px; margin: 0 auto; }
+        .music-title { font-size: 3.8rem; margin: 1.2rem 0; text-shadow: 0 0 18px #00ff00, 0 0 35px #00ff00; letter-spacing: 5px; animation: glow 4s infinite alternate; }
+        @keyframes glow { 0% { text-shadow: 0 0 8px #00ff00; } 100% { text-shadow: 0 0 25px #00ff00, 0 0 45px #00ff00; } }
+        .music-desc { font-size: 1.25rem; margin: 1rem 0 2rem 0; opacity: 0.9; }
+        .platform-links { margin-bottom: 2rem; }
+        .platform-link { display: inline-block; margin: 0.8rem 1.5rem; font-size: 1.8rem; padding: 0.7rem 1.5rem; border: 3px solid #ffff00; border-radius: 8px; background: rgba(255, 255, 0, 0.08); color: #ffff00; text-decoration: none; font-weight: bold; transition: all 0.3s; }
+        .platform-link:hover { background: rgba(255, 255, 0, 0.25); box-shadow: 0 0 18px #ffff00; transform: scale(1.07); }
+        .platform-note { font-size: 1.1rem; margin-top: 0.4rem; opacity: 0.85; display: block; }
+
+        /* O MNIE */
+        .profile-card { max-width: 640px; margin: 0 auto 1.5rem; padding: 1rem; border: 2px solid #00ff00; background: rgba(0, 20, 0, 0.65); box-shadow: 0 0 15px #00ff00; }
+        .profile-table { width: 100%; font-size: 1rem; line-height: 1.6; }
+        .separator { margin: 0.6rem 0; border: 0; border-top: 1px solid #00ff00; opacity: 0.5;}
+
         /* SERWER MC ALERT */
         .mc-alert-box { border: 3px double #ff0000; background: rgba(50, 0, 0, 0.7); padding: 25px; text-align: center; box-shadow: 0 0 20px rgba(255,0,0,0.4); }
         .mc-warning-header { color: #ff0000; font-size: 24px; animation: blinker 1.5s linear infinite; font-weight: bold; }
@@ -176,16 +191,6 @@
         .info-box { border: 1px solid #00ff00; padding: 15px; background: rgba(0,255,0,0.05); }
         .info-label { color: #ffff00; font-weight: bold; display: block; margin-bottom: 5px; }
 
-        /* MUZYKA */
-        .music-section { text-align: center; max-width: 720px; margin: 0 auto; }
-        .music-title { font-size: 3.8rem; margin: 1.2rem 0; text-shadow: 0 0 18px #00ff00, 0 0 35px #00ff00; letter-spacing: 5px; animation: glow 4s infinite alternate; }
-        @keyframes glow { 0% { text-shadow: 0 0 8px #00ff00; } 100% { text-shadow: 0 0 25px #00ff00, 0 0 45px #00ff00; } }
-        .music-desc { font-size: 1.25rem; margin: 1rem 0 2rem 0; opacity: 0.9; }
-        .platform-links { margin-bottom: 2rem; }
-        .platform-link { display: inline-block; margin: 0.8rem 1.5rem; font-size: 1.8rem; padding: 0.7rem 1.5rem; border: 3px solid #ffff00; border-radius: 8px; background: rgba(255, 255, 0, 0.08); color: #ffff00; text-decoration: none; font-weight: bold; transition: all 0.3s; }
-        .platform-link:hover { background: rgba(255, 255, 0, 0.25); box-shadow: 0 0 18px #ffff00; transform: scale(1.07); }
-        .platform-note { font-size: 1.1rem; margin-top: 0.4rem; opacity: 0.85; display: block; }
-
         /* SPRZĘT */
         .gear-section { max-width: 780px; margin: 0 auto; }
         .gear-title { font-size: 2.2rem; text-align: center; margin: 0.8rem 0 1.5rem 0; text-shadow: 0 0 10px #ffff00; }
@@ -195,12 +200,6 @@
         .thin-divider { margin: 1.2rem 0; height: 1px; opacity: 0.7; }
         .thick-divider { margin: 2rem 0 1.5rem; height: 3px; opacity: 0.85; }
         .studio-note { font-size: 1.2rem; text-align: center; margin-top: 2rem; opacity: 0.8; }
-
-        /* O MNIE */
-        .profile-card { max-width: 640px; margin: 0 auto 1.5rem; padding: 1rem; border: 2px solid #00ff00; background: rgba(0, 20, 0, 0.65); box-shadow: 0 0 15px #00ff00; }
-        .profile-card h2 { font-size: 2rem; margin-bottom: 1rem; }
-        .profile-table { width: 100%; font-size: 1rem; line-height: 1.6; }
-        .separator { margin: 0.6rem 0; border: 0; border-top: 1px solid #00ff00; opacity: 0.5;}
 
         .sidebar { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-left: 3px solid #ffff00; text-align: center; border-radius: 8px; }
         .sidebar img { margin: 12px 0; border: 2px solid #ffff00; border-radius: 4px; image-rendering: pixelated; }
@@ -250,7 +249,6 @@
 
                 <div id="o-mnie" class="page-content">
                     <div class="profile-card">
-                        <h2>smukly.exe</h2>
                         <table class="profile-table">
                             <tr><td>Imię:</td><td>Justyn</td></tr>
                             <tr><td colspan="2"><hr class="separator"></td></tr>
@@ -301,6 +299,9 @@
 
                 <div id="muzyka" class="page-content">
                     <div class="music-section">
+                        <h1 class="music-title">MUZYKA</h1>
+                        <p class="music-desc">słuchaj moich utworów i obczaj nowe projekty poniżej</p>
+                        
                         <div class="platform-links">
                             <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" target="_blank" class="platform-link">SPOTIFY</a>
                             <span class="platform-note">(smukly na Spotify)</span>
@@ -308,8 +309,6 @@
                             <a href="https://www.youtube.com/channel/UC28NIMWUi0qdJq14J9PnDPg" target="_blank" class="platform-link">YOUTUBE</a>
                             <span class="platform-note">(kanał smukly)</span>
                         </div>
-                        <h1 class="music-title">MUZYKA</h1>
-                        <p class="music-desc">słuchaj moich utworów i obczaj nowe projekty poniżej</p>
                     </div>
                 </div>
 
@@ -400,7 +399,6 @@
                 if (link && page) {
                     link.classList.add('active');
                     page.classList.add('active');
-                    // Resetowanie widoku bloga przy wejściu
                     if(targetId === 'blog') showBlogList();
                 }
             }
@@ -417,7 +415,6 @@
                 });
             });
 
-            // Zegar dla INFO 24/7
             function updateClock() {
                 const now = new Date();
                 const timeStr = now.getHours().toString().padStart(2, '0') + ":" + 
@@ -430,7 +427,6 @@
             updateClock();
         });
 
-        // Funkcje obsługi Bloga
         function showArticle(id) {
             document.getElementById('blog-list').style.display = 'none';
             document.querySelectorAll('.blog-article').forEach(a => a.classList.remove('active'));
