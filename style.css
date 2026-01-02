@@ -1,4 +1,4 @@
-/* GŁÓWNE USTAWIENIA */
+/* PODSTAWOWE STYLE */
 body {
     margin: 0;
     padding: 0;
@@ -84,7 +84,6 @@ header h1 {
     background-color: rgba(17, 0, 68, 0.95);
     border-right: 3px solid #ffff00;
     border-radius: 8px;
-    flex-shrink: 0;
 }
 
 .menu a {
@@ -105,41 +104,39 @@ header h1 {
     flex: 1;
     padding: 30px 40px;
     color: #00ff00;
-    line-height: 1.6;
 }
 
-/* SIDEBAR - UKŁAD W PARACH (SIATKA) */
+/* SIDEBAR - KLUCZ DO TWOJEGO UKŁADU */
 .sidebar {
-    width: 210px;
+    width: 200px;
     padding: 20px 5px;
     background-color: rgba(17, 0, 68, 0.95);
     border-left: 3px solid #ffff00;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sidebar-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dwie kolumny */
-    gap: 8px;
-    justify-items: center;
+    text-align: center; /* Centruje gify wewnątrz */
 }
 
 .sidebar img {
     width: 88px;
     height: 31px;
+    margin: 4px 2px; /* Odstępy między gifami */
     border: 2px solid #ffff00;
     border-radius: 4px;
     image-rendering: pixelated;
+    display: inline-block; /* Pozwala im stawać obok siebie */
 }
 
-/* Wyjątek dla Happy New Year - na całą szerokość, bez ramki */
-.sidebar .special-gif {
-    margin-top: 20px;
+/* Specjalny gif Happy New Year na dole */
+.sidebar .special-container {
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+}
+
+.sidebar .special-container img {
     width: auto;
     height: auto;
+    max-width: 150px;
     border: none;
 }
 
