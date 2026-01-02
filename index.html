@@ -17,22 +17,16 @@
         .main { display: flex; min-height: 500px; }
         .menu { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-right: 3px solid #ffff00; border-radius: 8px; }
         .menu a { display: block; margin: 15px 0; padding: 12px; background: linear-gradient(to right, #ff9900, #ffcc00); color: black; font-weight: bold; text-decoration: none; border: 2px solid #ffff66; border-radius: 10px; box-shadow: 4px 4px 8px #000; text-align: center; }
-        .menu a.active { background: linear-gradient(to right, #ffff00, #ffffff); color: #000; }
-        
-        /* GŁÓWNA TREŚĆ Z ZIELONĄ RAMKĄ */
-        .content { flex: 1; margin: 0 20px; padding: 30px 40px; color: #00ff00; line-height: 1.6; border: 3px solid #00ff00; background: rgba(0, 0, 0, 0.8); box-shadow: 0 0 15px #00ff00; }
+        .menu a.active { background: linear-gradient(to right, #ffff00, #ffffff); color: #000; box-shadow: 0 0 15px #ffff00; }
+        .content { flex: 1; margin: 0 20px; padding: 30px 40px; color: #00ff00; line-height: 1.6; border: 2px solid #00ff00; box-shadow: 0 0 15px #00ff00; background: rgba(0,0,0,0.5); }
         .main-header { text-align: center; margin-bottom: 2.5rem; }
         .main-header .top-line { font-family: 'VT323', monospace; font-size: 52px; font-weight: bold; color: #ffff00; letter-spacing: 8px; text-transform: uppercase; margin: 0; }
         .main-header .separator { width: 100%; border: none; border-top: 2px solid #00ff00; margin: 15px 0; }
         .main-header .bottom-line { font-family: 'VT323', monospace; font-size: 34px; color: #00ff00; letter-spacing: 6px; text-transform: uppercase; margin: 0; }
-
-        /* SIDEBAR Z GIFAMI W DWÓCH KOLUMNACH */
-        .sidebar { width: 220px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-left: 3px solid #ffff00; text-align: center; border-radius: 8px; }
-        .gif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px; }
-        .sidebar img { border: 2px solid #ffff00; border-radius: 4px; width: 88px; height: 31px; image-rendering: pixelated; }
-        .happy-box img { width: 100px; height: auto; border: 1px solid white; }
-
-        footer { padding: 10px; margin-top: 20px; font-size: 12px; text-align: center; color: #ffff00; font-weight: bold; }
+        .content p { margin-bottom: 1.2rem; font-size: 17px; font-weight: bold; letter-spacing: 0.5px; }
+        .sidebar { width: 200px; padding: 20px 10px; background-color: rgba(17, 0, 68, 0.95); border-left: 3px solid #ffff00; text-align: center; border-radius: 8px; }
+        .sidebar img { display: block; margin: 12px auto; border: 2px solid #ffff00; border-radius: 4px; image-rendering: pixelated; width: 88px; height: 31px; }
+        footer { padding: 10px; margin-top: 20px; font-size: 12px; text-align: center; color: #ffff00; }
     </style>
 </head>
 <body>
@@ -50,7 +44,6 @@
                 <a href="blog.html">BLOG</a>
                 <a href="info.html">INFO 24/7</a>
             </div>
-            
             <div class="content">
                 <div class="main-header">
                     <div class="top-line">smukly network</div>
@@ -64,19 +57,14 @@
                 <p>Po lewej stronie znajdziesz zakładki które przeniosą cię do miejsca którym jest owa zakładka jakby logiczne.</p>
                 <p>Miłej zabawy i dziena za odwiedziny!</p>
             </div>
-
             <div class="sidebar">
-                <div class="gif-grid">
-                    <img src="https://anlucas.neocities.org/face.gif">
-                    <img src="https://anlucas.neocities.org/hash_now.gif">
-                    <img src="https://anlucas.neocities.org/lilrib.gif">
-                    <img src="https://anlucas.neocities.org/Winamp.gif">
-                    <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
-                    <img src="https://anlucas.neocities.org/zxcert.png">
-                </div>
-                <div class="happy-box">
-                    <img src="https://anlucas.neocities.org/happynewyear.gif">
-                </div>
+                <img src="https://anlucas.neocities.org/face.gif">
+                <img src="https://anlucas.neocities.org/hash_now.gif">
+                <img src="https://anlucas.neocities.org/lilrib.gif">
+                <img src="https://anlucas.neocities.org/Winamp.gif">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
+                <img src="https://anlucas.neocities.org/zxcert.png">
+                <img src="https://anlucas.neocities.org/happynewyear.gif">
             </div>
         </div>
         <footer>© 2026 smukly network - nie błądź w świecie</footer>
