@@ -106,32 +106,81 @@
             color: #000;
             box-shadow: 0 0 15px #ffff00;
         }
+        
+        /* --- STYLIZACJA SYSTEM INFO ZGODNA ZE ZDJĘCIEM --- */
         .content {
             flex: 1;
             padding: 30px 40px;
-            color: #00ff00;
-            line-height: 1.6;
+            font-family: 'VT323', monospace;
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
-        /* RUBRYKA POSZERZONA NA CAŁY ŚRODEK */
-        .info-box {
-            border: 1px solid #00ff00;
-            background: rgba(0, 255, 0, 0.05);
-            padding: 30px;
+        .system-info-title {
+            color: #ffff00;
+            font-size: 48px;
+            margin: 0;
+            letter-spacing: 4px;
+        }
+
+        .separator-line {
+            width: 100%;
+            border: none;
+            border-top: 2px solid #00ff00;
+            margin: 15px 0 30px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .info-tile {
+            border: 2px solid #00ff00;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tile-label {
+            color: #ffff00;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .tile-value {
+            color: #00ff00;
+            font-size: 26px;
+        }
+
+        .value-red {
+            color: #ff0000;
+            text-decoration: line-through; /* Efekt ze zdjęcia */
+        }
+
+        .bottom-quote-box {
+            border: 2px dashed #ffff00;
+            padding: 25px;
             width: 100%;
             box-sizing: border-box;
             text-align: center;
         }
-        .status-online {
+
+        .quote-content {
             color: #00ff00;
-            font-weight: bold;
-            text-shadow: 0 0 10px #00ff00;
-            font-size: 1.5rem;
-            margin-top: 20px;
+            font-size: 24px;
+            line-height: 1.4;
+            margin: 0;
         }
 
+        /* --- SIDEBAR --- */
         .sidebar {
             width: 200px;
             padding: 20px 10px;
@@ -144,7 +193,6 @@
             margin: 12px 0;
             border: 2px solid #ffff00;
             border-radius: 4px;
-            image-rendering: pixelated;
             max-width: 170px;
         }
         footer {
@@ -172,15 +220,37 @@
                 <a href="blog.html">BLOG</a>
                 <a href="info.html" class="active">INFO 24/7</a>
             </div>
+            
             <div class="content">
-                <div class="info-box">
-                    <h2 style="color: #ffff00; font-family: 'VT323', monospace; font-size: 40px; margin-top: 0; border-bottom: 2px solid #ffff00; padding-bottom: 10px;">STATUS SYSTEMU</h2>
-                    <p style="font-size: 1.2rem; margin-top: 20px;">
-                        Strona <strong>smukly network</strong> jest dostępna 24 godziny na dobę 7 dni w tygodniu.
+                <h2 class="system-info-title">SYSTEM INFO 24/7</h2>
+                <hr class="separator-line">
+
+                <div class="info-grid">
+                    <div class="info-tile">
+                        <span class="tile-label">CZAS SYSTEMOWY:</span>
+                        <span class="tile-value" id="clock">22:11:24</span>
+                    </div>
+                    <div class="info-tile">
+                        <span class="tile-label">STATUS SIECI:</span>
+                        <span class="tile-value">POŁĄCZONO (v.2.0)</span>
+                    </div>
+                    <div class="info-tile">
+                        <span class="tile-label">SERWER MC:</span>
+                        <span class="tile-value value-red">OFFLINE</span>
+                    </div>
+                    <div class="info-tile">
+                        <span class="tile-label">LOKALIZACJA:</span>
+                        <span class="tile-value">POLAND / <br>SMUKLY_NET</span>
+                    </div>
+                </div>
+
+                <div class="bottom-quote-box">
+                    <p class="quote-content">
+                        "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
                     </p>
-                    <div class="status-online">● SYSTEM ONLINE</div>
                 </div>
             </div>
+
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
                 <img src="https://anlucas.neocities.org/hash_now.gif">
@@ -193,5 +263,17 @@
         </div>
         <footer>© 2026 smukly network - nie błądź w świecie</footer>
     </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.getHours().toString().padStart(2, '0') + ':' + 
+                               now.getMinutes().toString().padStart(2, '0') + ':' + 
+                               now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
