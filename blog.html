@@ -112,22 +112,26 @@
             color: #00ff00;
             line-height: 1.6;
         }
+
+        /* ZMNIEJSZONA TABELKA / PRZYCISK WPISU */
         .blog-post-link { 
-            border: 2px solid #00ff00; 
+            border: 1px solid #00ff00; 
             background: rgba(0, 255, 0, 0.1); 
-            padding: 20px; 
+            padding: 10px 15px;      /* Zmniejszony padding */
             color: #00ff00; 
             transition: 0.3s; 
-            margin-top: 20px; 
-            display: block; 
+            margin-top: 15px; 
+            display: inline-block;   /* Zmienione na inline-block, żeby nie zajmowało całej szerokości */
             text-decoration: none; 
-            font-size: 1.2rem;
+            font-size: 1rem;         /* Zmniejszona czcionka */
+            min-width: 300px;        /* Minimalna szerokość, żeby wyglądało schludnie */
         }
         .blog-post-link:hover { 
-            background: rgba(0, 255, 0, 0.3); 
-            box-shadow: 0 0 20px #00ff00; 
-            transform: scale(1.02);
+            background: rgba(0, 255, 0, 0.2); 
+            box-shadow: 0 0 10px #00ff00; 
+            transform: translateX(5px);
         }
+
         .sidebar {
             width: 200px;
             padding: 20px 10px;
