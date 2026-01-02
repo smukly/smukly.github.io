@@ -12,10 +12,10 @@
             background-color: #000;
             color: #00ff00;
             font-family: "Courier New", Courier, monospace;
-            min-height: 100vh;  /* zapewnia pełną wysokość ekranu */
+            min-height: 100vh;
             display: flex;
-            align-items: center;  /* wyśrodkowanie pionowe */
-            justify-content: center;  /* wyśrodkowanie poziome */
+            align-items: center;
+            justify-content: center;
 
             /* ANIMOWANE NEON ZIELONY GRID TUNNEL 3D */
             background-image: 
@@ -111,12 +111,21 @@
         }
         .content {
             flex: 1;
-            padding: 20px;
+            padding: 30px 40px;  /* więcej paddingu dla lepszego wyglądu tekstu */
             color: #00ff00;
+            line-height: 1.6;  /* lepsze odstępy między liniami */
         }
         .content h2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 32px;
             color: #00ff00;
-            text-shadow: 0 0 8px #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+            letter-spacing: 3px;
+        }
+        .content p {
+            margin-bottom: 20px;
+            font-size: 16px;
         }
         .sidebar {
             width: 200px;
@@ -148,7 +157,7 @@
         </header>
         <div class="ticker-wrapper">
             <div class="ticker">
-                wkrótce nowe wpisy na stronie smuklym network
+                wkrótce nowe wpisy na stronie smuklym.network
             </div>
         </div>
         <div class="main">
@@ -164,16 +173,13 @@
                 <a href="#">MANIFEST</a>
             </div>
             <div class="content">
-                <h2>smukly.network - internetowa strefa niezależna</h2>
-                <p>yoo tu smukly.</p>
-                <p>smukly network to moja baza — miejsce, gdzie zbieram wszystko, co tworzę poza systemem.</p>
-                <p>projekty muzyczne — albumy, mixtape, bity.<br>
-                gry i projekty kodowane na zajawie po nocach.<br>
-                gry i sprzęt — wszystko od podstaw, wszystko sam.</p>
-                <p>w menu po lewej stronie znajdziesz wejścia do moich światów.</p>
-                <p>kliknij w muzyka, jeśli chcesz posłuchać.<br>
-                w gry, jeśli chcesz pograć.<br>
-                albo po prostu przejdź się po download, aktualnościach i sprawdź co słychać.</p>
+                <h2>smukly network - sieć bez granic</h2>
+                <p>yooo tu smukly.</p>
+                <p>Ta oto strona to moja baza — strefa w, której można znaleźć informacje jak i również moją twórczość</p>
+                <p>Projekty muzyczne — albumy, utwory czy przyszłe projekty<br>
+                Gry i sprzęt — w co pogrywam i na czym, oraz trochę info o serwerze mc</p>
+                <p>Po lewej stronie znajdziesz zakładki które przeniosą cię do miejsca którym jest owa zakładka jakby logiczne.</p>
+                <p>Miłej zabawy i dziena za odwiedziny!</p>
             </div>
             <div class="sidebar">
                 <!-- PUSTY SIDEBAR - miejsce na Twoje rzeczy -->
