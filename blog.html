@@ -111,25 +111,26 @@
             padding: 30px 40px;
             color: #00ff00;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* ZMNIEJSZONA TABELKA / PRZYCISK WPISU */
+        /* RUBRYKA NA CAŁĄ SZEROKOŚĆ BLOKU TREŚCI */
         .blog-post-link { 
             border: 1px solid #00ff00; 
             background: rgba(0, 255, 0, 0.1); 
-            padding: 10px 15px;      /* Zmniejszony padding */
+            padding: 15px 20px;
             color: #00ff00; 
             transition: 0.3s; 
             margin-top: 15px; 
-            display: inline-block;   /* Zmienione na inline-block, żeby nie zajmowało całej szerokości */
+            display: block;          /* Zajmuje całą dostępną szerokość */
             text-decoration: none; 
-            font-size: 1rem;         /* Zmniejszona czcionka */
-            min-width: 300px;        /* Minimalna szerokość, żeby wyglądało schludnie */
+            font-size: 1.1rem;
+            box-sizing: border-box;  /* Zapewnia, że padding nie wypchnie rubryki poza krawędź */
         }
         .blog-post-link:hover { 
             background: rgba(0, 255, 0, 0.2); 
-            box-shadow: 0 0 10px #00ff00; 
-            transform: translateX(5px);
+            box-shadow: 0 0 15px #00ff00; 
         }
 
         .sidebar {
