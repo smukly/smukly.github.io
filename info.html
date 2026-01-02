@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Info - smukly network</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>SMUKLY NETWORK</h1></header>
+        <div class="main">
+            <div class="menu">
+                <a href="index.html">STRONA GŁÓWNA</a>
+                <a href="o-mnie.html">O MNIE</a>
+                <a href="sprzet.html">SPRZĘT</a>
+                <a href="muzyka.html">MUZYKA</a>
+                <a href="serwer-mc.html">SERWER MC</a>
+                <a href="discord.html">DISCORD</a>
+                <a href="blog.html">BLOG</a>
+                <a href="info.html" class="active">INFO 24/7</a>
+            </div>
+            <div class="content">
+                <h2 style="color: #ffff00; text-align: center; border-bottom: 2px solid #00ff00;">SYSTEM INFO 24/7</h2>
+                <div class="info-grid">
+                    <div class="info-box"><span class="info-label">CZAS SYSTEMOWY:</span> <div id="clock">00:00:00</div></div>
+                    <div class="info-box"><span class="info-label">STATUS SIECI:</span> <span style="color: #00ff00;">POŁĄCZONO</span></div>
+                    <div class="info-box"><span class="info-label">SERWER MC:</span> <span style="color: #ff0000;">OFFLINE</span></div>
+                    <div class="info-box"><span class="info-label">LOKALIZACJA:</span> POLAND</div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <img src="https://anlucas.neocities.org/zxcert.png">
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.getHours().toString().padStart(2, '0') + ":" + 
+                now.getMinutes().toString().padStart(2, '0') + ":" + now.getSeconds().toString().padStart(2, '0');
+        }
+        setInterval(updateClock, 1000); updateClock();
+    </script>
+</body>
+</html>
