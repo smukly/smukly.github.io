@@ -174,10 +174,10 @@
         .profile-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 1.05rem;           /* mniejsza czcionka */
+            font-size: 1.05rem;
         }
         .profile-table td:first-child {
-            width: 32%;                   /* węższa pierwsza kolumna */
+            width: 32%;
             text-align: right;
             padding-right: 1rem;
             color: #ffff00;
@@ -189,7 +189,7 @@
             padding-left: 0.9rem;
         }
         .profile-table tr {
-            line-height: 1.9;             /* mniejsze odstępy między wierszami */
+            line-height: 1.9;
         }
         .separator {
             border: none;
@@ -258,7 +258,7 @@
         <div class="main">
             <div class="menu">
                 <a data-target="main">STRONA GŁÓWNA</a>
-                <a data-target="o-mnie" class="active">O MNIE</a>
+                <a data-target="o-mnie">O MNIE</a>
                 <a data-target="sprzet">SPRZĘT</a>
                 <a data-target="muzyka">MUZYKA</a>
                 <a data-target="serwer-mc">SERWER MC</a>
@@ -282,8 +282,8 @@
                     <p>Miłej zabawy i dziena za odwiedziny!</p>
                 </div>
 
-                <!-- O MNIE - mniejsza wersja -->
-                <div id="o-mnie" class="page-content active">
+                <!-- O MNIE -->
+                <div id="o-mnie" class="page-content">
                     <div class="profile-card">
                         <h2>smukly.exe</h2>
                         
@@ -377,16 +377,33 @@
             const links = document.querySelectorAll('.menu a');
             const pages = document.querySelectorAll('.page-content');
 
+            // Funkcja aktywująca wybraną stronę
+            function activatePage(targetId) {
+                links.forEach(l => l.classList.remove('active'));
+                pages.forEach(p => p.classList.remove('active'));
+
+                const link = document.querySelector(`[data-target="${targetId}"]`);
+                const page = document.getElementById(targetId);
+
+                if (link && page) {
+                    link.classList.add('active');
+                    page.classList.add('active');
+                }
+            }
+
+            // Sprawdzamy, czy mamy zapamiętaną stronę z sesji
+            const savedPage = sessionStorage.getItem('currentPage') || 'main';
+
+            // Aktywujemy zapamiętaną stronę (lub główną jeśli nie ma)
+            activatePage(savedPage);
+
+            // Po kliknięciu zapisujemy wybraną stronę w sessionStorage
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-
-                    links.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-
-                    pages.forEach(p => p.classList.remove('active'));
                     const targetId = link.getAttribute('data-target');
-                    document.getElementById(targetId).classList.add('active');
+                    activatePage(targetId);
+                    sessionStorage.setItem('currentPage', targetId);
                 });
             });
         });
