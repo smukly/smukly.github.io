@@ -1,3 +1,4 @@
+/* GŁÓWNE USTAWIENIA TŁA I ANIMACJI */
 body {
     margin: 0;
     padding: 0;
@@ -22,7 +23,7 @@ body {
     100% { background-position: 0 1000px, 0 1000px, 0 0, center center; }
 }
 
-/* Kontener główny - 1100px */
+/* KONTENER GŁÓWNY */
 .container {
     width: 1100px; 
     padding: 20px;
@@ -33,6 +34,7 @@ body {
     border-radius: 10px;
 }
 
+/* NAGŁÓWEK */
 header {
     background: linear-gradient(to bottom, #6600cc, #330066);
     padding: 20px;
@@ -51,12 +53,14 @@ header h1 {
     letter-spacing: 12px;
 }
 
+/* PASEK INFORMACYJNY (TICKER) */
 .ticker-wrapper {
     background-color: #000;
     overflow: hidden;
     padding: 8px 0;
     margin-bottom: 20px;
     border-radius: 8px;
+    position: relative;
 }
 
 .ticker {
@@ -73,21 +77,24 @@ header h1 {
     100% { transform: translateX(-100%); }
 }
 
+/* UKŁAD STRONY */
 .main {
     display: flex;
-    justify-content: space-between;
+    min-height: 500px;
 }
 
-/* Lewe Menu */
+/* LEWE MENU */
 .menu {
     width: 200px;
-    padding: 10px;
-    flex-shrink: 0;
+    padding: 20px 10px;
+    background-color: rgba(17, 0, 68, 0.95);
+    border-right: 3px solid #ffff00;
+    border-radius: 8px;
 }
 
 .menu a {
     display: block;
-    margin: 10px 0;
+    margin: 15px 0;
     padding: 12px;
     background: linear-gradient(to right, #ff9900, #ffcc00);
     color: black;
@@ -95,59 +102,66 @@ header h1 {
     text-decoration: none;
     border: 2px solid #ffff66;
     border-radius: 10px;
+    box-shadow: 4px 4px 8px #000;
     text-align: center;
 }
 
-/* ŚRODKOWA RUBRYKA - POSZERZONA */
+.menu a.active {
+    background: linear-gradient(to right, #ffff00, #ffffff);
+    color: #000;
+}
+
+/* ŚRODKOWA TREŚĆ (CONTENT) */
 .content {
-    flex-grow: 1; /* Zabiera całą wolną przestrzeń */
-    margin: 0 20px;
-    padding: 20px;
+    flex: 1;
+    padding: 30px 40px;
+    color: #00ff00;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* POSZERZONA KARTA TREŚCI - TAKA SAMA DLA INDEX I O MNIE */
+.profile-card {
+    width: 100%; 
+    max-width: 650px; 
+    padding: 25px;
     border: 2px solid #00ff00;
-    background: rgba(0, 20, 0, 0.4);
+    background: rgba(0, 20, 0, 0.65);
+    box-shadow: 0 0 15px #00ff00;
 }
 
-/* SIDEBAR - UKŁAD GIFÓW W PARACH */
+/* STYLE TEKSTU W KARCIE */
+.main-header { text-align: center; }
+.main-header .top-line { font-family: 'VT323', monospace; font-size: 52px; font-weight: bold; color: #ffff00; letter-spacing: 8px; text-transform: uppercase; margin: 0; }
+.main-header .bottom-line { font-family: 'VT323', monospace; font-size: 34px; color: #00ff00; letter-spacing: 6px; text-transform: uppercase; margin: 0; }
+.separator { width: 100%; border: none; border-top: 1px solid #00ff00; margin: 15px 0; opacity: 0.5; }
+
+/* SIDEBAR Z GIFAMI */
 .sidebar {
-    width: 200px; /* Szerokość pozwalająca na dwa gify obok siebie */
-    padding: 10px;
-    flex-shrink: 0;
+    width: 200px;
+    padding: 20px 10px;
+    background-color: rgba(17, 0, 68, 0.95);
+    border-left: 3px solid #ffff00;
     text-align: center;
-}
-
-/* Gify w siatce 2-kolumnowej */
-.gif-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    justify-items: center;
+    border-radius: 8px;
 }
 
 .sidebar img {
-    width: 88px;
-    height: 31px;
+    margin: 12px 0;
     border: 2px solid #ffff00;
+    border-radius: 4px;
+    image-rendering: pixelated;
+    max-width: 170px;
 }
 
-/* Happy New Year na dole */
-.happy-new-year {
-    margin-top: 30px;
-    display: inline-block;
-}
-
-.happy-new-year img {
-    width: 80px;
-    height: auto;
-    border: 2px solid #fff;
-}
-
-.main-header { text-align: center; margin-bottom: 20px; }
-.main-header .top-line { font-size: 40px; color: #ffff00; }
-.main-header .separator { border: 1px solid #00ff00; margin: 10px 0; }
-
+/* STOPKA */
 footer {
-    text-align: center;
+    padding: 10px;
     margin-top: 20px;
-    color: #ffff00;
     font-size: 12px;
+    text-align: center;
+    color: #ffff00;
+    font-weight: bold;
 }
