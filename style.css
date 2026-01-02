@@ -1,4 +1,4 @@
-/* GŁÓWNE USTAWIENIA I ANIMOWANE TŁO */
+/* GŁÓWNE USTAWIENIA */
 body {
     margin: 0;
     padding: 0;
@@ -23,7 +23,6 @@ body {
     100% { background-position: 0 1000px, 0 1000px, 0 0, center center; }
 }
 
-/* KONTENER 1100PX */
 .container {
     width: 1100px; 
     padding: 20px;
@@ -52,14 +51,12 @@ header h1 {
     letter-spacing: 12px;
 }
 
-/* TICKER */
 .ticker-wrapper {
     background-color: #000;
     overflow: hidden;
     padding: 8px 0;
     margin-bottom: 20px;
     border-radius: 8px;
-    position: relative;
 }
 
 .ticker {
@@ -81,7 +78,6 @@ header h1 {
     min-height: 500px;
 }
 
-/* MENU BOCZNE */
 .menu {
     width: 200px;
     padding: 20px 10px;
@@ -105,82 +101,53 @@ header h1 {
     text-align: center;
 }
 
-.menu a:hover {
-    background: linear-gradient(to right, #ffcc00, #ffff66);
-    transform: translateY(-3px);
-}
-
-.menu a.active {
-    background: linear-gradient(to right, #ffff00, #ffffff);
-    color: #000;
-    box-shadow: 0 0 15px #ffff00;
-}
-
-/* TREŚĆ I KARTA PROFILU */
 .content {
     flex: 1;
     padding: 30px 40px;
     color: #00ff00;
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.profile-card {
-    width: 100%;
-    max-width: 620px; 
-    padding: 15px 25px;
-    border: 2px solid #00ff00;
-    background: rgba(0, 20, 0, 0.65);
-    box-shadow: 0 0 15px #00ff00;
-    margin: 0 auto;
-}
-
-.profile-table {
-    width: 100%;
-    font-size: 18px;
-    border-collapse: collapse;
-}
-
-.profile-table td {
-    padding: 4px 0;
-    vertical-align: top;
-}
-
-.profile-table td:first-child {
-    width: 150px;
-    color: #ffff00;
-    font-weight: bold;
-}
-
-.separator {
-    margin: 8px 0;
-    border: 0;
-    border-top: 1px solid #00ff00;
-    opacity: 0.5;
-}
-
-/* SIDEBAR - UKŁAD KOPIOWANY Z TWOJEGO KODU */
+/* SIDEBAR - UKŁAD W PARACH (SIATKA) */
 .sidebar {
-    width: 200px;
-    padding: 20px 10px;
+    width: 210px;
+    padding: 20px 5px;
     background-color: rgba(17, 0, 68, 0.95);
     border-left: 3px solid #ffff00;
-    text-align: center;
     border-radius: 8px;
-    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dwie kolumny */
+    gap: 8px;
+    justify-items: center;
 }
 
 .sidebar img {
-    margin: 12px 0;
+    width: 88px;
+    height: 31px;
     border: 2px solid #ffff00;
     border-radius: 4px;
     image-rendering: pixelated;
-    max-width: 170px;
 }
 
-/* STOPKA */
+/* Wyjątek dla Happy New Year - na całą szerokość, bez ramki */
+.sidebar .special-gif {
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+    border: none;
+}
+
+.main-header { text-align: center; margin-bottom: 2.5rem; }
+.main-header .top-line { font-family: 'VT323', monospace; font-size: 52px; font-weight: bold; color: #ffff00; letter-spacing: 8px; text-transform: uppercase; margin: 0; }
+.main-header .bottom-line { font-family: 'VT323', monospace; font-size: 34px; color: #00ff00; letter-spacing: 6px; text-transform: uppercase; margin: 0; }
+.main-header .separator { width: 100%; border: none; border-top: 2px solid #00ff00; margin: 15px 0; }
+
 footer {
     padding: 10px;
     margin-top: 20px;
@@ -189,8 +156,3 @@ footer {
     color: #ffff00;
     font-weight: bold;
 }
-
-/* Nagłówek dla strony głównej */
-.main-header { text-align: center; margin-bottom: 2.5rem; }
-.main-header .top-line { font-family: 'VT323', monospace; font-size: 52px; font-weight: bold; color: #ffff00; letter-spacing: 8px; text-transform: uppercase; margin: 0; }
-.main-header .bottom-line { font-family: 'VT323', monospace; font-size: 34px; color: #00ff00; letter-spacing: 6px; text-transform: uppercase; margin: 0; }
