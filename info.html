@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info - SMUKLY NETWORK</title>
+    <title>Info - smukly network</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,22 +24,10 @@
             <div class="content">
                 <h2 style="color: #ffff00; text-align: center; border-bottom: 2px solid #00ff00;">SYSTEM INFO 24/7</h2>
                 <div class="info-grid">
-                    <div class="info-box">
-                        <span class="info-label">CZAS SYSTEMOWY:</span>
-                        <div id="clock" style="font-size: 20px;">00:00:00</div>
-                    </div>
-                    <div class="info-box">
-                        <span class="info-label">STATUS SIECI:</span>
-                        <span style="color: #00ff00; font-weight: bold;">POŁĄCZONO (v.2.0)</span>
-                    </div>
-                    <div class="info-box">
-                        <span class="info-label">SERWER MC:</span>
-                        <span style="color: #ff0000; font-weight: bold;">OFFLINE</span>
-                    </div>
-                    <div class="info-box">
-                        <span class="info-label">LOKALIZACJA:</span>
-                        <span>POLAND / SMUKLY_NET</span>
-                    </div>
+                    <div class="info-box"><span class="info-label">CZAS SYSTEMOWY:</span><div id="clock">00:00:00</div></div>
+                    <div class="info-box"><span class="info-label">STATUS SIECI:</span><span style="color: #00ff00;">POŁĄCZONO (v.2.0)</span></div>
+                    <div class="info-box"><span class="info-label">SERWER MC:</span><span style="color: #ff0000;">OFFLINE</span></div>
+                    <div class="info-box"><span class="info-label">LOKALIZACJA:</span><span>POLAND / SMUKLY_NET</span></div>
                 </div>
                 <div style="margin-top: 30px; border: 1px dashed #ffff00; padding: 15px; font-style: italic; opacity: 0.8;">
                     "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
@@ -55,15 +43,12 @@
                 <div style="margin-top: 15px;"><img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;"></div>
             </div>
         </div>
+        <footer>© 2026 smukly network - nie błądź w świecie</footer>
     </div>
     <script>
         function updateClock() {
             const now = new Date();
-            const timeStr = now.getHours().toString().padStart(2, '0') + ":" + 
-                            now.getMinutes().toString().padStart(2, '0') + ":" + 
-                            now.getSeconds().toString().padStart(2, '0');
-            const clockEl = document.getElementById('clock');
-            if(clockEl) clockEl.innerText = timeStr;
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
         }
         setInterval(updateClock, 1000); updateClock();
     </script>
