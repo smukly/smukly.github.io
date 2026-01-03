@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Mały nagłówek na samej górze contentu */
+        /* Mały nagłówek na górze */
         .art-title-small {
             font-family: 'VT323', monospace;
             font-size: 2rem;
@@ -24,6 +24,38 @@
             margin: 0 0 40px 0;
             padding-top: 20px;
         }
+
+        /* Kafelkowa galeria – czysta, bez ramek */
+        .gallery-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            column-count: 3;
+            column-gap: 12px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #ff00ff;
+            box-shadow: 0 0 6px rgba(255, 0, 255, 0.3);
+            transition: all 0.2s ease;
+            image-rendering: pixelated;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 14px rgba(255, 0, 255, 0.6);
+        }
+
+        @media (max-width: 1000px) { .gallery-container { column-count: 2; } }
+        @media (max-width: 600px) { .gallery-container { column-count: 1; } }
     </style>
 </head>
 <body>
@@ -45,16 +77,21 @@
                 <a href="kontakt.html">KONTAKT</a>
                 <a href="info.html">INFO 24/7</a>
 
-                <!-- Linia i przycisk POWRÓT – pod INFO 24/7 -->
                 <hr style="border: 0; border-top: 1px solid #ffff00; margin: 15px 20px; opacity: 0.3;">
                 <a href="sztuka.html" style="background: rgba(102, 0, 204, 0.3); color: #fff; border: 1px solid #ffff00; font-size: 14px; padding: 8px; margin: 0 10px; text-decoration: none; display: block; text-align: center; border-radius: 5px;">POWRÓT</a>
             </div>
             <div class="content">
-                <!-- Mały nagłówek na górze -->
                 <div class="art-title-small">GALERIA 2</div>
 
-                <!-- Reszta contentu całkowicie pusta – tu wrzucisz później zdjęcia lub co chcesz -->
-                
+                <!-- Tu są Twoje zdjęcia – zamień nazwy plików na swoje -->
+                <div class="gallery-container">
+                    <div class="gallery-item"><img src="zdjecie1.jpg" alt="Praca 1"></div>
+                    <div class="gallery-item"><img src="zdjecie2.png" alt="Praca 2"></div>
+                    <div class="gallery-item"><img src="zdjecie3.gif" alt="Animacja"></div>
+                    <div class="gallery-item"><img src="zdjecie4.jpg" alt="Praca 4"></div>
+                    <div class="gallery-item"><img src="zdjecie5.png" alt="Praca 5"></div>
+                    <!-- Dodawaj kolejne linijki w ten sam sposób -->
+                </div>
             </div>
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
