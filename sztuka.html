@@ -7,12 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Sekcja nagłówka – jak w MUZYKA */
+        /* Sekcja nagłówka – gify za napisem */
         .art-header {
             position: relative;
             text-align: center;
             margin: 0 0 100px 0;
-            height: 340px; /* miejsce na gify */
+            height: 380px; /* dopasowane do nowych gifów */
         }
 
         .art-title {
@@ -31,33 +31,33 @@
             position: relative;
             z-index: 2;
             margin: 0;
-            padding-top: 40px; /* lekkie przesunięcie, żeby napis był centralnie na gifach */
+            padding-top: 60px; /* napis dobrze wyśrodkowany na gifach */
         }
 
         .art-gif {
             position: absolute;
             z-index: 1;
             image-rendering: pixelated;
-            opacity: 0.9; /* lekko przyciemnione, żeby nie odwracały uwagi od napisu */
+            opacity: 0.85; /* lekko stonowane tło */
         }
 
-        /* Tylko 3 gify – ładnie rozmieszczone jako tło */
+        /* Pozycje dla Twoich 3 gifów */
         .gif-left {
             bottom: 20px;
-            left: 8%;
-            width: 180px;
+            left: 5%;
+            width: 220px;
         }
 
         .gif-center {
-            top: 30px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 240px;
+            width: 280px; /* lawa lampa największa w środku */
         }
 
         .gif-right {
             bottom: 40px;
-            right: 8%;
+            right: 5%;
             width: 200px;
         }
     </style>
@@ -83,15 +83,15 @@
             </div>
             <div class="content">
                 <div class="art-header">
-                    <!-- Tylko 3 retro gify jako tło -->
-                    <img src="https://anlucas.neocities.org/glitch1.gif" class="art-gif gif-left" alt="Glitch retro">
-                    <img src="https://anlucas.neocities.org/vaporwave.gif" class="art-gif gif-center" alt="Vaporwave retro">
-                    <img src="https://anlucas.neocities.org/crtscan.gif" class="art-gif gif-right" alt="CRT scan retro">
+                    <!-- Twoje 3 gify jako tło -->
+                    <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left" alt="Retro TV">
+                    <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="Lava Lamp">
+                    <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="Stop Light">
 
                     <div class="art-title">SZTUKA</div>
                 </div>
 
-                <!-- Na razie nic poniżej – możesz później dodać galerię lub przyciski -->
+                <!-- Poniżej możesz dodać galerię kafelkową z paginacją, jak chcesz -->
             </div>
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
