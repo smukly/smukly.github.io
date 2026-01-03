@@ -60,14 +60,13 @@
             width: 150px;
         }
 
-        /* Sekcja z przyciskami – styl 88x31 badges, ułożone jak na starych stronach */
+        /* Sekcja z retro badges – ułożenie jak na starych stronach (luźno, po kilka w rzędzie) */
         .art-badges {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px 20px;
-            justify-items: center;
-            align-items: center;
-            max-width: 900px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px 60px; /* większe odstępy poziome i pionowe */
+            max-width: 1000px;
             margin: 0 auto 100px auto;
             padding: 0 20px;
         }
@@ -78,17 +77,16 @@
         }
 
         .art-badge-link:hover {
-            transform: scale(1.1) translateY(-5px);
+            transform: scale(1.15) translateY(-8px);
         }
 
         .art-badge-link img {
-            width: 100%;
-            max-width: 200px; /* typowy rozmiar badge'ów ~88x31 lub podobne */
-            height: auto;
+            height: 31px; /* klasyczny rozmiar 88x31 badge'ów – wysokość stała */
+            width: auto;
             image-rendering: pixelated;
             border: 3px solid #ff00ff;
-            border-radius: 8px;
-            box-shadow: 0 0 20px #ff00ff;
+            border-radius: 6px;
+            box-shadow: 0 0 18px #ff00ff;
         }
     </style>
 </head>
@@ -120,9 +118,8 @@
                     <div class="art-title">SZTUKA</div>
                 </div>
 
-                <!-- Przyciski jako retro badges (88x31 style) – bez tekstowych podpisów -->
+                <!-- Retro badges – tylko obrazki jako linki, bez tekstu -->
                 <div class="art-badges">
-                    <!-- Zamień src na swoje badge/gify reprezentujące kategorie -->
                     <a href="sztuka-glitch.html" class="art-badge-link">
                         <img src="https://anlucas.neocities.org/glitch1.gif" alt="Glitch Art">
                     </a>
@@ -138,7 +135,7 @@
                     <a href="sztuka-crt.html" class="art-badge-link">
                         <img src="https://anlucas.neocities.org/crtscan.gif" alt="CRT">
                     </a>
-                    <!-- Dodaj więcej jeśli chcesz -->
+                    <!-- Dodaj kolejne jeśli chcesz -->
                 </div>
             </div>
             <div class="sidebar">
