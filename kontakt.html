@@ -33,39 +33,52 @@
                 <div class="main-header">
                     <div class="top-line">KONTAKT</div>
                     <div class="dash">-</div>
-                    <div class="bottom-line">podłącz się</div>
+                    <div class="bottom-line">rzuć sygnał</div>
                 </div>
 
                 <p>yooo tu smukly</p>
 
-                <p>chcesz pogadać, dogadać collab, spytać o cos albo wrzucic starego gifa z winampa? dawaj śmiało</p>
+                <p>chcesz collab, pogadać o bitach, spytać o sprzęt albo po prostu rzucić starego mema? wal śmiało</p>
 
-                <p>najlepszy i najszybszy kontakt:</p>
-                <p style="font-size: 1.6rem; color: #00ff9d; text-shadow: 0 0 12px #00ff9d; margin: 15px 0;">
-                    DISCORD → smukly
+                <p style="margin: 30px 0 10px 0;">kontakt:</p>
+
+                <p>
+                    <span style="color:#00ff9d; cursor:pointer;" 
+                          onclick="navigator.clipboard.writeText('smukly.dred'); showCopy('Discord skopiowany!')">
+                        discord → smukly.dred
+                    </span>
                 </p>
 
-                <p>trochę wolniej ale dojdzie na pewno:</p>
-                <p style="font-size: 1.3rem; color: #ffff00; margin: 12px 0;">
-                    MAIL → hej@smukly.dev
+                <p>
+                    <span style="color:#ffff00; cursor:pointer;" 
+                          onclick="navigator.clipboard.writeText('smuklyd.bizness@gmail.com'); showCopy('Mail skopiowany!')">
+                        mail → smuklyd.bizness@gmail.com
+                    </span>
                 </p>
 
-                <p>jak masz ochote na oldschool albo rzadziej sprawdzane:</p>
-                <p style="line-height: 1.6; margin: 18px 0;">
-                    → X / twitter → @smukly_<br>
-                    → telegram → @smukly<br>
-                    → matrix → smukly:matrix.org
+                <p style="margin-top: 35px; font-size:0.95rem; opacity:0.7; line-height:1.5;">
+                    jak nie odpisuje od razu to albo gram, albo jem ramen o 4 rano<br>
+                    ale spokojnie – w końcu wrócę
                 </p>
 
-                <p style="margin-top: 30px; opacity: 0.75;">
-                    priorytet kontaktu:<br>
-                    discord > mail > reszta<br>
-                    jak nie odpisuje w ciagu 1-2 dni to albo spie albo router mnie zbanował lol
-                </p>
+                <!-- mały retro popup -->
+                <div id="copyMsg" 
+                     style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
+                            background:#000; color:#00ff41; border:2px solid #00ff41; 
+                            padding:8px 18px; font-family:'VT323',monospace; font-size:1.4rem; 
+                            border-radius:0; opacity:0; pointer-events:none; transition:opacity 0.5s;
+                            z-index:999;">
+                    skopiowano!
+                </div>
 
-                <p style="margin-top: 35px; text-align: center; font-style: italic; opacity: 0.7;">
-                    no to dawaj – pisz nawet jak chcesz tylko poopowiadać o vaporwave albo starej skajpie
-                </p>
+                <script>
+                function showCopy(text) {
+                    const el = document.getElementById('copyMsg');
+                    el.textContent = text;
+                    el.style.opacity = '1';
+                    setTimeout(() => el.style.opacity = '0', 1600);
+                }
+                </script>
             </div>
 
             <div class="sidebar">
