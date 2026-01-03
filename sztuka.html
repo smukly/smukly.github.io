@@ -101,22 +101,7 @@
             width: 50px;
             font-size: 1.8rem;
         }
-        /* Przyciski ozdobne – nie klikalne */
-        .art-pagination span.decorative {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 35px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid #ff00ff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px #ff00ff;
-            color: #ff00ff;
-            font-family: 'VT323', monospace;
-            font-size: 1.8rem;
-        }
-        /* Footer */
+        /* Footer – przywrócone oryginalne ustawienia */
         footer {
             text-align: center;
             margin: 0;
@@ -124,6 +109,7 @@
             color: #ff00ff;
             text-shadow: 0 0 8px #ff00ff;
             font-size: 1rem;
+            font-family: 'VT323', monospace;
         }
     </style>
 </head>
@@ -155,7 +141,7 @@
                 </div>
                 <p class="art-desc">oglądaj moje prace i obczaj nowe projekty poniżej</p>
                
-                <!-- Paginacja – dwa przyciski « i » są tylko ozdobne (nie klikalne) -->
+                <!-- Paginacja z ozdobnymi « i » -->
                 <div class="art-pagination">
                     <span class="decorative">«</span>
                     <a href="sztuka-page1.html">PAGE 1</a>
