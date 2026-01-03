@@ -11,8 +11,8 @@
         .art-header {
             position: relative;
             text-align: center;
-            margin: 0 0 70px 0;
-            height: 340px; /* lekko zwiększony kontener, żeby gify miały miejsce */
+            margin: 0 0 50px 0; /* trochę mniej marginesu dolnego */
+            height: 340px;
         }
         .art-title {
             font-family: 'VT323', monospace;
@@ -38,38 +38,78 @@
             image-rendering: pixelated;
             opacity: 0.85;
         }
-        /* Lekko zwiększone gify */
         .gif-left {
             bottom: 30px;
             left: 8%;
-            width: 170px; /* było 140px – lekko większe */
+            width: 170px;
         }
         .gif-center {
             top: 30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 210px; /* było 180px – lekko większe */
+            width: 210px;
         }
         .gif-right {
             bottom: 50px;
             right: 8%;
-            width: 160px; /* było 130px – lekko większe */
+            width: 160px;
+        }
+
+        /* Zakładki/galerie – styl jak w MUZYKA */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+        .gallery-link {
+            display: block;
+            background: #000;
+            color: #ffff00;
+            border: 2px solid #ffff00;
+            font-family: 'VT323', monospace;
+            font-size: 1.8rem;
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            box-shadow: 0 0 10px #ffff00;
+            transition: all 0.3s;
+        }
+        .gallery-link:hover {
+            background: #ffff00;
+            color: #000;
+            box-shadow: 0 0 20px #ffff00;
+            transform: translateY(-5px);
         }
 
         /* Komunikat "GALERIA WKRÓTCE" */
         .art-teaser {
             text-align: center;
-            margin: 60px 0 100px 0;
+            margin: 40px 0 100px 0;
             font-family: 'VT323', monospace;
             font-size: 2.4rem;
             color: #ff00ff;
             text-shadow: 0 0 12px #ff00ff;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px 0;
+        /* Responsywność */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .gallery-link {
+                font-size: 1.6rem;
+                padding: 15px;
+            }
+            .art-header {
+                height: 300px;
+            }
+            .art-title {
+                font-size: 4.5rem;
+            }
         }
     </style>
 </head>
@@ -82,7 +122,7 @@
             <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
         </div>
         <div class="main">
-             <div class="menu">
+            <div class="menu">
                 <a href="index.html">STRONA GŁÓWNA</a>
                 <a href="o-mnie.html">O MNIE</a>
                 <a href="sprzet.html">SPRZĘT</a>
@@ -98,6 +138,14 @@
                     <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="Lava Lamp">
                     <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="Stop Light">
                     <div class="art-title">SZTUKA</div>
+                </div>
+
+                <!-- Zakładki galerii – kompaktowe, nie wydłużają strony -->
+                <div class="gallery-grid">
+                    <a href="#" class="gallery-link">Seria / Galeria 1</a>
+                    <a href="#" class="gallery-link">Seria / Galeria 2</a>
+                    <a href="#" class="gallery-link">Seria / Galeria 3</a>
+                    <a href="#" class="gallery-link">Seria / Galeria 4</a>
                 </div>
 
                 <div class="art-teaser">
