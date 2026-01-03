@@ -60,12 +60,12 @@
             width: 150px;
         }
 
-        /* Sekcja z retro badges – ułożenie jak na starych stronach (luźno, po kilka w rzędzie) */
+        /* Przyciski z tekstem – retro neon style, wszystkie tej samej wielkości */
         .art-badges {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px 60px; /* większe odstępy poziome i pionowe */
+            gap: 40px 60px;
             max-width: 1000px;
             margin: 0 auto 100px auto;
             padding: 0 20px;
@@ -73,20 +73,23 @@
 
         .art-badge-link {
             display: block;
-            transition: transform 0.3s ease;
+            width: 220px; /* stała szerokość – wszystkie przyciski tej samej wielkości */
+            padding: 12px 20px;
+            background: #000;
+            border: 4px solid #ff00ff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #ff00ff, inset 0 0 20px rgba(255,0,255,0.2);
+            text-align: center;
+            text-decoration: none;
+            color: #ff00ff;
+            font-family: 'VT323', monospace;
+            font-size: 2rem;
+            transition: all 0.3s ease;
         }
 
         .art-badge-link:hover {
-            transform: scale(1.15) translateY(-8px);
-        }
-
-        .art-badge-link img {
-            height: 31px; /* klasyczny rozmiar 88x31 badge'ów – wysokość stała */
-            width: auto;
-            image-rendering: pixelated;
-            border: 3px solid #ff00ff;
-            border-radius: 6px;
-            box-shadow: 0 0 18px #ff00ff;
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 0 40px #ff00ff, inset 0 0 30px rgba(255,0,255,0.3);
         }
     </style>
 </head>
@@ -118,24 +121,13 @@
                     <div class="art-title">SZTUKA</div>
                 </div>
 
-                <!-- Retro badges – tylko obrazki jako linki, bez tekstu -->
+                <!-- Przyciski z tekstem – wszystkie tej samej wielkości, bez obrazków -->
                 <div class="art-badges">
-                    <a href="sztuka-glitch.html" class="art-badge-link">
-                        <img src="https://anlucas.neocities.org/glitch1.gif" alt="Glitch Art">
-                    </a>
-                    <a href="sztuka-pixel.html" class="art-badge-link">
-                        <img src="https://anlucas.neocities.org/pixelcity.gif" alt="Pixel Art">
-                    </a>
-                    <a href="sztuka-vapor.html" class="art-badge-link">
-                        <img src="https://anlucas.neocities.org/vaporwave.gif" alt="Vaporwave">
-                    </a>
-                    <a href="sztuka-retro.html" class="art-badge-link">
-                        <img src="https://anlucas.neocities.org/retrowindow.gif" alt="Retro">
-                    </a>
-                    <a href="sztuka-crt.html" class="art-badge-link">
-                        <img src="https://anlucas.neocities.org/crtscan.gif" alt="CRT">
-                    </a>
-                    <!-- Dodaj kolejne jeśli chcesz -->
+                    <a href="sztuka-glitch.html" class="art-badge-link">GLITCH ART</a>
+                    <a href="sztuka-pixel.html" class="art-badge-link">PIXEL ART</a>
+                    <a href="sztuka-vapor.html" class="art-badge-link">VAPORWAVE</a>
+                    <a href="sztuka-retro.html" class="art-badge-link">RETRO</a>
+                    <a href="sztuka-crt.html" class="art-badge-link">CRT</a>
                 </div>
             </div>
             <div class="sidebar">
