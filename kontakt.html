@@ -21,7 +21,6 @@
             margin: 20px 0 40px 0;
         }
 
-        /* GIF-y JESZCZE BLIŻEJ napisu KONTAKT */
         .header-gif {
             position: absolute;
             top: 50%;
@@ -31,15 +30,28 @@
             box-shadow: 0 0 20px rgba(0, 255, 157, 0.8);
         }
         .header-gif-left {
-            left: -5px; /* jeszcze bliżej */
+            left: -5px;
             transform: translateY(-50%) rotate(-10deg);
         }
         .header-gif-right {
-            right: -5px; /* jeszcze bliżej */
+            right: -5px;
             transform: translateY(-50%) rotate(8deg);
         }
 
-        /* Responsywność – na mobile pod napisem */
+        /* Nowy styl dla GIF-a przy mailu */
+        .mail-gif-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px; /* odstęp między tekstem a GIF-em */
+            margin: 15px 0;
+        }
+        .mail-gif {
+            max-width: 120px;
+            image-rendering: pixelated;
+            flex-shrink: 0;
+        }
+
         @media (max-width: 960px) {
             .header-gif {
                 position: static;
@@ -48,8 +60,14 @@
                 transform: rotate(0deg);
                 max-width: 220px;
             }
-            .main-header {
-                margin: 15px 0 30px 0;
+            .mail-gif-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .mail-gif {
+                max-width: 100px;
+                margin: 0 auto;
             }
         }
     </style>
@@ -75,36 +93,36 @@
             </div>
             <div class="content">
                 <div class="main-header">
-                    <!-- Lewy GIF: bluescreen – teraz bardzo blisko -->
                     <img src="https://anlucas.neocities.org/bluscrn.gif" alt="Bluescreen" class="header-gif header-gif-left">
-
-                    <!-- Napis KONTAKT -->
                     <div class="top-line" style="font-size: 3.4rem; letter-spacing: 5px;
                         text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 2px 2px 0 #ff00ff, -2px -2px 0 #ffff00;
                         animation: glitch 3s infinite alternate; display: inline-block;">
                         KONTAKT
                     </div>
-
-                    <!-- Prawy GIF: telefon – bardzo blisko -->
                     <img src="https://anlucas.neocities.org/cellflash.gif" alt="Cell phone" class="header-gif header-gif-right">
-
                     <div class="bottom-line"></div>
                 </div>
 
                 <p>chcesz pogadać, razem komponować czy spytać o sprzęt albo rzucić pytaniem? wal śmiało!</p>
                 <p style="margin: 30px 0 10px 0;">dostępny kontakt:</p>
+
+                <!-- Discord – bez GIF-a -->
                 <p>
                     <span style="color:#00ff9d; cursor:pointer;"
                         onclick="navigator.clipboard.writeText('smukly.dred'); showCopy('Discord skopiowany!')">
                         discord → smukly.dred
                     </span>
                 </p>
-                <p>
+
+                <!-- Mail – z GIF-em po prawej -->
+                <div class="mail-gif-container">
                     <span style="color:#ffff00; cursor:pointer;"
                         onclick="navigator.clipboard.writeText('smuklyd.bizness@gmail.com'); showCopy('Mail skopiowany!')">
                         mail → smuklyd.bizness@gmail.com
                     </span>
-                </p>
+                    <img src="https://anlucas.neocities.org/mailput.gif" alt="Wyślij maila" class="mail-gif">
+                </div>
+
                 <p style="margin-top: 35px; font-size:0.95rem; opacity:0.7; line-height:1.5;">
                     nie odpisuje od razu? albo gram w halo, albo coś mnie trzyma<br>
                     ale spokojnie – jak żyje to odpowiem
