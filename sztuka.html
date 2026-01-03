@@ -11,8 +11,8 @@
         .art-header {
             position: relative;
             text-align: center;
-            margin: 0 0 100px 0;
-            height: 380px; /* dopasowane do nowych gifów */
+            margin: 0 0 80px 0;
+            height: 320px; /* zmniejszone, bo gify mniejsze */
         }
 
         .art-title {
@@ -31,34 +31,72 @@
             position: relative;
             z-index: 2;
             margin: 0;
-            padding-top: 60px; /* napis dobrze wyśrodkowany na gifach */
+            padding-top: 50px;
         }
 
         .art-gif {
             position: absolute;
             z-index: 1;
             image-rendering: pixelated;
-            opacity: 0.85; /* lekko stonowane tło */
+            opacity: 0.85;
         }
 
-        /* Pozycje dla Twoich 3 gifów */
+        /* Zmniejszone gify */
         .gif-left {
-            bottom: 20px;
-            left: 5%;
-            width: 220px;
+            bottom: 30px;
+            left: 8%;
+            width: 160px; /* mniejsze */
         }
 
         .gif-center {
-            top: 20px;
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 280px; /* lawa lampa największa w środku */
+            width: 200px; /* mniejsze */
         }
 
         .gif-right {
-            bottom: 40px;
-            right: 5%;
-            width: 200px;
+            bottom: 50px;
+            right: 8%;
+            width: 150px; /* mniejsze */
+        }
+
+        /* Przyciski pod nagłówkiem – przejście do stron galerii */
+        .art-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .art-btn {
+            display: block;
+            padding: 8px 60px;
+            background: #000;
+            border: 4px solid #ff00ff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #ff00ff, inset 0 0 20px rgba(255,0,255,0.2);
+            text-align: center;
+            text-decoration: none;
+            color: #ff00ff;
+            font-family: 'VT323', monospace;
+            font-size: 2.2rem;
+            transition: all 0.3s ease;
+            width: fit-content;
+            min-width: 320px;
+        }
+
+        .art-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px #ff00ff, inset 0 0 30px rgba(255,0,255,0.3);
+        }
+
+        .art-note {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: -15px;
+            color: #ff00ff;
         }
     </style>
 </head>
@@ -83,7 +121,6 @@
             </div>
             <div class="content">
                 <div class="art-header">
-                    <!-- Twoje 3 gify jako tło -->
                     <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left" alt="Retro TV">
                     <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="Lava Lamp">
                     <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="Stop Light">
@@ -91,7 +128,20 @@
                     <div class="art-title">SZTUKA</div>
                 </div>
 
-                <!-- Poniżej możesz dodać galerię kafelkową z paginacją, jak chcesz -->
+                <!-- Przyciski do stron galerii -->
+                <div class="art-links">
+                    <a href="sztuka-glitch.html" class="art-btn">GLITCH ART</a>
+                    <span class="art-note">(glitche i eksperymenty)</span>
+
+                    <a href="sztuka-pixel.html" class="art-btn">PIXEL ART</a>
+                    <span class="art-note">(pixel city, retro sceny)</span>
+
+                    <a href="sztuka-vapor.html" class="art-btn">VAPORWAVE</a>
+                    <span class="art-note">(vapor dreams, aesthetic)</span>
+
+                    <a href="sztuka-inne.html" class="art-btn">INNE PRACE</a>
+                    <span class="art-note">(CRT, retro window i więcej)</span>
+                </div>
             </div>
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
