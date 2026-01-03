@@ -38,23 +38,12 @@
             transform: translateY(-50%) rotate(8deg);
         }
 
-        /* Kontener dla linii kontaktowych z GIF-ami po prawej */
-        .contact-line {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 30px;
-            margin: 15px 0;
-        }
-        .contact-gif {
-            flex-shrink: 0;
+        /* Styl dla nowego GIF-a na dole sidebaru */
+        .sidebar-gif {
+            max-width: 180px;
             image-rendering: pixelated;
-        }
-        .discord-gif {
-            max-width: 220px; /* duży GIF przy Discordzie – jak czerwony prostokąt */
-        }
-        .mail-gif {
-            max-width: 180px; /* trochę mniejszy przy mailu, ale też powiększony */
+            margin: 20px auto;
+            display: block;
         }
 
         @media (max-width: 960px) {
@@ -64,15 +53,6 @@
                 margin: 15px auto;
                 transform: rotate(0deg);
                 max-width: 220px;
-            }
-            .contact-line {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            .contact-gif {
-                max-width: 160px;
-                margin: 0 auto;
             }
         }
     </style>
@@ -111,23 +91,19 @@
                 <p>chcesz pogadać, razem komponować czy spytać o sprzęt albo rzucić pytaniem? wal śmiało!</p>
                 <p style="margin: 30px 0 10px 0;">dostępny kontakt:</p>
 
-                <!-- Discord z dużym GIF-em po prawej (miejsce z czerwonego prostokąta) -->
-                <div class="contact-line">
+                <p>
                     <span style="color:#00ff9d; cursor:pointer;"
                         onclick="navigator.clipboard.writeText('smukly.dred'); showCopy('Discord skopiowany!')">
                         discord → smukly.dred
                     </span>
-                    <img src="https://anlucas.neocities.org/mailput.gif" alt="Napisz na Discord" class="contact-gif discord-gif">
-                </div>
+                </p>
 
-                <!-- Mail z powiększonym GIF-em po prawej -->
-                <div class="contact-line">
+                <p>
                     <span style="color:#ffff00; cursor:pointer;"
                         onclick="navigator.clipboard.writeText('smuklyd.bizness@gmail.com'); showCopy('Mail skopiowany!')">
                         mail → smuklyd.bizness@gmail.com
                     </span>
-                    <img src="https://anlucas.neocities.org/mailput.gif" alt="Wyślij maila" class="contact-gif mail-gif">
-                </div>
+                </p>
 
                 <p style="margin-top: 35px; font-size:0.95rem; opacity:0.7; line-height:1.5;">
                     nie odpisuje od razu? albo gram w halo, albo coś mnie trzyma<br>
@@ -161,6 +137,9 @@
                 <div style="margin-top: 15px;">
                     <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
                 </div>
+
+                <!-- Jeden GIF mailput.gif na samym dole sidebaru -->
+                <img src="https://anlucas.neocities.org/mailput.gif" alt="Wyślij wiadomość" class="sidebar-gif">
             </div>
         </div>
         <footer>
