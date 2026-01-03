@@ -3,22 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria 1 - SMUKLY NETWORK</title>
+    <title>Galeria 3 - SMUKLY NETWORK</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Nagłówek jak na sztuce */
-        .art-header { /* kopiuj z sztuka.html */ }
-        .art-title  { /* kopiuj z sztuka.html */ }
-        .art-gif    { /* kopiuj z sztuka.html */ }
-        .gif-left   { /* ... */ }
-        .gif-center { /* ... */ }
-        .gif-right  { /* ... */ }
+        /* Nagłówek taki sam jak na sztuka.html */
+        .art-header {
+            position: relative;
+            text-align: center;
+            margin: 0 0 40px 0;
+            height: 340px;
+        }
+        .art-title {
+            font-family: 'VT323', monospace;
+            font-size: 5.5rem;
+            color: #ff00ff;
+            text-shadow:
+                0 0 8px #ff00ff,
+                0 0 16px #ff00ff,
+                0 0 24px #ff00ff,
+                -5px -5px 0 #000,
+                5px -5px 0 #000,
+                -5px 5px 0 #000,
+                5px 5px 0 #000;
+            letter-spacing: 8px;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            padding-top: 60px;
+        }
+        .art-gif {
+            position: absolute;
+            z-index: 1;
+            image-rendering: pixelated;
+            opacity: 0.85;
+        }
+        .gif-left   { bottom: 30px; left: 8%;  width: 170px; }
+        .gif-center { top: 30px; left: 50%; transform: translateX(-50%); width: 210px; }
+        .gif-right  { bottom: 50px; right: 8%; width: 160px; }
 
         /* Galeria kafelkowa */
         .gallery-container {
             max-width: 1100px;
-            margin: 0 auto 60px;
+            margin: 0 auto 60px auto;
             padding: 0 20px;
             column-count: 3;
             column-gap: 10px;
@@ -34,53 +61,59 @@
             height: auto;
             display: block;
             border: 2px solid #ff00ff;
-            box-shadow: 0 0 8px #ff00ff44;
-            transition: all 0.2s;
+            box-shadow: 0 0 8px rgba(255,0,255,0.4);
+            transition: all 0.18s ease;
         }
 
         .gallery-item img:hover {
-            transform: scale(1.04);
-            box-shadow: 0 0 16px #ff00ffaa;
+            transform: scale(1.035);
+            box-shadow: 0 0 16px rgba(255,0,255,0.7);
         }
 
+        /* Responsywność galerii */
         @media (max-width: 1100px) { .gallery-container { column-count: 2; } }
         @media (max-width: 680px)  { .gallery-container { column-count: 1; } }
 
-        /* Przycisk powrotu */
+        /* Kreska i przycisk POWRÓT - dokładnie jak w blogu */
         .back-section {
-            margin: 40px 20px;
+            margin: 40px 40px 60px;
             text-align: center;
         }
         .back-section hr {
-            border: 0; border-top: 1px solid #ffff00; margin: 0 0 15px; opacity: 0.3;
+            border: 0;
+            border-top: 1px solid #ffff00;
+            margin: 0 0 20px 0;
+            opacity: 0.35;
         }
         .btn-back {
             display: inline-block;
-            background: rgba(102,0,204,0.3);
-            color: #fff;
+            background: rgba(102, 0, 204, 0.35);
+            color: #ffffff;
             border: 1px solid #ffff00;
             font-family: 'VT323', monospace;
             font-size: 1.1rem;
-            padding: 10px 28px;
+            padding: 10px 32px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 4px;
+            transition: all 0.2s;
         }
         .btn-back:hover {
-            background: rgba(102,0,204,0.55);
-            box-shadow: 0 0 12px #ffff0088;
+            background: rgba(102, 0, 204, 0.6);
+            box-shadow: 0 0 14px rgba(255,255,0,0.5);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header><h1>SMUKLY NETWORK</h1></header>
+        <header>
+            <h1>SMUKLY NETWORK</h1>
+        </header>
         <div class="ticker-wrapper">
             <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
         </div>
-        
+
         <div class="main">
             <div class="menu">
-                <!-- dokładnie to samo menu jak na sztuka.html -->
                 <a href="index.html">STRONA GŁÓWNA</a>
                 <a href="o-mnie.html">O MNIE</a>
                 <a href="sprzet.html">SPRZĘT</a>
@@ -93,30 +126,38 @@
 
             <div class="content">
                 <div class="art-header">
-                    <!-- możesz zostawić taki sam nagłówek albo zrobić inny dla każdej galerii -->
-                    <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left" alt="">
-                    <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="">
-                    <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="">
+                    <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left" alt="Retro TV">
+                    <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="Lava Lamp">
+                    <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="Stop Light">
                     <div class="art-title">GALERIA 3</div>
                 </div>
 
+                <!-- Tu wklejasz swoje obrazki -->
                 <div class="gallery-container">
-                    <!-- Tu wklejasz swoje obrazki dla tej galerii -->
-                    <div class="gallery-item"><img src="twoj-obrazek-1.jpg" alt=""></div>
-                    <div class="gallery-item"><img src="twoj-obrazek-2.jpg" alt=""></div>
-                    <div class="gallery-item"><img src="twoj-obrazek-3.jpg" alt=""></div>
-                    <!-- ... i tak dalej -->
+                    <div class="gallery-item"><img src="https://via.placeholder.com/600x900/111/eee?text=Twoje+zdjecie+1" alt=""></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/500x700/222/eee?text=Twoje+zdjecie+2" alt=""></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/700x500/333/eee?text=Twoje+zdjecie+3" alt=""></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x600/444/eee?text=Twoje+zdjecie+4" alt=""></div>
+                    <!-- dodawaj kolejne linie z <div class="gallery-item">...</div> -->
                 </div>
 
+                <!-- Kreska + POWRÓT -->
                 <div class="back-section">
                     <hr>
                     <a href="sztuka.html" class="btn-back">POWRÓT</a>
                 </div>
             </div>
 
-            <!-- sidebar bez zmian -->
             <div class="sidebar">
-                <!-- ... wszystkie obrazki sidebar jak zawsze ... -->
+                <img src="https://anlucas.neocities.org/face.gif">
+                <img src="https://anlucas.neocities.org/hash_now.gif">
+                <img src="https://anlucas.neocities.org/lilrib.gif">
+                <img src="https://anlucas.neocities.org/Winamp.gif">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
+                <img src="https://anlucas.neocities.org/zxcert.png">
+                <div style="margin-top: 15px;">
+                    <img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;">
+                </div>
             </div>
         </div>
 
