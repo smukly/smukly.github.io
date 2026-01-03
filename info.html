@@ -5,210 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info 24/7 - smukly network</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #00ff00;
-            font-family: "Courier New", Courier, monospace;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image:
-                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0,255,0,0.1) 20px, rgba(0,255,0,0.2) 21px),
-                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,255,0,0.1) 20px, rgba(0,255,0,0.2) 21px),
-                linear-gradient(to bottom, rgba(0,50,0,0.8), #000 70%),
-                radial-gradient(circle at center, transparent 40%, #000 70%);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 200% 200%;
-            animation: tunnel-move 30s linear infinite;
-        }
-        @keyframes tunnel-move {
-            0% { background-position: 0 0, 0 0, 0 0, center center; }
-            100% { background-position: 0 1000px, 0 1000px, 0 0, center center; }
-        }
-        .container {
-            width: 1100px; 
-            padding: 20px;
-            border: 4px solid #ffff00;
-            background-color: rgba(12, 0, 51, 0.92);
-            box-shadow: 0 0 40px #00ff00;
-            backdrop-filter: blur(4px);
-            border-radius: 10px;
-        }
-        header {
-            background: linear-gradient(to bottom, #6600cc, #330066);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 4px solid #ffff00;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 70px;
-            font-family: 'VT323', monospace;
-            color: #ffffaa;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffcc00, 0 0 30px #aa00ff, 0 0 50px #00ffff;
-            letter-spacing: 12px;
-        }
-        .ticker-wrapper {
-            background-color: #000;
-            overflow: hidden;
-            padding: 8px 0;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            position: relative;
-        }
-        .ticker {
-            display: inline-block;
-            color: #00ff00;
-            font-size: 14px;
-            white-space: nowrap;
-            padding-left: 100%;
-            animation: ticker-move 15s linear infinite;
-        }
-        @keyframes ticker-move {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .main {
-            display: flex;
-            min-height: 500px;
-        }
-        .menu {
-            width: 200px;
-            padding: 20px 10px;
-            background-color: rgba(17, 0, 68, 0.95);
-            border-right: 3px solid #ffff00;
-            border-radius: 8px;
-        }
-        .menu a {
-            display: block;
-            margin: 15px 0;
-            padding: 12px;
-            background: linear-gradient(to right, #ff9900, #ffcc00);
-            color: black;
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid #ffff66;
-            border-radius: 10px;
-            box-shadow: 4px 4px 8px #000;
-            text-align: center;
-        }
-        .menu a:hover {
-            background: linear-gradient(to right, #ffcc00, #ffff66);
-            transform: translateY(-3px);
-        }
-        .menu a.active {
-            background: linear-gradient(to right, #ffff00, #ffffff);
-            color: #000;
-            box-shadow: 0 0 15px #ffff00;
-        }
-        
-        /* --- STYLIZACJA SYSTEM INFO ZGODNA ZE ZDJĘCIEM --- */
-        .content {
-            flex: 1;
-            padding: 30px 40px;
-            font-family: 'VT323', monospace;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .system-info-title {
-            color: #ffff00;
-            font-size: 48px;
-            margin: 0;
-            letter-spacing: 4px;
-        }
-
-        .separator-line {
-            width: 100%;
-            border: none;
-            border-top: 2px solid #00ff00;
-            margin: 15px 0 30px 0;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            margin-bottom: 40px;
-        }
-
-        .info-tile {
-            border: 2px solid #00ff00;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            min-height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .tile-label {
-            color: #ffff00;
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        .tile-value {
-            color: #00ff00;
-            font-size: 26px;
-        }
-
-        .value-red {
-            color: #ff0000;
-            text-decoration: line-through; /* Efekt ze zdjęcia */
-        }
-
-        .bottom-quote-box {
-            border: 2px dashed #ffff00;
-            padding: 25px;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .quote-content {
-            color: #00ff00;
-            font-size: 24px;
-            line-height: 1.4;
-            margin: 0;
-        }
-
-        /* --- SIDEBAR --- */
-        .sidebar {
-            width: 200px;
-            padding: 20px 10px;
-            background-color: rgba(17, 0, 68, 0.95);
-            border-left: 3px solid #ffff00;
-            text-align: center;
-            border-radius: 8px;
-        }
-        .sidebar img {
-            margin: 12px 0;
-            border: 2px solid #ffff00;
-            border-radius: 4px;
-            max-width: 170px;
-        }
-        footer {
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 12px;
-            text-align: center;
-            color: #ffff00;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header><h1>SMUKLY NETWORK</h1></header>
-        <div class="ticker-wrapper"><div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div></div>
+        <header>
+            <h1>SMUKLY NETWORK</h1>
+        </header>
+        <div class="ticker-wrapper">
+            <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
+        </div>
         <div class="main">
             <div class="menu">
                 <a href="index.html">STRONA GŁÓWNA</a>
@@ -220,57 +26,53 @@
                 <a href="blog.html">BLOG</a>
                 <a href="info.html" class="active">INFO 24/7</a>
             </div>
-            
             <div class="content">
-                <h2 class="system-info-title">SYSTEM INFO 24/7</h2>
-                <hr class="separator-line">
-
+                <h2 style="color: #ffff00; text-align: center; border-bottom: 2px solid #00ff00;">SYSTEM INFO 24/7</h2>
                 <div class="info-grid">
-                    <div class="info-tile">
-                        <span class="tile-label">CZAS SYSTEMOWY:</span>
-                        <span class="tile-value" id="clock">22:11:24</span>
+                    <div class="info-box">
+                        <span class="info-label">CZAS SYSTEMOWY:</span>
+                        <div id="clock" style="font-size: 20px;">00:00:00</div>
                     </div>
-                    <div class="info-tile">
-                        <span class="tile-label">STATUS SIECI:</span>
-                        <span class="tile-value">POŁĄCZONO (v.2.0)</span>
+                    <div class="info-box">
+                        <span class="info-label">STATUS SIECI:</span>
+                        <span style="color: #00ff00; font-weight: bold;">POŁĄCZONO (v.2.0)</span>
                     </div>
-                    <div class="info-tile">
-                        <span class="tile-label">SERWER MC:</span>
-                        <span class="tile-value value-red">OFFLINE</span>
+                    <div class="info-box">
+                        <span class="info-label">SERWER MC:</span>
+                        <span style="color: #ff0000; font-weight: bold;">OFFLINE</span>
                     </div>
-                    <div class="info-tile">
-                        <span class="tile-label">LOKALIZACJA:</span>
-                        <span class="tile-value">POLAND / <br>SMUKLY_NET</span>
+                    <div class="info-box">
+                        <span class="info-label">LOKALIZACJA:</span>
+                        <span>POLAND / SMUKLY_NET</span>
                     </div>
                 </div>
-
-                <div class="bottom-quote-box">
-                    <p class="quote-content">
-                        "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
-                    </p>
+                <div style="margin-top: 30px; border: 1px dashed #ffff00; padding: 15px; font-style: italic; opacity: 0.8;">
+                    "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
                 </div>
             </div>
-
             <div class="sidebar">
-                <img src="https://anlucas.neocities.org/face.gif">
-                <img src="https://anlucas.neocities.org/hash_now.gif">
-                <img src="https://anlucas.neocities.org/lilrib.gif">
-                <img src="https://anlucas.neocities.org/Winamp.gif">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
-                <img src="https://anlucas.neocities.org/zxcert.png">
-                <div style="margin-top: 15px;"><img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;"></div>
+                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
+                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
+                <img src="https://anlucas.neocities.org/lilrib.gif" alt="Lil Rib">
+                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
+                <img src="https://anlucas.neocities.org/zxcert.png" alt="ZX Cert">
+                <div style="margin-top: 15px;">
+                    <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
+                </div>
             </div>
         </div>
-        <footer>© 2026 smukly network - nie błądź w świecie</footer>
+        <footer>
+            © 2026 smukly network - nie błądź w świecie
+        </footer>
     </div>
-
     <script>
         function updateClock() {
             const now = new Date();
-            const timeString = now.getHours().toString().padStart(2, '0') + ':' + 
-                               now.getMinutes().toString().padStart(2, '0') + ':' + 
-                               now.getSeconds().toString().padStart(2, '0');
-            document.getElementById('clock').textContent = timeString;
+            const timeStr = now.getHours().toString().padStart(2, '0') + ":" + 
+                            now.getMinutes().toString().padStart(2, '0') + ":" + 
+                            now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = timeStr;
         }
         setInterval(updateClock, 1000);
         updateClock();
