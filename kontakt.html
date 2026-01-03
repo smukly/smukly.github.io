@@ -6,6 +6,15 @@
     <title>KONTAKT - SMUKLY NETWORK</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes glitch {
+            0%   { transform: translate(0); }
+            20%  { transform: translate(-2px, 2px); }
+            40%  { transform: translate(2px, -2px); }
+            60%  { transform: translate(-1px, 1px); }
+            100% { transform: translate(0); }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -31,7 +40,11 @@
 
             <div class="content">
                 <div class="main-header">
-                    <div class="top-line">KONTAKT</div>
+                    <div class="top-line" style="font-size: 3.4rem; letter-spacing: 5px; 
+                         text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 2px 2px 0 #ff00ff, -2px -2px 0 #ffff00;
+                         animation: glitch 3s infinite alternate;">
+                        KONTAKT
+                    </div>
                     <div class="bottom-line"></div>
                 </div>
 
