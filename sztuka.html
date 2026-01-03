@@ -55,13 +55,13 @@
             width: 160px;
         }
 
-        /* Zakładki/galerie – nowe kolory pasujące do SZTUKA (magenta neon) */
+        /* Zmniejszone galerie */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 20px;
             max-width: 800px;
-            margin: 0 auto 100px auto; /* margines dolny dla odstępu od footera */
+            margin: 0 auto 80px auto;
             padding: 0 20px;
         }
         .gallery-link {
@@ -70,29 +70,29 @@
             color: #ff00ff;
             border: 3px solid #ff00ff;
             font-family: 'VT323', monospace;
-            font-size: 2rem;
+            font-size: 1.7rem;           /* ← było 2rem */
             text-align: center;
-            padding: 20px;
+            padding: 14px 10px;          /* ← dużo mniej paddingu */
             text-decoration: none;
-            box-shadow: 0 0 15px #ff00ff;
+            box-shadow: 0 0 10px #ff00ff; /* ← mniejszy efekt */
             transition: all 0.3s;
         }
         .gallery-link:hover {
             background: #ff00ff;
             color: #000;
-            box-shadow: 0 0 30px #ff00ff;
-            transform: translateY(-8px);
+            box-shadow: 0 0 25px #ff00ff;
+            transform: translateY(-6px);
         }
 
         /* Responsywność */
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 16px;
             }
             .gallery-link {
-                font-size: 1.8rem;
-                padding: 18px;
+                font-size: 1.6rem;
+                padding: 12px 8px;
             }
             .art-header {
                 height: 300px;
@@ -130,15 +130,13 @@
                     <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="Stop Light">
                     <div class="art-title">SZTUKA</div>
                 </div>
-
-                <!-- Zakładki galerii – magenta neon, kompaktowe -->
+                <!-- Zmniejszone zakładki galerii -->
                 <div class="gallery-grid">
                     <a href="#" class="gallery-link">Seria / Galeria 1</a>
                     <a href="#" class="gallery-link">Seria / Galeria 2</a>
                     <a href="#" class="gallery-link">Seria / Galeria 3</a>
                     <a href="#" class="gallery-link">Seria / Galeria 4</a>
                 </div>
-                <!-- "GALERIA WKRÓTCE" usunięte -->
             </div>
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
