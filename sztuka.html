@@ -60,20 +60,20 @@
             width: 150px;
         }
 
-        /* Przyciski z tekstem – retro neon style, wszystkie tej samej wielkości */
-        .art-badges {
+        /* Kategorie – przyciski tekstowe */
+        .art-categories {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 40px 60px;
             max-width: 1000px;
-            margin: 0 auto 100px auto;
+            margin: 0 auto 60px auto;
             padding: 0 20px;
         }
 
-        .art-badge-link {
+        .category-btn {
             display: block;
-            width: 220px; /* stała szerokość – wszystkie przyciski tej samej wielkości */
+            width: 220px;
             padding: 12px 20px;
             background: #000;
             border: 4px solid #ff00ff;
@@ -87,9 +87,43 @@
             transition: all 0.3s ease;
         }
 
-        .art-badge-link:hover {
+        .category-btn:hover {
             transform: translateY(-8px) scale(1.05);
             box-shadow: 0 0 40px #ff00ff, inset 0 0 30px rgba(255,0,255,0.3);
+        }
+
+        /* Paginacja jak w Google – na dole strony */
+        .pagination {
+            text-align: center;
+            margin: 80px 0;
+            font-family: 'VT323', monospace;
+            font-size: 1.8rem;
+        }
+
+        .pagination a, .pagination span {
+            display: inline-block;
+            padding: 10px 16px;
+            margin: 0 6px;
+            color: #ff00ff;
+            text-decoration: none;
+            border: 3px solid #ff00ff;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background: rgba(255,0,255,0.2);
+            box-shadow: 0 0 20px #ff00ff;
+        }
+
+        .pagination .active {
+            background: #ff00ff;
+            color: #000;
+            box-shadow: 0 0 25px #ff00ff;
+        }
+
+        .pagination .prev, .pagination .next {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -121,13 +155,29 @@
                     <div class="art-title">SZTUKA</div>
                 </div>
 
-                <!-- Przyciski z tekstem – wszystkie tej samej wielkości, bez obrazków -->
-                <div class="art-badges">
-                    <a href="sztuka-glitch.html" class="art-badge-link">GLITCH ART</a>
-                    <a href="sztuka-pixel.html" class="art-badge-link">PIXEL ART</a>
-                    <a href="sztuka-vapor.html" class="art-badge-link">VAPORWAVE</a>
-                    <a href="sztuka-retro.html" class="art-badge-link">RETRO</a>
-                    <a href="sztuka-crt.html" class="art-badge-link">CRT</a>
+                <!-- Kategorie (przyciski tekstowe) -->
+                <div class="art-categories">
+                    <a href="sztuka-glitch.html" class="category-btn">GLITCH ART</a>
+                    <a href="sztuka-pixel.html" class="category-btn">PIXEL ART</a>
+                    <a href="sztuka-vapor.html" class="category-btn">VAPORWAVE</a>
+                    <a href="sztuka-retro.html" class="category-btn">RETRO</a>
+                    <a href="sztuka-crt.html" class="category-btn">CRT</a>
+                </div>
+
+                <!-- Paginacja jak w Google – na samym dole */
+                <div class="pagination">
+                    <a href="#" class="prev">« Poprzednia</a>
+                    <a href="sztuka.html" class="active">1</a>
+                    <a href="sztuka2.html">2</a>
+                    <a href="sztuka3.html">3</a>
+                    <a href="sztuka4.html">4</a>
+                    <a href="sztuka5.html">5</a>
+                    <a href="sztuka6.html">6</a>
+                    <a href="sztuka7.html">7</a>
+                    <a href="sztuka8.html">8</a>
+                    <a href="sztuka9.html">9</a>
+                    <a href="sztuka10.html">10</a>
+                    <a href="sztuka2.html" class="next">Następna »</a>
                 </div>
             </div>
             <div class="sidebar">
