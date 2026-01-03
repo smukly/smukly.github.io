@@ -58,51 +58,56 @@
         .art-desc {
             text-align: center;
             font-size: 1.5rem;
-            margin-bottom: 100px;
+            margin-bottom: 100px; /* spory odstęp, żeby było przewiewnie */
             color: #ff00ff;
             text-shadow: 0 0 8px #ff00ff;
         }
-        /* Paginacja – tylko przyciski z numerami stron */
+        /* Paginacja – małe przyciski na samym dole strony */
         .art-pagination {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            margin: 0 0 30px 0;
+            gap: 15px;
+            margin: 0 0 20px 0; /* tylko mały odstęp od footera */
             padding: 10px 0;
         }
         .art-pagination a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 90px;
-            height: 40px;
+            width: 80px;
+            height: 35px;
             background: rgba(0, 0, 0, 0.6);
             border: 2px solid #ff00ff;
             border-radius: 8px;
-            box-shadow: 0 0 12px #ff00ff;
+            box-shadow: 0 0 10px #ff00ff;
             text-decoration: none;
             color: #ff00ff;
             font-family: 'VT323', monospace;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
         }
         .art-pagination a:hover {
             background: rgba(255, 0, 255, 0.1);
-            box-shadow: 0 0 25px #ff00ff;
-            transform: translateY(-4px);
+            box-shadow: 0 0 20px #ff00ff;
+            transform: translateY(-3px);
         }
         .art-pagination .active {
             background: #ff00ff;
             color: #000;
-            box-shadow: 0 0 25px #ff00ff;
+            box-shadow: 0 0 20px #ff00ff;
         }
-        /* Footer – dokładnie taki jak w podstronie SPRZĘT */
+        .art-pagination .prev, .art-pagination .next {
+            width: 50px;
+            font-size: 1.8rem;
+        }
+        /* Footer */
         footer {
             text-align: center;
+            margin: 0;
             padding: 20px 0;
             color: #ff00ff;
-            font-family: 'VT323', monospace;
+            text-shadow: 0 0 8px #ff00ff;
             font-size: 1rem;
         }
     </style>
@@ -134,29 +139,29 @@
                     <div class="art-title">SZTUKA</div>
                 </div>
                 <p class="art-desc">oglądaj moje prace i obczaj nowe projekty poniżej</p>
-               
-                <!-- Paginacja bez strzałek -->
+                
+                <!-- Mała paginacja na samym dole -->
                 <div class="art-pagination">
+                    <a href="#" class="prev">«</a>
                     <a href="sztuka-page1.html">PAGE 1</a>
                     <a href="sztuka-page2.html" class="active">PAGE 2</a>
                     <a href="sztuka-page3.html">PAGE 3</a>
+                    <a href="sztuka-page4.html" class="next">»</a>
                 </div>
             </div>
-        <div class="sidebar">
-                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
-                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
-                <img src="https://anlucas.neocities.org/lilrib.gif" alt="Lil Rib">
-                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
-                <img src="https://anlucas.neocities.org/zxcert.png" alt="ZX Cert">
+            <div class="sidebar">
+                <img src="https://anlucas.neocities.org/face.gif">
+                <img src="https://anlucas.neocities.org/hash_now.gif">
+                <img src="https://anlucas.neocities.org/lilrib.gif">
+                <img src="https://anlucas.neocities.org/Winamp.gif">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
+                <img src="https://anlucas.neocities.org/zxcert.png">
                 <div style="margin-top: 15px;">
-                    <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
+                    <img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;">
                 </div>
             </div>
         </div>
-        <footer>
-            © 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE
-        </footer>
+        <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
     </div>
 </body>
 </html>
