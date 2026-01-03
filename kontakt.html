@@ -15,39 +15,39 @@
             100% { transform: translate(0); }
         }
 
-        /* Nagłówek wyżej i z większymi GIF-ami */
+        /* Nagłówek wyżej */
         .main-header {
             position: relative;
             text-align: center;
-            margin: 20px 0 40px 0; /* mniej marginesu na górze → wyżej */
+            margin: 20px 0 40px 0;
         }
 
-        /* Większe GIF-y po bokach KONTAKT */
+        /* GIF-y bardzo blisko napisu – odległość zbliżona do tej do żółtej linii */
         .header-gif {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            max-width: 240px; /* większe niż wcześniej */
+            max-width: 270px; /* większe, bardziej dominujące */
             image-rendering: pixelated;
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.7);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.8);
         }
         .header-gif-left {
-            left: -30px;
+            left: -10px; /* bardzo blisko napisu */
             transform: translateY(-50%) rotate(-12deg);
         }
         .header-gif-right {
-            right: -30px;
+            right: -10px; /* bardzo blisko napisu */
             transform: translateY(-50%) rotate(10deg);
         }
 
-        /* Na mniejszych ekranach – GIF-y pod napisem, bez przekrzywienia */
+        /* Na mniejszych ekranach – GIF-y pod napisem */
         @media (max-width: 960px) {
             .header-gif {
                 position: static;
                 display: block;
-                margin: 20px auto;
+                margin: 15px auto;
                 transform: rotate(0deg);
-                max-width: 200px;
+                max-width: 220px;
             }
             .main-header {
                 margin: 15px 0 30px 0;
@@ -75,9 +75,9 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
-                <!-- Nagłówek z większymi GIF-ami po bokach, umieszczony wyżej -->
+                <!-- Nagłówek z GIF-ami bardzo blisko KONTAKT -->
                 <div class="main-header">
-                    <!-- Lewy GIF: niebieski ekran -->
+                    <!-- Lewy GIF: bluescreen -->
                     <img src="https://anlucas.neocities.org/bluscrn.gif" alt="Bluescreen" class="header-gif header-gif-left">
 
                     <!-- Napis KONTAKT -->
