@@ -7,12 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Sekcja nagłówka – lekko zmniejszone */
+        /* Sekcja nagłówka */
         .art-header {
             position: relative;
             text-align: center;
             margin: 0 0 70px 0;
-            height: 300px;
+            height: 340px; /* lekko zwiększony kontener, żeby gify miały miejsce */
         }
         .art-title {
             font-family: 'VT323', monospace;
@@ -38,21 +38,22 @@
             image-rendering: pixelated;
             opacity: 0.85;
         }
+        /* Lekko zwiększone gify */
         .gif-left {
             bottom: 30px;
             left: 8%;
-            width: 140px;
+            width: 170px; /* było 140px – lekko większe */
         }
         .gif-center {
             top: 30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 180px;
+            width: 210px; /* było 180px – lekko większe */
         }
         .gif-right {
             bottom: 50px;
             right: 8%;
-            width: 130px;
+            width: 160px; /* było 130px – lekko większe */
         }
 
         /* Komunikat "GALERIA WKRÓTCE" */
@@ -65,7 +66,7 @@
             text-shadow: 0 0 12px #ff00ff;
         }
 
-        /* Footer – zero stylów inline, żeby całkowicie polegał na style.css */
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px 0;
