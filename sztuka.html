@@ -6,6 +6,72 @@
     <title>SZTUKA - SMUKLY NETWORK</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Sekcja nagłówka */
+        .art-header {
+            position: relative;
+            text-align: center;
+            margin: 0 0 70px 0;
+            height: 340px; /* lekko zwiększony kontener, żeby gify miały miejsce */
+        }
+        .art-title {
+            font-family: 'VT323', monospace;
+            font-size: 6rem;
+            color: #ff00ff;
+            text-shadow:
+                0 0 8px #ff00ff,
+                0 0 16px #ff00ff,
+                0 0 24px #ff00ff,
+                -5px -5px 0 #000,
+                5px -5px 0 #000,
+                -5px 5px 0 #000,
+                5px 5px 0 #000;
+            letter-spacing: 10px;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            padding-top: 50px;
+        }
+        .art-gif {
+            position: absolute;
+            z-index: 1;
+            image-rendering: pixelated;
+            opacity: 0.85;
+        }
+        /* Lekko zwiększone gify */
+        .gif-left {
+            bottom: 30px;
+            left: 8%;
+            width: 170px; /* było 140px – lekko większe */
+        }
+        .gif-center {
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 210px; /* było 180px – lekko większe */
+        }
+        .gif-right {
+            bottom: 50px;
+            right: 8%;
+            width: 160px; /* było 130px – lekko większe */
+        }
+
+        /* Komunikat "GALERIA WKRÓTCE" */
+        .art-teaser {
+            text-align: center;
+            margin: 60px 0 100px 0;
+            font-family: 'VT323', monospace;
+            font-size: 2.4rem;
+            color: #ff00ff;
+            text-shadow: 0 0 12px #ff00ff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -16,7 +82,7 @@
             <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
         </div>
         <div class="main">
-            <div class="menu">
+             <div class="menu">
                 <a href="index.html">STRONA GŁÓWNA</a>
                 <a href="o-mnie.html">O MNIE</a>
                 <a href="sprzet.html">SPRZĘT</a>
@@ -27,9 +93,16 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
-                <h2 style="text-align:center; color:#ffff00; font-size:38px;">SZTUKA</h2>
-                <p style="text-align:center; font-size:20px;">GALERIA WKRÓTCE</p>
-                <hr style="border: 1px dashed #ffff00;">
+                <div class="art-header">
+                    <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left" alt="Retro TV">
+                    <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="Lava Lamp">
+                    <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="Stop Light">
+                    <div class="art-title">SZTUKA</div>
+                </div>
+
+                <div class="art-teaser">
+                    GALERIA WKRÓTCE
+                </div>
             </div>
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
@@ -43,9 +116,7 @@
                 </div>
             </div>
         </div>
-        <footer>
-            © 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE
-        </footer>
+        <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
     </div>
 </body>
 </html>
