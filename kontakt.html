@@ -1,75 +1,89 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KONTAKT – SMUKLY NETWORK</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-      background: white;
-      color: black;
-    }
-    .kontakt-container {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-    }
-    h1 {
-      font-size: 32px;
-    }
-    .kontakt-item {
-      margin: 15px 0;
-      font-size: 20px;
-      cursor: pointer;
-      color: #007bff;
-      text-decoration: underline;
-    }
-    .kontakt-item:hover {
-      color: #0056b3;
-    }
-    #msg {
-      font-size: 16px;
-      color: green;
-      margin-top: 10px;
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONTAKT - SMUKLY NETWORK</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>SMUKLY NETWORK</h1>
+        </header>
 
-  <h1>KONTAKT</h1>
+        <div class="ticker-wrapper">
+            <div class="ticker">napisz zanim matrix się zawiesi... kontakt 24/7</div>
+        </div>
 
-  <div class="kontakt-container">
+        <div class="main">
+            <div class="menu">
+                <a href="index.html">STRONA GŁÓWNA</a>
+                <a href="o-mnie.html">O MNIE</a>
+                <a href="sprzet.html">SPRZĘT</a>
+                <a href="muzyka.html">MUZYKA</a>
+                <a href="sztuka.html">SZTUKA</a>
+                <a href="blog.html">BLOG</a>
+                <a href="kontakt.html" class="active">KONTAKT</a>
+                <a href="info.html">INFO 24/7</a>
+            </div>
 
-    <div class="kontakt-item" onclick="copyText('smuklyd.bizness@gmail.com')">
-      📧 Email: smuklyd.bizness@gmail.com
+            <div class="content">
+                <div class="main-header">
+                    <div class="top-line">KONTAKT</div>
+                    <div class="dash">-</div>
+                    <div class="bottom-line">podłącz się</div>
+                </div>
+
+                <p>yooo tu smukly</p>
+
+                <p>chcesz pogadać, dogadać collab, spytać o cos albo wrzucic starego gifa z winampa? dawaj śmiało</p>
+
+                <p>najlepszy i najszybszy kontakt:</p>
+                <p style="font-size: 1.6rem; color: #00ff9d; text-shadow: 0 0 12px #00ff9d; margin: 15px 0;">
+                    DISCORD → smukly
+                </p>
+
+                <p>trochę wolniej ale dojdzie na pewno:</p>
+                <p style="font-size: 1.3rem; color: #ffff00; margin: 12px 0;">
+                    MAIL → hej@smukly.dev
+                </p>
+
+                <p>jak masz ochote na oldschool albo rzadziej sprawdzane:</p>
+                <p style="line-height: 1.6; margin: 18px 0;">
+                    → X / twitter → @smukly_<br>
+                    → telegram → @smukly<br>
+                    → matrix → smukly:matrix.org
+                </p>
+
+                <p style="margin-top: 30px; opacity: 0.75;">
+                    priorytet kontaktu:<br>
+                    discord > mail > reszta<br>
+                    jak nie odpisuje w ciagu 1-2 dni to albo spie albo router mnie zbanował lol
+                </p>
+
+                <p style="margin-top: 35px; text-align: center; font-style: italic; opacity: 0.7;">
+                    no to dawaj – pisz nawet jak chcesz tylko poopowiadać o vaporwave albo starej skajpie
+                </p>
+            </div>
+
+            <div class="sidebar">
+                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
+                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
+                <img src="https://anlucas.neocities.org/lilrib.gif" alt="Lil Rib">
+                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
+                <img src="https://anlucas.neocities.org/zxcert.png" alt="ZX Cert">
+                <div style="margin-top: 15px;">
+                    <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE
+        </footer>
     </div>
-
-    <div class="kontakt-item" onclick="copyText('smukly.dred')">
-      💬 Discord: smukly.dred
-    </div>
-
-    <div id="msg">Skopiowano do schowka! 📋</div>
-
-  </div>
-
-  <footer>
-    <p>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</p>
-  </footer>
-
-  <script>
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(function() {
-        const msg = document.getElementById('msg');
-        msg.style.display = 'block';
-        setTimeout(() => { msg.style.display = 'none'; }, 1500);
-      });
-    }
-  </script>
-
 </body>
 </html>
