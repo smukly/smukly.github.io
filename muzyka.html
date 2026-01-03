@@ -10,15 +10,15 @@
         .music-header {
             position: relative;
             text-align: center;
-            margin: 20px 0 50px 0;
+            margin: 20px 0 40px 0;
             height: 250px;
         }
         .music-title {
             font-family: 'VT323', monospace;
-            font-size: 5.5rem;
+            font-size: 6rem;
             color: #00ff00;
             text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
-            letter-spacing: 10px;
+            letter-spacing: 20px; /* szersze litery */
             position: relative;
             z-index: 2;
         }
@@ -45,8 +45,9 @@
         }
         .music-desc {
             text-align: center;
-            font-size: 1.4rem;
-            margin-bottom: 50px;
+            font-size: 1.6rem; /* zwiększony */
+            font-weight: bold;
+            margin-bottom: 60px;
         }
         .platform-links {
             display: flex;
@@ -56,7 +57,7 @@
         }
         .platform-btn {
             display: block;
-            padding: 18px 60px;
+            padding: 12px 40px; /* zmniejszone */
             background: #000;
             border: 4px solid #00ff00;
             border-radius: 12px;
@@ -66,10 +67,10 @@
             color: #00ff00;
             font-family: 'VT323', monospace;
             font-weight: bold;
-            font-size: 2.5rem;
+            font-size: 2rem; /* zmniejszony */
             transition: all 0.3s ease;
-            max-width: 600px;
-            width: 80%;
+            max-width: 500px; /* węższe */
+            width: 70%;
         }
         .platform-btn:hover {
             transform: translateY(-5px);
