@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Sekcja nagłówka – gify za napisem */
+        /* Sekcja nagłówka – identycznie jak w MUZYKA */
         .art-header {
             position: relative;
             text-align: center;
-            margin: 0 0 100px 0;
+            margin: 0 0 60px 0;
             height: 340px;
         }
 
@@ -60,35 +60,50 @@
             width: 150px;
         }
 
-        /* Kategorie – flex dla lepszego wyśrodkowania i wrap */
-        .art-categories {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px 40px; /* większe odstępy pionowe i poziome */
-            max-width: 1200px;
-            margin: 0 auto 120px auto;
-            padding: 0 20px;
+        /* Opis pod nagłówkiem – jak w MUZYKA */
+        .art-desc {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 80px;
+            color: #ff00ff;
+            text-shadow: 0 0 8px #ff00ff;
         }
 
-        .category-btn {
-            flex: 0 0 240px; /* stała szerokość, nie rozciąga się */
-            padding: 16px 20px;
-            background: #000;
-            border: 4px solid #ff00ff;
-            border-radius: 12px;
-            box-shadow: 0 0 20px #ff00ff, inset 0 0 20px rgba(255,0,255,0.2);
+        /* Paginacja na dole – strzałki i numery jak w przeglądarce/Google */
+        .art-pagination {
             text-align: center;
-            text-decoration: none;
-            color: #ff00ff;
+            margin: 80px 0;
+        }
+
+        .art-pagination a, .art-pagination span {
+            display: inline-block;
+            padding: 12px 18px;
+            margin: 0 8px;
             font-family: 'VT323', monospace;
             font-size: 2rem;
+            color: #ff00ff;
+            text-decoration: none;
+            border: 4px solid #ff00ff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #ff00ff;
             transition: all 0.3s ease;
         }
 
-        .category-btn:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 0 40px #ff00ff, inset 0 0 30px rgba(255,0,255,0.3);
+        .art-pagination a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px #ff00ff;
+            background: rgba(255,0,255,0.2);
+        }
+
+        .art-pagination .active {
+            background: #ff00ff;
+            color: #000;
+            box-shadow: 0 0 30px #ff00ff;
+        }
+
+        .art-pagination .prev, .art-pagination .next {
+            font-size: 2.5rem;
+            padding: 10px 20px;
         }
     </style>
 </head>
@@ -120,13 +135,19 @@
                     <div class="art-title">SZTUKA</div>
                 </div>
 
-                <!-- Kategorie – flex-wrap z większymi gap */
-                <div class="art-categories">
-                    <a href="sztuka-glitch.html" class="category-btn">GLITCH ART</a>
-                    <a href="sztuka-pixel.html" class="category-btn">PIXEL ART</a>
-                    <a href="sztuka-vapor.html" class="category-btn">VAPORWAVE</a>
-                    <a href="sztuka-retro.html" class="category-btn">RETRO</a>
-                    <a href="sztuka-crt.html" class="category-btn">CRT</a>
+                <p class="art-desc">oglądaj moje prace i obczaj nowe projekty poniżej</p>
+
+                <!-- Paginacja – strzałki i numery stron jak w przeglądarce/Google -->
+                <div class="art-pagination">
+                    <a href="#" class="prev">«</a>
+                    <a href="sztuka1.html" class="active">1</a>
+                    <a href="sztuka2.html">2</a>
+                    <a href="sztuka3.html">3</a>
+                    <a href="sztuka4.html">4</a>
+                    <a href="sztuka5.html">5</a>
+                    <span>...</span>
+                    <a href="sztuka10.html">10</a>
+                    <a href="sztuka2.html" class="next">»</a>
                 </div>
             </div>
             <div class="sidebar">
