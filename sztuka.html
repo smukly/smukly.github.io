@@ -11,7 +11,7 @@
         .art-header {
             position: relative;
             text-align: center;
-            margin: 0 0 100px 0; /* więcej miejsca pod nagłówkiem */
+            margin: 0 0 100px 0;
             height: 340px;
         }
 
@@ -60,20 +60,20 @@
             width: 150px;
         }
 
-        /* Kategorie – przyciski tekstowe, lepiej wyśrodkowane i rozmieszczone */
+        /* Kategorie – flex dla lepszego wyśrodkowania i wrap */
         .art-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto 120px auto; /* więcej miejsca na dole */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px 40px; /* większe odstępy pionowe i poziome */
+            max-width: 1200px;
+            margin: 0 auto 120px auto;
             padding: 0 20px;
-            justify-items: center;
         }
 
         .category-btn {
-            width: 240px; /* trochę szersze dla lepszego wyglądu */
-            padding: 14px 20px;
+            flex: 0 0 240px; /* stała szerokość, nie rozciąga się */
+            padding: 16px 20px;
             background: #000;
             border: 4px solid #ff00ff;
             border-radius: 12px;
@@ -120,7 +120,7 @@
                     <div class="art-title">SZTUKA</div>
                 </div>
 
-                <!-- Kategorie – grid dla lepszego ułożenia (2-3 w rzędzie, wyśrodkowane) -->
+                <!-- Kategorie – flex-wrap z większymi gap */
                 <div class="art-categories">
                     <a href="sztuka-glitch.html" class="category-btn">GLITCH ART</a>
                     <a href="sztuka-pixel.html" class="category-btn">PIXEL ART</a>
