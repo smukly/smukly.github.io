@@ -15,38 +15,42 @@
             100% { transform: translate(0); }
         }
 
-        /* Kontener na nagłówek z GIF-ami po bokach */
+        /* Nagłówek wyżej i z większymi GIF-ami */
         .main-header {
             position: relative;
             text-align: center;
-            margin: 40px 0;
+            margin: 20px 0 40px 0; /* mniej marginesu na górze → wyżej */
         }
 
-        /* GIF-y koło KONTAKT */
+        /* Większe GIF-y po bokach KONTAKT */
         .header-gif {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            max-width: 180px;
+            max-width: 240px; /* większe niż wcześniej */
             image-rendering: pixelated;
-            box-shadow: 0 0 15px rgba(0, 255, 157, 0.6);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.7);
         }
         .header-gif-left {
-            left: -20px;
+            left: -30px;
             transform: translateY(-50%) rotate(-12deg);
         }
         .header-gif-right {
-            right: -20px;
+            right: -30px;
             transform: translateY(-50%) rotate(10deg);
         }
 
-        /* Na mniejszych ekranach GIF-y schowają się pod nagłówkiem, żeby nie rozwalać układu */
-        @media (max-width: 900px) {
+        /* Na mniejszych ekranach – GIF-y pod napisem, bez przekrzywienia */
+        @media (max-width: 960px) {
             .header-gif {
                 position: static;
                 display: block;
                 margin: 20px auto;
                 transform: rotate(0deg);
+                max-width: 200px;
+            }
+            .main-header {
+                margin: 15px 0 30px 0;
             }
         }
     </style>
@@ -71,12 +75,12 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
-                <!-- Nagłówek z GIF-ami po bokach -->
+                <!-- Nagłówek z większymi GIF-ami po bokach, umieszczony wyżej -->
                 <div class="main-header">
                     <!-- Lewy GIF: niebieski ekran -->
                     <img src="https://anlucas.neocities.org/bluscrn.gif" alt="Bluescreen" class="header-gif header-gif-left">
 
-                    <!-- Tekst KONTAKT -->
+                    <!-- Napis KONTAKT -->
                     <div class="top-line" style="font-size: 3.4rem; letter-spacing: 5px;
                         text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 2px 2px 0 #ff00ff, -2px -2px 0 #ffff00;
                         animation: glitch 3s infinite alternate; display: inline-block;">
