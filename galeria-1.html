@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria 1 - SMUKLY NETWORK</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Nagłówek jak na sztuce */
+        .art-header { /* kopiuj z sztuka.html */ }
+        .art-title  { /* kopiuj z sztuka.html */ }
+        .art-gif    { /* kopiuj z sztuka.html */ }
+        .gif-left   { /* ... */ }
+        .gif-center { /* ... */ }
+        .gif-right  { /* ... */ }
+
+        /* Galeria kafelkowa */
+        .gallery-container {
+            max-width: 1100px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            column-count: 3;
+            column-gap: 10px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 8px #ff00ff44;
+            transition: all 0.2s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 16px #ff00ffaa;
+        }
+
+        @media (max-width: 1100px) { .gallery-container { column-count: 2; } }
+        @media (max-width: 680px)  { .gallery-container { column-count: 1; } }
+
+        /* Przycisk powrotu */
+        .back-section {
+            margin: 40px 20px;
+            text-align: center;
+        }
+        .back-section hr {
+            border: 0; border-top: 1px solid #ffff00; margin: 0 0 15px; opacity: 0.3;
+        }
+        .btn-back {
+            display: inline-block;
+            background: rgba(102,0,204,0.3);
+            color: #fff;
+            border: 1px solid #ffff00;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            padding: 10px 28px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-back:hover {
+            background: rgba(102,0,204,0.55);
+            box-shadow: 0 0 12px #ffff0088;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h1>SMUKLY NETWORK</h1></header>
+        <div class="ticker-wrapper">
+            <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
+        </div>
+        
+        <div class="main">
+            <div class="menu">
+                <!-- dokładnie to samo menu jak na sztuka.html -->
+                <a href="index.html">STRONA GŁÓWNA</a>
+                <a href="o-mnie.html">O MNIE</a>
+                <a href="sprzet.html">SPRZĘT</a>
+                <a href="muzyka.html">MUZYKA</a>
+                <a href="sztuka.html" class="active">SZTUKA</a>
+                <a href="blog.html">BLOG</a>
+                <a href="kontakt.html">KONTAKT</a>
+                <a href="info.html">INFO 24/7</a>
+            </div>
+
+            <div class="content">
+                <div class="art-header">
+                    <!-- możesz zostawić taki sam nagłówek albo zrobić inny dla każdej galerii -->
+                    <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left" alt="">
+                    <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="">
+                    <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="">
+                    <div class="art-title">GALERIA 1</div>
+                </div>
+
+                <div class="gallery-container">
+                    <!-- Tu wklejasz swoje obrazki dla tej galerii -->
+                    <div class="gallery-item"><img src="twoj-obrazek-1.jpg" alt=""></div>
+                    <div class="gallery-item"><img src="twoj-obrazek-2.jpg" alt=""></div>
+                    <div class="gallery-item"><img src="twoj-obrazek-3.jpg" alt=""></div>
+                    <!-- ... i tak dalej -->
+                </div>
+
+                <div class="back-section">
+                    <hr>
+                    <a href="sztuka.html" class="btn-back">POWRÓT</a>
+                </div>
+            </div>
+
+            <!-- sidebar bez zmian -->
+            <div class="sidebar">
+                <!-- ... wszystkie obrazki sidebar jak zawsze ... -->
+            </div>
+        </div>
+
+        <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
+    </div>
+</body>
+</html>
