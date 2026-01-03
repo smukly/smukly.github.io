@@ -210,3 +210,26 @@ footer {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+/* Ulepszone menu – retro neon vibe */
+.menu a {
+    transition: all 0.3s ease; /* płynniejsze przejścia */
+    font-weight: bold;
+    font-size: 18px; /* trochę większy tekst */
+    letter-spacing: 1px;
+}
+
+.menu a:hover {
+    transform: translateY(-3px) scale(1.05); /* lekkie powiększenie + podniesienie */
+    box-shadow: 0 0 15px #ffff00, 0 6px 12px #000; /* neonowy glow */
+}
+
+.menu a.active {
+    box-shadow: 0 0 20px #ffff00, inset 0 0 10px #ffffff; /* mocniejszy glow dla aktywnej */
+    transform: scale(1.03);
+}
+
+/* Opcjonalnie: efekt wciskania przy kliku */
+.menu a:active {
+    transform: translateY(1px) scale(1.02);
+    box-shadow: 0 0 10px #ffff00, 0 2px 4px #000;
+}
