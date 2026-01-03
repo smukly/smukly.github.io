@@ -58,17 +58,41 @@
         .art-desc {
             text-align: center;
             font-size: 1.5rem;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
             color: #ff00ff;
             text-shadow: 0 0 8px #ff00ff;
         }
-        /* Paginacja – styl jak na Twoim obrazku */
+
+        /* Galeria kafelków – nowe prace */
+        .art-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            margin: 60px auto 80px auto;
+            max-width: 1200px;
+        }
+        .art-gallery img {
+            width: 100%;
+            height: auto;
+            border: 3px solid #ff00ff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #ff00ff;
+            image-rendering: pixelated; /* dla retro pixel art */
+            transition: all 0.4s ease;
+        }
+        .art-gallery img:hover {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 0 40px #ff00ff;
+        }
+
+        /* Paginacja – ta sama wielkość i styl co wcześniej */
         .art-pagination {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 25px;
-            margin: 60px 0 40px 0; /* odstęp od tekstu i do footera */
+            margin: 0 0 40px 0;
         }
         .art-pagination a {
             display: flex;
@@ -101,6 +125,7 @@
         .art-pagination .next, .art-pagination .prev {
             font-size: 2.2rem;
         }
+
         /* Footer */
         footer {
             text-align: center;
@@ -138,8 +163,24 @@
                     <div class="art-title">SZTUKA</div>
                 </div>
                 <p class="art-desc">oglądaj moje prace i obczaj nowe projekty poniżej</p>
-                
-                <!-- Nowa paginacja z HOME i LISTA -->
+
+                <!-- Galeria z kafelkami (przykład – zamień na swoje prace) -->
+                <div class="art-gallery">
+                    <img src="https://i.imgur.com/Pr0vL2Z.png" alt="Praca 1">
+                    <img src="https://i.imgur.com/8Qz5z3K.png" alt="Praca 2">
+                    <img src="https://i.imgur.com/Jx1K0pM.png" alt="Praca 3">
+                    <img src="https://i.imgur.com/4pL9v1q.png" alt="Praca 4">
+                    <img src="https://i.imgur.com/X7vM3qR.png" alt="Praca 5">
+                    <img src="https://i.imgur.com/Z5pL8vX.png" alt="Praca 6">
+                    <img src="https://i.imgur.com/K9rT2vB.png" alt="Praca 7">
+                    <img src="https://i.imgur.com/M3vQ8pL.png" alt="Praca 8">
+                    <img src="https://i.imgur.com/N7xP4rT.png" alt="Praca 9">
+                    <img src="https://i.imgur.com/P2qW9vY.png" alt="Praca 10">
+                    <img src="https://i.imgur.com/Q8rL5tZ.png" alt="Praca 11">
+                    <img src="https://i.imgur.com/R4tM2vX.png" alt="Praca 12">
+                </div>
+
+                <!-- Paginacja – ta sama wielkość i styl -->
                 <div class="art-pagination">
                     <a href="index.html" class="home">« HOME</a>
                     <a href="sztuka-page1.html" class="lista">LISTA</a>
