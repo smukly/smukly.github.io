@@ -64,31 +64,33 @@
         .art-desc {
             text-align: center;
             font-size: 1.5rem;
-            margin-bottom: 80px;
+            margin-bottom: 140px; /* więcej miejsca – paginacja niżej */
             color: #ff00ff;
             text-shadow: 0 0 8px #ff00ff;
         }
 
-        /* Paginacja – mniejsze przyciski, blisko siebie, w jednej linii */
+        /* Paginacja – idealnie wyśrodkowana w jednej linii */
         .art-pagination {
-            text-align: center;
-            margin: 80px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* równy odstęp między przyciskami */
+            margin: 0 0 150px 0;
         }
 
         .art-pagination a {
-            display: inline-block;
-            padding: 8px 14px; /* mniejsze */
-            margin: 0 6px; /* blisko siebie */
-            min-width: 70px; /* mniejsze */
+            display: block;
+            padding: 8px 16px;
+            min-width: 70px;
             background: #000;
-            border: 3px solid #ff00ff; /* cieńsza ramka */
+            border: 3px solid #ff00ff;
             border-radius: 10px;
             box-shadow: 0 0 15px #ff00ff;
             text-align: center;
             text-decoration: none;
             color: #ff00ff;
             font-family: 'VT323', monospace;
-            font-size: 1.6rem; /* mniejszy font */
+            font-size: 1.5rem;
             transition: all 0.3s ease;
         }
 
@@ -107,7 +109,7 @@
         .art-pagination .prev, .art-pagination .next {
             font-size: 2rem;
             min-width: auto;
-            padding: 8px 18px;
+            padding: 8px 20px;
         }
     </style>
 </head>
@@ -141,7 +143,7 @@
 
                 <p class="art-desc">oglądaj moje prace i obczaj nowe projekty poniżej</p>
 
-                <!-- Paginacja – mniejsze i blisko siebie -->
+                <!-- Paginacja – idealnie wyśrodkowana w jednej linii -->
                 <div class="art-pagination">
                     <a href="#" class="prev">«</a>
                     <a href="sztuka-page1.html">PAGE 1</a>
