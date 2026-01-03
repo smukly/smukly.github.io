@@ -19,7 +19,7 @@
         .art-title {
             font-family: 'VT323', monospace;
             font-size: 6rem;
-            color: #ff00ff; /* oryginalny różowy kolor zostaje */
+            color: #ff00ff;
             text-shadow:
                 0 0 12px #ff00ff,
                 0 0 24px #ff00ff,
@@ -27,13 +27,40 @@
                 -4px -4px 0 #000,
                 4px -4px 0 #000,
                 -4px 4px 0 #000,
-                4px 4px 0 #000; /* dokładnie ten sam shadow co w MUZYKA – tylko kolor #ff00ff */
+                4px 4px 0 #000;
             letter-spacing: 10px;
             position: relative;
             z-index: 2;
             margin: 0;
             padding-top: 50px;
+
+            /* Dodana animacja pulsowania */
+            animation: neon-pulse 4s ease-in-out infinite;
         }
+
+        @keyframes neon-pulse {
+            0%, 100% {
+                text-shadow:
+                    0 0 12px #ff00ff,
+                    0 0 24px #ff00ff,
+                    0 0 36px #ff00ff,
+                    -4px -4px 0 #000,
+                    4px -4px 0 #000,
+                    -4px 4px 0 #000,
+                    4px 4px 0 #000;
+            }
+            50% {
+                text-shadow:
+                    0 0 18px #ff00ff,
+                    0 0 36px #ff00ff,
+                    0 0 54px #ff00ff,
+                    -4px -4px 0 #000,
+                    4px -4px 0 #000,
+                    -4px 4px 0 #000,
+                    4px 4px 0 #000;
+            }
+        }
+
         .art-gif {
             position: absolute;
             z-index: 1;
@@ -56,7 +83,7 @@
             right: 8%;
             width: 160px;
         }
-        /* Zmniejszone galerie */
+        /* Reszta bez zmian */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -84,7 +111,6 @@
             box-shadow: 0 0 25px #ff00ff;
             transform: translateY(-6px);
         }
-        /* Responsywność */
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: 1fr;
@@ -125,12 +151,12 @@
             </div>
             <div class="content">
                 <div class="art-header">
+                    <!-- GIF-y bez zmian -->
                     <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left" alt="Retro TV">
                     <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="Lava Lamp">
                     <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="Stop Light">
                     <div class="art-title">SZTUKA</div>
                 </div>
-                <!-- Zmniejszone zakładki galerii -->
                 <div class="gallery-grid">
                     <a href="galeria-1.html" class="gallery-link">Seria / Galeria 1</a>
                     <a href="galeria-2.html" class="gallery-link">Seria / Galeria 2</a>
