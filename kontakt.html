@@ -38,11 +38,11 @@
             transform: translateY(-50%) rotate(8deg);
         }
 
-        /* Styl dla nowego GIF-a na dole sidebaru */
-        .sidebar-gif {
+        /* GIF na samym dole sidebaru */
+        .bottom-sidebar-gif {
             max-width: 180px;
             image-rendering: pixelated;
-            margin: 20px auto;
+            margin: 40px auto 20px auto; /* duży margines górny, żeby był nisko */
             display: block;
         }
 
@@ -53,6 +53,9 @@
                 margin: 15px auto;
                 transform: rotate(0deg);
                 max-width: 220px;
+            }
+            .bottom-sidebar-gif {
+                margin: 30px auto 15px auto;
             }
         }
     </style>
@@ -138,8 +141,8 @@
                     <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
                 </div>
 
-                <!-- Jeden GIF mailput.gif na samym dole sidebaru -->
-                <img src="https://anlucas.neocities.org/mailput.gif" alt="Wyślij wiadomość" class="sidebar-gif">
+                <!-- GIF mailput.gif przeniesiony na sam dół sidebaru (nisko, jak na screenie) -->
+                <img src="https://anlucas.neocities.org/mailput.gif" alt="Wyślij wiadomość" class="bottom-sidebar-gif">
             </div>
         </div>
         <footer>
