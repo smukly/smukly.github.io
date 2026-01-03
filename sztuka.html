@@ -7,7 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Nagłówek SZTUKA – absolutnie na samą górę contentu, tuż pod tickerem */
+        /* Sekcja nagłówka – jak w MUZYKA */
+        .art-header {
+            position: relative;
+            text-align: center;
+            margin: 0 0 100px 0;
+            height: 340px; /* miejsce na gify */
+        }
+
         .art-title {
             font-family: 'VT323', monospace;
             font-size: 7rem;
@@ -21,9 +28,37 @@
                 -5px 5px 0 #000,
                 5px 5px 0 #000;
             letter-spacing: 12px;
-            text-align: center;
-            margin: 0;          /* zero marginesów */
-            padding: 15px 0 80px 0; /* tylko mały padding górny dla lekkiego odstępu od tickera */
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            padding-top: 40px; /* lekkie przesunięcie, żeby napis był centralnie na gifach */
+        }
+
+        .art-gif {
+            position: absolute;
+            z-index: 1;
+            image-rendering: pixelated;
+            opacity: 0.9; /* lekko przyciemnione, żeby nie odwracały uwagi od napisu */
+        }
+
+        /* Tylko 3 gify – ładnie rozmieszczone jako tło */
+        .gif-left {
+            bottom: 20px;
+            left: 8%;
+            width: 180px;
+        }
+
+        .gif-center {
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 240px;
+        }
+
+        .gif-right {
+            bottom: 40px;
+            right: 8%;
+            width: 200px;
         }
     </style>
 </head>
@@ -47,9 +82,16 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
-                <div class="art-title">SZTUKA</div>
+                <div class="art-header">
+                    <!-- Tylko 3 retro gify jako tło -->
+                    <img src="https://anlucas.neocities.org/glitch1.gif" class="art-gif gif-left" alt="Glitch retro">
+                    <img src="https://anlucas.neocities.org/vaporwave.gif" class="art-gif gif-center" alt="Vaporwave retro">
+                    <img src="https://anlucas.neocities.org/crtscan.gif" class="art-gif gif-right" alt="CRT scan retro">
 
-                <!-- Pod nagłówkiem nic nie ma -->
+                    <div class="art-title">SZTUKA</div>
+                </div>
+
+                <!-- Na razie nic poniżej – możesz później dodać galerię lub przyciski -->
             </div>
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
