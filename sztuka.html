@@ -7,25 +7,23 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Nagłówek SZTUKA */
+        /* Nagłówek SZTUKA – wyżej i mniej intensywny glow */
         .art-title {
             font-family: 'VT323', monospace;
             font-size: 7rem;
             color: #ff00ff; /* neon magenta */
             text-shadow:
-                0 0 12px #ff00ff,
+                0 0 8px #ff00ff,   /* zmniejszony glow */
+                0 0 16px #ff00ff,
                 0 0 24px #ff00ff,
-                0 0 36px #ff00ff,
                 -5px -5px 0 #000,
                 5px -5px 0 #000,
                 -5px 5px 0 #000,
                 5px 5px 0 #000;
             letter-spacing: 12px;
             text-align: center;
-            margin: 20px 0 60px 0;
+            margin: 10px 0 80px 0; /* wyżej – mniejszy margines górny, większy dolny dla odstępu */
         }
-
-        /* Usunięto całą galerię i captiony – strona pusta pod nagłówkiem */
     </style>
 </head>
 <body>
@@ -50,7 +48,7 @@
             <div class="content">
                 <div class="art-title">SZTUKA</div>
 
-                <!-- Cała galeria i wszystkie elementy usunięte – pod nagłówkiem nic nie ma -->
+                <!-- Pod nagłówkiem nic nie ma -->
             </div>
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif">
