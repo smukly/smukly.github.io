@@ -35,6 +35,24 @@
             color: #ffff00;
             text-shadow: 0 0 8px #ffff00;
         }
+
+        /* Nowy styl dla nagłówka SZTUKA */
+        .art-title {
+            font-family: 'VT323', monospace;
+            font-size: 6.5rem;
+            color: #00ffff; /* neon cyjan – inny niż zielony w MUZYKA */
+            text-shadow:
+                0 0 12px #00ffff,
+                0 0 24px #00ffff,
+                0 0 36px #00ffff,
+                -4px -4px 0 #000,
+                4px -4px 0 #000,
+                -4px 4px 0 #000,
+                4px 4px 0 #000;
+            letter-spacing: 10px;
+            text-align: center;
+            margin: 40px 0;
+        }
     </style>
 </head>
 <body>
@@ -57,13 +75,10 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
-                <h2 style="text-align: center; color: #ffff00; font-size: 48px; text-shadow: 0 0 20px #00ff00; margin-bottom: 40px;">
-                    SZTUKA
-                </h2>
+                <div class="art-title">SZTUKA</div>
                 <p style="font-size: 20px; text-align: center; margin-bottom: 40px;">
                     Moje prace, glitche, pixel art, retro wizje i inne eksperymenty wizualne.
                 </p>
-
                 <div class="art-gallery">
                     <!-- Tu wstawiasz swoje obrazy – na razie przykładowe retro arty -->
                     <div class="art-item">
@@ -87,7 +102,6 @@
                         <div class="art-caption">CRT Memories</div>
                     </div>
                 </div>
-
                 <p style="text-align: center; font-size: 18px; margin-top: 50px; opacity: 0.9;">
                     Więcej wkrótce... prace w toku.
                 </p>
