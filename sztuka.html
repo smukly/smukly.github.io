@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Nagłówek SZTUKA – wyżej i mniej intensywny glow */
+        /* Nagłówek SZTUKA – przyklejony tuż pod tickerem (na samą górę contentu) */
         .art-title {
             font-family: 'VT323', monospace;
             font-size: 7rem;
             color: #ff00ff; /* neon magenta */
             text-shadow:
-                0 0 8px #ff00ff,   /* zmniejszony glow */
+                0 0 8px #ff00ff,
                 0 0 16px #ff00ff,
                 0 0 24px #ff00ff,
                 -5px -5px 0 #000,
@@ -22,7 +22,8 @@
                 5px 5px 0 #000;
             letter-spacing: 12px;
             text-align: center;
-            margin: 10px 0 80px 0; /* wyżej – mniejszy margines górny, większy dolny dla odstępu */
+            margin: 0 0 80px 0; /* zero marginesu górnego – zaczyna się od razu po tickerze */
+            padding-top: 20px; /* drobny odstęp od górnej krawędzi contentu */
         }
     </style>
 </head>
