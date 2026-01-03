@@ -6,6 +6,97 @@
     <title>MUZYKA - SMUKLY NETWORK</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specjalny styl dla MUZYKA – retro CD vibe, ale spójny z resztą */
+        .music-header {
+            position: relative;
+            text-align: center;
+            margin: 40px 0 60px 0;
+            height: 300px; /* miejsce na gify CD */
+        }
+        .music-title {
+            font-family: 'Courier New', monospace;
+            font-size: 6rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 
+                0 0 10px #00ff00,
+                0 0 20px #00ff00,
+                -5px -5px 0 #000, 
+                5px -5px 0 #000, 
+                -5px 5px 0 #000, 
+                5px 5px 0 #000;
+            letter-spacing: 8px;
+            position: relative;
+            z-index: 2;
+            animation: music-glow 4s infinite alternate;
+        }
+        @keyframes music-glow {
+            0% { text-shadow: 0 0 10px #00ff00, -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000; }
+            100% { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000; }
+        }
+        .cd-gif {
+            position: absolute;
+            z-index: 1;
+            image-rendering: pixelated;
+        }
+        .cd-left {
+            bottom: 0;
+            left: 10%;
+            width: 150px;
+        }
+        .cd-top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+        }
+        .cd-right {
+            top: 20%;
+            right: 10%;
+            width: 200px;
+        }
+        .platform-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .platform-btn {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 40px;
+            background: #000;
+            border: 4px solid #00ff00;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #00ff00;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #00ff00;
+            font-weight: bold;
+            font-size: 2rem;
+            min-width: 500px;
+            justify-content: center;
+        }
+        .platform-btn img {
+            height: 60px;
+            image-rendering: pixelated;
+        }
+        .platform-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 40px #00ff00;
+        }
+        .platform-btn:active {
+            transform: translateY(2px);
+        }
+        .platform-note {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: -20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -27,27 +118,35 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
-                <div class="music-section">
-                    <h1 class="music-title">MUZYKA</h1>
-                    <p class="music-desc">słuchaj moich utworów i obczaj nowe projekty poniżej</p>
-                    <div class="platform-links">
-                        <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" target="_blank" class="platform-link">SPOTIFY</a>
-                        <span class="platform-note">(smukly na Spotify)</span>
-                        <br><br>
-                        <a href="https://www.youtube.com/channel/UC28NIMWUi0qdJq14J9PnDPg" target="_blank" class="platform-link">YOUTUBE</a>
-                        <span class="platform-note">(kanał smukly)</span>
-                    </div>
+                <div class="music-header">
+                    <img src="https://anlucas.neocities.org/Music_CD.gif" class="cd-gif cd-left" alt="CD">
+                    <img src="https://anlucas.neocities.org/42.gif" class="cd-gif cd-top" alt="CD">
+                    <img src="https://anlucas.neocities.org/cd7.gif" class="cd-gif cd-right" alt="CD">
+                    <div class="music-title">MUZYKA</div>
+                </div>
+                <p class="music-desc">słuchaj moich utworów i obczaj nowe projekty poniżej</p>
+
+                <div class="platform-links">
+                    <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" target="_blank" class="platform-btn">
+                        <img src="https://anlucas.neocities.org/spotify_icon.png" alt="Spotify"> SPOTIFY
+                    </a>
+                    <span class="platform-note">(smukly na Spotify)</span>
+
+                    <a href="https://www.youtube.com/channel/UC28NIMWUi0qdJq14J9PnDPg" target="_blank" class="platform-btn">
+                        <img src="https://anlucas.neocities.org/youtube_icon.png" alt="YouTube"> YOUTUBE
+                    </a>
+                    <span class="platform-note">(kanał smukly)</span>
                 </div>
             </div>
             <div class="sidebar">
-                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
-                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
-                <img src="https://anlucas.neocities.org/lilrib.gif" alt="Lil Rib">
-                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
-                <img src="https://anlucas.neocities.org/zxcert.png" alt="ZX Cert">
+                <img src="https://anlucas.neocities.org/face.gif">
+                <img src="https://anlucas.neocities.org/hash_now.gif">
+                <img src="https://anlucas.neocities.org/lilrib.gif">
+                <img src="https://anlucas.neocities.org/Winamp.gif">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
+                <img src="https://anlucas.neocities.org/zxcert.png">
                 <div style="margin-top: 15px;">
-                    <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
+                    <img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;">
                 </div>
             </div>
         </div>
