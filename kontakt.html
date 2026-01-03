@@ -15,32 +15,31 @@
             100% { transform: translate(0); }
         }
 
-        /* Nagłówek wyżej */
         .main-header {
             position: relative;
             text-align: center;
             margin: 20px 0 40px 0;
         }
 
-        /* GIF-y bardzo blisko napisu – odległość zbliżona do tej do żółtej linii */
+        /* GIF-y JESZCZE BLIŻEJ napisu KONTAKT */
         .header-gif {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            max-width: 270px; /* większe, bardziej dominujące */
+            max-width: 270px;
             image-rendering: pixelated;
             box-shadow: 0 0 20px rgba(0, 255, 157, 0.8);
         }
         .header-gif-left {
-            left: -10px; /* bardzo blisko napisu */
-            transform: translateY(-50%) rotate(-12deg);
+            left: -5px; /* jeszcze bliżej */
+            transform: translateY(-50%) rotate(-10deg);
         }
         .header-gif-right {
-            right: -10px; /* bardzo blisko napisu */
-            transform: translateY(-50%) rotate(10deg);
+            right: -5px; /* jeszcze bliżej */
+            transform: translateY(-50%) rotate(8deg);
         }
 
-        /* Na mniejszych ekranach – GIF-y pod napisem */
+        /* Responsywność – na mobile pod napisem */
         @media (max-width: 960px) {
             .header-gif {
                 position: static;
@@ -75,9 +74,8 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
-                <!-- Nagłówek z GIF-ami bardzo blisko KONTAKT -->
                 <div class="main-header">
-                    <!-- Lewy GIF: bluescreen -->
+                    <!-- Lewy GIF: bluescreen – teraz bardzo blisko -->
                     <img src="https://anlucas.neocities.org/bluscrn.gif" alt="Bluescreen" class="header-gif header-gif-left">
 
                     <!-- Napis KONTAKT -->
@@ -87,7 +85,7 @@
                         KONTAKT
                     </div>
 
-                    <!-- Prawy GIF: migający telefon -->
+                    <!-- Prawy GIF: telefon – bardzo blisko -->
                     <img src="https://anlucas.neocities.org/cellflash.gif" alt="Cell phone" class="header-gif header-gif-right">
 
                     <div class="bottom-line"></div>
@@ -112,7 +110,6 @@
                     ale spokojnie – jak żyje to odpowiem
                 </p>
 
-                <!-- retro popup -->
                 <div id="copyMsg"
                     style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
                         background:#000; color:#00ff41; border:2px solid #00ff41;
