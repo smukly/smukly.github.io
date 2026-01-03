@@ -5,150 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muzyka - smukly network</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #00ff00;
-            font-family: "Courier New", Courier, monospace;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image:
-                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0,255,0,0.1) 20px, rgba(0,255,0,0.2) 21px),
-                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,255,0,0.1) 20px, rgba(0,255,0,0.2) 21px),
-                linear-gradient(to bottom, rgba(0,50,0,0.8), #000 70%),
-                radial-gradient(circle at center, transparent 40%, #000 70%);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 200% 200%;
-            animation: tunnel-move 30s linear infinite;
-        }
-        @keyframes tunnel-move {
-            0% { background-position: 0 0, 0 0, 0 0, center center; }
-            100% { background-position: 0 1000px, 0 1000px, 0 0, center center; }
-        }
-        .container {
-            width: 1100px; 
-            padding: 20px;
-            border: 4px solid #ffff00;
-            background-color: rgba(12, 0, 51, 0.92);
-            box-shadow: 0 0 40px #00ff00;
-            backdrop-filter: blur(4px);
-            border-radius: 10px;
-        }
-        header {
-            background: linear-gradient(to bottom, #6600cc, #330066);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 4px solid #ffff00;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 70px;
-            font-family: 'VT323', monospace;
-            color: #ffffaa;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffcc00, 0 0 30px #aa00ff, 0 0 50px #00ffff;
-            letter-spacing: 12px;
-        }
-        .ticker-wrapper {
-            background-color: #000;
-            overflow: hidden;
-            padding: 8px 0;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            position: relative;
-        }
-        .ticker {
-            display: inline-block;
-            color: #00ff00;
-            font-size: 14px;
-            white-space: nowrap;
-            padding-left: 100%;
-            animation: ticker-move 15s linear infinite;
-        }
-        @keyframes ticker-move {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .main {
-            display: flex;
-            min-height: 500px;
-        }
-        .menu {
-            width: 200px;
-            padding: 20px 10px;
-            background-color: rgba(17, 0, 68, 0.95);
-            border-right: 3px solid #ffff00;
-            border-radius: 8px;
-        }
-        .menu a {
-            display: block;
-            margin: 15px 0;
-            padding: 12px;
-            background: linear-gradient(to right, #ff9900, #ffcc00);
-            color: black;
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid #ffff66;
-            border-radius: 10px;
-            box-shadow: 4px 4px 8px #000;
-            text-align: center;
-        }
-        .menu a:hover {
-            background: linear-gradient(to right, #ffcc00, #ffff66);
-            transform: translateY(-3px);
-        }
-        .menu a.active {
-            background: linear-gradient(to right, #ffff00, #ffffff);
-            color: #000;
-            box-shadow: 0 0 15px #ffff00;
-        }
-        .content {
-            flex: 1;
-            padding: 30px 40px;
-            color: #00ff00;
-            line-height: 1.6;
-        }
-        .music-section { text-align: center; max-width: 800px; margin: 0 auto; }
-        .music-title { font-size: 3.8rem; margin: 1.2rem 0; text-shadow: 0 0 18px #00ff00, 0 0 35px #00ff00; letter-spacing: 5px; animation: glow 4s infinite alternate; }
-        @keyframes glow { 0% { text-shadow: 0 0 8px #00ff00; } 100% { text-shadow: 0 0 25px #00ff00, 0 0 45px #00ff00; } }
-        .music-desc { font-size: 1.25rem; margin: 1rem 0 2rem 0; opacity: 0.9; }
-        .platform-links { margin-bottom: 2rem; }
-        .platform-link { display: inline-block; margin: 0.8rem 1.5rem; font-size: 1.8rem; padding: 0.7rem 1.5rem; border: 3px solid #ffff00; border-radius: 8px; background: rgba(255, 255, 0, 0.08); color: #ffff00; text-decoration: none; font-weight: bold; transition: all 0.3s; }
-        .platform-link:hover { background: rgba(255, 255, 0, 0.25); box-shadow: 0 0 18px #ffff00; transform: scale(1.07); }
-        .platform-note { font-size: 1.1rem; margin-top: 0.4rem; opacity: 0.85; display: block; }
-
-        .sidebar {
-            width: 200px;
-            padding: 20px 10px;
-            background-color: rgba(17, 0, 68, 0.95);
-            border-left: 3px solid #ffff00;
-            text-align: center;
-            border-radius: 8px;
-        }
-        .sidebar img {
-            margin: 12px 0;
-            border: 2px solid #ffff00;
-            border-radius: 4px;
-            image-rendering: pixelated;
-            max-width: 170px;
-        }
-        footer {
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 12px;
-            text-align: center;
-            color: #ffff00;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header><h1>SMUKLY NETWORK</h1></header>
+        <header>
+            <h1>SMUKLY NETWORK</h1>
+        </header>
         <div class="ticker-wrapper">
             <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
         </div>
@@ -167,7 +30,6 @@
                 <div class="music-section">
                     <h1 class="music-title">MUZYKA</h1>
                     <p class="music-desc">słuchaj moich utworów i obczaj nowe projekty poniżej</p>
-                    
                     <div class="platform-links">
                         <a href="https://open.spotify.com/artist/6QvGfcrdQPV0Bajo67Vy25?si=GvDXpHfySTWuVuPhz1zk3Q" target="_blank" class="platform-link">SPOTIFY</a>
                         <span class="platform-note">(smukly na Spotify)</span>
@@ -185,11 +47,13 @@
                 <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
                 <img src="https://anlucas.neocities.org/zxcert.png" alt="ZX Cert">
                 <div style="margin-top: 15px;">
-                    <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="display: block; margin: 0 auto; border: none;">
+                    <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
                 </div>
             </div>
         </div>
-        <footer>© 2026 smukly network - nie błądź w świecie</footer>
+        <footer>
+            © 2026 smukly network - nie błądź w świecie
+        </footer>
     </div>
 </body>
 </html>
