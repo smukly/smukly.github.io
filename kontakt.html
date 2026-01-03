@@ -8,11 +8,31 @@
     <link rel="stylesheet" href="style.css">
     <style>
         @keyframes glitch {
-            0%   { transform: translate(0); }
-            20%  { transform: translate(-2px, 2px); }
-            40%  { transform: translate(2px, -2px); }
-            60%  { transform: translate(-1px, 1px); }
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-1px, 1px); }
             100% { transform: translate(0); }
+        }
+        
+        /* Styl dla nowych GIF-ów – lekkie przekrzywienie i responsywność */
+        .contact-gif {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+            image-rendering: pixelated; /* dla lepszego retro looku */
+        }
+        .gif-bluescreen {
+            transform: rotate(-8deg);
+            margin: 30px auto;
+            display: block;
+            max-width: 300px;
+        }
+        .gif-cell {
+            transform: rotate(10deg);
+            margin: 20px auto;
+            display: block;
+            max-width: 180px;
         }
     </style>
 </head>
@@ -21,11 +41,9 @@
         <header>
             <h1>SMUKLY NETWORK</h1>
         </header>
-
         <div class="ticker-wrapper">
             <div class="ticker">napisz zanim matrix się zawiesi... kontakt 24/7</div>
         </div>
-
         <div class="main">
             <div class="menu">
                 <a href="index.html">STRONA GŁÓWNA</a>
@@ -37,34 +55,32 @@
                 <a href="kontakt.html" class="active">KONTAKT</a>
                 <a href="info.html">INFO 24/7</a>
             </div>
-
             <div class="content">
                 <div class="main-header">
-                    <div class="top-line" style="font-size: 3.4rem; letter-spacing: 5px; 
-                         text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 2px 2px 0 #ff00ff, -2px -2px 0 #ffff00;
-                         animation: glitch 3s infinite alternate;">
+                    <div class="top-line" style="font-size: 3.4rem; letter-spacing: 5px;
+                        text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 2px 2px 0 #ff00ff, -2px -2px 0 #ffff00;
+                        animation: glitch 3s infinite alternate;">
                         KONTAKT
                     </div>
                     <div class="bottom-line"></div>
                 </div>
-
                 <p>chcesz pogadać, razem komponować czy spytać o sprzęt albo rzucić pytaniem? wal śmiało!</p>
-
                 <p style="margin: 30px 0 10px 0;">dostępny kontakt:</p>
-
                 <p>
-                    <span style="color:#00ff9d; cursor:pointer;" 
-                          onclick="navigator.clipboard.writeText('smukly.dred'); showCopy('Discord skopiowany!')">
+                    <span style="color:#00ff9d; cursor:pointer;"
+                        onclick="navigator.clipboard.writeText('smukly.dred'); showCopy('Discord skopiowany!')">
                         discord → smukly.dred
                     </span>
                 </p>
-
                 <p>
-                    <span style="color:#ffff00; cursor:pointer;" 
-                          onclick="navigator.clipboard.writeText('smuklyd.bizness@gmail.com'); showCopy('Mail skopiowany!')">
+                    <span style="color:#ffff00; cursor:pointer;"
+                        onclick="navigator.clipboard.writeText('smuklyd.bizness@gmail.com'); showCopy('Mail skopiowany!')">
                         mail → smuklyd.bizness@gmail.com
                     </span>
                 </p>
+
+                <!-- Tutaj pierwszy GIF: niebieski ekran śmierci (lekko przekrzywiony) -->
+                <img src="https://anlucas.neocities.org/bluscrn.gif" alt="Bluescreen glitch" class="contact-gif gif-bluescreen">
 
                 <p style="margin-top: 35px; font-size:0.95rem; opacity:0.7; line-height:1.5;">
                     nie odpisuje od razu? albo gram w halo, albo coś mnie trzyma<br>
@@ -72,15 +88,14 @@
                 </p>
 
                 <!-- retro popup -->
-                <div id="copyMsg" 
-                     style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
-                            background:#000; color:#00ff41; border:2px solid #00ff41; 
-                            padding:8px 18px; font-family:'VT323',monospace; font-size:1.4rem; 
-                            border-radius:0; opacity:0; pointer-events:none; transition:opacity 0.5s;
-                            z-index:999;">
+                <div id="copyMsg"
+                    style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
+                        background:#000; color:#00ff41; border:2px solid #00ff41;
+                        padding:8px 18px; font-family:'VT323',monospace; font-size:1.4rem;
+                        border-radius:0; opacity:0; pointer-events:none; transition:opacity 0.5s;
+                        z-index:999;">
                     skopiowano!
                 </div>
-
                 <script>
                 function showCopy(text) {
                     const el = document.getElementById('copyMsg');
@@ -90,7 +105,6 @@
                 }
                 </script>
             </div>
-
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif" alt="Face">
                 <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
@@ -101,9 +115,11 @@
                 <div style="margin-top: 15px;">
                     <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
                 </div>
+
+                <!-- Tutaj drugi GIF: migający telefon (lekko przekrzywiony) -->
+                <img src="https://anlucas.neocities.org/cellflash.gif" alt="Old cell phone flashing" class="contact-gif gif-cell">
             </div>
         </div>
-
         <footer>
             © 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE
         </footer>
