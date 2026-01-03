@@ -54,21 +54,23 @@
             right: 8%;
             width: 150px;
         }
-        /* Opis pod nagłówkiem – zwiększony dolny margines */
+        /* Opis pod nagłówkiem – duży odstęp pod tekstem */
         .art-desc {
             text-align: center;
             font-size: 1.5rem;
-            margin-bottom: 140px; /* ← tutaj zwiększony odstęp (było 80px) */
+            margin-bottom: 120px; /* duży odstęp OD tekstu DO paginacji */
             color: #ff00ff;
             text-shadow: 0 0 8px #ff00ff;
         }
-        /* Paginacja – bezpośrednio nad footerem */
+        /* Paginacja – niżej, blisko footera */
         .art-pagination {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
-            margin: 0 0 40px 0; /* lekko większy odstęp od stopki, żeby nie stykała się z nią */
+            margin: 0 0 30px 0; /* mały odstęp od footera – przyciski "lekko nad" stopką */
+            position: relative;
+            bottom: 0;
         }
         .art-pagination a {
             display: block;
@@ -136,7 +138,7 @@
                 </div>
                 <p class="art-desc">oglądaj moje prace i obczaj nowe projekty poniżej</p>
                 
-                <!-- Paginacja umieszczona tuż przed zamknięciem .content -->
+                <!-- Paginacja niżej -->
                 <div class="art-pagination">
                     <a href="#" class="prev">«</a>
                     <a href="sztuka-page1.html">PAGE 1</a>
