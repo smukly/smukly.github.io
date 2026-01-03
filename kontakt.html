@@ -14,25 +14,40 @@
             60% { transform: translate(-1px, 1px); }
             100% { transform: translate(0); }
         }
-        
-        /* Styl dla nowych GIF-ów – lekkie przekrzywienie i responsywność */
-        .contact-gif {
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-            image-rendering: pixelated; /* dla lepszego retro looku */
+
+        /* Kontener na nagłówek z GIF-ami po bokach */
+        .main-header {
+            position: relative;
+            text-align: center;
+            margin: 40px 0;
         }
-        .gif-bluescreen {
-            transform: rotate(-8deg);
-            margin: 30px auto;
-            display: block;
-            max-width: 300px;
-        }
-        .gif-cell {
-            transform: rotate(10deg);
-            margin: 20px auto;
-            display: block;
+
+        /* GIF-y koło KONTAKT */
+        .header-gif {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             max-width: 180px;
+            image-rendering: pixelated;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.6);
+        }
+        .header-gif-left {
+            left: -20px;
+            transform: translateY(-50%) rotate(-12deg);
+        }
+        .header-gif-right {
+            right: -20px;
+            transform: translateY(-50%) rotate(10deg);
+        }
+
+        /* Na mniejszych ekranach GIF-y schowają się pod nagłówkiem, żeby nie rozwalać układu */
+        @media (max-width: 900px) {
+            .header-gif {
+                position: static;
+                display: block;
+                margin: 20px auto;
+                transform: rotate(0deg);
+            }
         }
     </style>
 </head>
@@ -56,14 +71,24 @@
                 <a href="info.html">INFO 24/7</a>
             </div>
             <div class="content">
+                <!-- Nagłówek z GIF-ami po bokach -->
                 <div class="main-header">
+                    <!-- Lewy GIF: niebieski ekran -->
+                    <img src="https://anlucas.neocities.org/bluscrn.gif" alt="Bluescreen" class="header-gif header-gif-left">
+
+                    <!-- Tekst KONTAKT -->
                     <div class="top-line" style="font-size: 3.4rem; letter-spacing: 5px;
                         text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 2px 2px 0 #ff00ff, -2px -2px 0 #ffff00;
-                        animation: glitch 3s infinite alternate;">
+                        animation: glitch 3s infinite alternate; display: inline-block;">
                         KONTAKT
                     </div>
+
+                    <!-- Prawy GIF: migający telefon -->
+                    <img src="https://anlucas.neocities.org/cellflash.gif" alt="Cell phone" class="header-gif header-gif-right">
+
                     <div class="bottom-line"></div>
                 </div>
+
                 <p>chcesz pogadać, razem komponować czy spytać o sprzęt albo rzucić pytaniem? wal śmiało!</p>
                 <p style="margin: 30px 0 10px 0;">dostępny kontakt:</p>
                 <p>
@@ -78,10 +103,6 @@
                         mail → smuklyd.bizness@gmail.com
                     </span>
                 </p>
-
-                <!-- Tutaj pierwszy GIF: niebieski ekran śmierci (lekko przekrzywiony) -->
-                <img src="https://anlucas.neocities.org/bluscrn.gif" alt="Bluescreen glitch" class="contact-gif gif-bluescreen">
-
                 <p style="margin-top: 35px; font-size:0.95rem; opacity:0.7; line-height:1.5;">
                     nie odpisuje od razu? albo gram w halo, albo coś mnie trzyma<br>
                     ale spokojnie – jak żyje to odpowiem
@@ -115,9 +136,6 @@
                 <div style="margin-top: 15px;">
                     <img src="https://anlucas.neocities.org/happynewyear.gif" alt="Happy New Year" style="border: none;">
                 </div>
-
-                <!-- Tutaj drugi GIF: migający telefon (lekko przekrzywiony) -->
-                <img src="https://anlucas.neocities.org/cellflash.gif" alt="Old cell phone flashing" class="contact-gif gif-cell">
             </div>
         </div>
         <footer>
