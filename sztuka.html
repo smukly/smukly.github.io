@@ -8,56 +8,54 @@
     <link rel="shortcut icon" href="server-icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <style>
-        /* Sekcja nagłówka */
         .art-header {
             position: relative;
             text-align: center;
             margin: 0 0 50px 0;
             height: 340px;
         }
+
         .art-title {
             font-family: 'VT323', monospace;
             font-size: 6rem;
             color: #ff00ff;
-            text-shadow:
-                0 0 12px #ff00ff,
-                0 0 24px #ff00ff,
-                0 0 36px #ff00ff,
-                -4px -4px 0 #000,
-                4px -4px 0 #000,
-                -4px 4px 0 #000,
-                4px 4px 0 #000;
             letter-spacing: 10px;
-            position: relative;
-            z-index: 2;
             margin: 0;
             padding-top: 50px;
+            position: relative;
+            z-index: 2;
 
-            /* Dodana animacja pulsowania */
-            animation: neon-pulse 4s ease-in-out infinite;
+            /* CZARNY OBRYS – ZAWSZE */
+            text-shadow:
+                -4px -4px 0 #000,
+                 4px -4px 0 #000,
+                -4px  4px 0 #000,
+                 4px  4px 0 #000;
+
+            animation: neon-fade 5s ease-in-out infinite;
         }
 
-        @keyframes neon-pulse {
+        /* ANIMACJA: 0 → jasny → 0 */
+        @keyframes neon-fade {
             0%, 100% {
+                text-shadow:
+                    -4px -4px 0 #000,
+                     4px -4px 0 #000,
+                    -4px  4px 0 #000,
+                     4px  4px 0 #000;
+            }
+
+            50% {
                 text-shadow:
                     0 0 12px #ff00ff,
                     0 0 24px #ff00ff,
                     0 0 36px #ff00ff,
                     -4px -4px 0 #000,
-                    4px -4px 0 #000,
-                    -4px 4px 0 #000,
-                    4px 4px 0 #000;
-            }
-            50% {
-                text-shadow:
-                    0 0 18px #ff00ff,
-                    0 0 36px #ff00ff,
-                    0 0 54px #ff00ff,
-                    -4px -4px 0 #000,
-                    4px -4px 0 #000,
-                    -4px 4px 0 #000,
-                    4px 4px 0 #000;
+                     4px -4px 0 #000,
+                    -4px  4px 0 #000,
+                     4px  4px 0 #000;
             }
         }
 
@@ -67,23 +65,26 @@
             image-rendering: pixelated;
             opacity: 0.85;
         }
+
         .gif-left {
             bottom: 30px;
             left: 8%;
             width: 170px;
         }
+
         .gif-center {
             top: 30px;
             left: 50%;
             transform: translateX(-50%);
             width: 210px;
         }
+
         .gif-right {
             bottom: 50px;
             right: 8%;
             width: 160px;
         }
-        /* Reszta bez zmian */
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -92,6 +93,7 @@
             margin: 0 auto 80px auto;
             padding: 0 20px;
         }
+
         .gallery-link {
             display: block;
             background: #000;
@@ -105,78 +107,84 @@
             box-shadow: 0 0 10px #ff00ff;
             transition: all 0.3s;
         }
+
         .gallery-link:hover {
             background: #ff00ff;
             color: #000;
             box-shadow: 0 0 25px #ff00ff;
             transform: translateY(-6px);
         }
+
         @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .gallery-link {
-                font-size: 1.6rem;
-                padding: 12px 8px;
-            }
             .art-header {
                 height: 300px;
             }
+
             .art-title {
                 font-size: 4.5rem;
                 letter-spacing: 6px;
             }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>SMUKLY NETWORK</h1>
-        </header>
-        <div class="ticker-wrapper">
-            <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
-        </div>
-        <div class="main">
-            <div class="menu">
-                <a href="index.html">STRONA GŁÓWNA</a>
-                <a href="o-mnie.html">O MNIE</a>
-                <a href="sprzet.html">SPRZĘT</a>
-                <a href="muzyka.html">MUZYKA</a>
-                <a href="sztuka.html" class="active">SZTUKA</a>
-                <a href="blog.html">BLOG</a>
-                <a href="kontakt.html">KONTAKT</a>
-                <a href="info.html">INFO 24/7</a>
-            </div>
-            <div class="content">
-                <div class="art-header">
-                    <!-- GIF-y bez zmian -->
-                    <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left" alt="Retro TV">
-                    <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center" alt="Lava Lamp">
-                    <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right" alt="Stop Light">
-                    <div class="art-title">SZTUKA</div>
-                </div>
-                <div class="gallery-grid">
-                    <a href="galeria-1.html" class="gallery-link">Seria / Galeria 1</a>
-                    <a href="galeria-2.html" class="gallery-link">Seria / Galeria 2</a>
-                    <a href="galeria-3.html" class="gallery-link">Seria / Galeria 3</a>
-                    <a href="galeria-4.html" class="gallery-link">Seria / Galeria 4</a>
-                </div>
-            </div>
-            <div class="sidebar">
-                <img src="https://anlucas.neocities.org/face.gif">
-                <img src="https://anlucas.neocities.org/hash_now.gif">
-                <img src="https://anlucas.neocities.org/lilrib.gif">
-                <img src="https://anlucas.neocities.org/Winamp.gif">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
-                <img src="https://anlucas.neocities.org/zxcert.png">
-                <div style="margin-top: 15px;">
-                    <img src="https://anlucas.neocities.org/happynewyear.gif" style="border: none;">
-                </div>
-            </div>
-        </div>
-        <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
+<div class="container">
+
+    <header>
+        <h1>SMUKLY NETWORK</h1>
+    </header>
+
+    <div class="ticker-wrapper">
+        <div class="ticker">wkrótce nowe wpisy na stronie: smukly network</div>
     </div>
+
+    <div class="main">
+
+        <div class="menu">
+            <a href="index.html">STRONA GŁÓWNA</a>
+            <a href="o-mnie.html">O MNIE</a>
+            <a href="sprzet.html">SPRZĘT</a>
+            <a href="muzyka.html">MUZYKA</a>
+            <a href="sztuka.html" class="active">SZTUKA</a>
+            <a href="blog.html">BLOG</a>
+            <a href="kontakt.html">KONTAKT</a>
+            <a href="info.html">INFO 24/7</a>
+        </div>
+
+        <div class="content">
+            <div class="art-header">
+                <img src="https://anlucas.neocities.org/tv_gray.gif" class="art-gif gif-left">
+                <img src="https://anlucas.neocities.org/lavalamp_blue.gif" class="art-gif gif-center">
+                <img src="https://anlucas.neocities.org/stoplite.gif" class="art-gif gif-right">
+                <div class="art-title">SZTUKA</div>
+            </div>
+
+            <div class="gallery-grid">
+                <a href="galeria-1.html" class="gallery-link">Seria / Galeria 1</a>
+                <a href="galeria-2.html" class="gallery-link">Seria / Galeria 2</a>
+                <a href="galeria-3.html" class="gallery-link">Seria / Galeria 3</a>
+                <a href="galeria-4.html" class="gallery-link">Seria / Galeria 4</a>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <img src="https://anlucas.neocities.org/face.gif">
+            <img src="https://anlucas.neocities.org/hash_now.gif">
+            <img src="https://anlucas.neocities.org/lilrib.gif">
+            <img src="https://anlucas.neocities.org/Winamp.gif">
+            <img src="https://anlucas.neocities.org/apple_fatal_error.gif">
+            <img src="https://anlucas.neocities.org/zxcert.png">
+        </div>
+
+    </div>
+
+    <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
+</div>
 </body>
 </html>
