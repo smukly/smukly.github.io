@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria 1 - SMUKLY NETWORK</title>
     <link rel="icon" href="server-icon.png" type="image/png">
-<link rel="shortcut icon" href="server-icon.png" type="image/png">
+    <link rel="shortcut icon" href="server-icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -26,7 +26,6 @@
             margin: 0 0 40px 0;
             padding-top: 20px;
         }
-
         /* Kafelkowa galeria – czysta, bez ramek */
         .gallery-container {
             max-width: 1100px;
@@ -35,12 +34,10 @@
             column-count: 3;
             column-gap: 12px;
         }
-
         .gallery-item {
             break-inside: avoid;
             margin-bottom: 10px;
         }
-
         .gallery-item img {
             width: 100%;
             height: auto;
@@ -49,13 +46,12 @@
             box-shadow: 0 0 6px rgba(255, 0, 255, 0.3);
             transition: all 0.2s ease;
             image-rendering: pixelated;
+            cursor: pointer; /* dodane – kursor pokazuje, że można kliknąć */
         }
-
         .gallery-item img:hover {
             transform: scale(1.03);
             box-shadow: 0 0 14px rgba(255, 0, 255, 0.6);
         }
-
         @media (max-width: 1000px) { .gallery-container { column-count: 2; } }
         @media (max-width: 600px) { .gallery-container { column-count: 1; } }
     </style>
@@ -78,19 +74,23 @@
                 <a href="blog.html">BLOG</a>
                 <a href="kontakt.html">KONTAKT</a>
                 <a href="info.html">INFO 24/7</a>
-
                 <hr style="border: 0; border-top: 1px solid #ffff00; margin: 15px 20px; opacity: 0.3;">
                 <a href="sztuka.html" style="background: rgba(102, 0, 204, 0.3); color: #fff; border: 1px solid #ffff00; font-size: 14px; padding: 8px; margin: 0 10px; text-decoration: none; display: block; text-align: center; border-radius: 5px;">POWRÓT</a>
             </div>
             <div class="content">
                 <div class="art-title-small">GALERIA 1</div>
-
-                <!-- Tu są Twoje zdjęcia – zamień nazwy plików na swoje -->
+                <!-- Tu są Twoje zdjęcia – z dodanym onclick -->
                 <div class="gallery-container">
-                    <div class="gallery-item"><img src="obraz8.jpeg" alt="Praca 1"></div>
-                    <div class="gallery-item"><img src="obraz3.jpg" alt="Praca 3"></div>
-                    <div class="gallery-item"><img src="obraz7.jpeg" alt="Praca 2"></div>
-                    <!-- Dodawaj kolejne linijki w ten sam sposób -->
+                    <div class="gallery-item">
+                        <img src="obraz8.jpeg" alt="Praca 1" onclick="openLightbox('obraz8.jpeg')" style="cursor: pointer;">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="obraz3.jpg" alt="Praca 3" onclick="openLightbox('obraz3.jpg')" style="cursor: pointer;">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="obraz7.jpeg" alt="Praca 2" onclick="openLightbox('obraz7.jpeg')" style="cursor: pointer;">
+                    </div>
+                    <!-- Dodawaj kolejne zdjęcia w ten sam sposób -->
                 </div>
             </div>
             <div class="sidebar">
@@ -111,5 +111,27 @@
         </div>
         <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
     </div>
+
+    <!-- === DODANE: Lightbox retro === -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">X</span>
+        <img id="lightbox-img" src="" alt="Powiększone dzieło">
+    </div>
+
+    <script>
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+    // Zamknij po kliknięciu w tło
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+    </script>
+    <!-- === KONIEC DODANEGO KODU === -->
+
 </body>
 </html>
