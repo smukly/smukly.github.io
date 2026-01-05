@@ -54,9 +54,10 @@
                     "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
                 </div>
 
-                <!-- przycisk WIĘCEJ INFORMACJI w stylu SPOTIFY -->
+                <!-- przycisk WIĘCEJ INFORMACJI – styl jak w MUZYKA po hoverze -->
                 <div style="text-align: center; margin: 40px 0 30px 0;">
                     <a href="wiecej-info.html"
+                       class="more-info-btn"
                        style="display: inline-block;
                               padding: 10px 50px;
                               font-size: 18px;
@@ -68,25 +69,24 @@
                               text-transform: uppercase;
                               letter-spacing: 2px;
                               box-shadow: 0 0 10px #00ff9d60,
-                                          inset 0 0 8px #00ff9d40;
-                              transition: all 0.18s ease;
+                                          inset 0 0 8px #00ff9d30;
+                              transition: all 0.2s ease;
                               border-radius: 2px;">
                         WIĘCEJ INFORMACJI
                     </a>
                 </div>
 
                 <style>
-                    .content a[href="wiecej-info.html"]:hover,
-                    .content a[href="wiecej-info.html"]:focus {
-                        color: #00ff9d;
-                        box-shadow: 0 0 24px #00ff9d,
-                                    0 0 40px #00ff9dcc,
-                                    inset 0 0 12px #00ff9d70;
-                        transform: translateY(-1px);
-                        background: #000000;
-                    }
-                </style>
-
+    .more-info-btn:hover,
+    .more-info-btn:focus {
+        background: #00ff9d;
+        color: #000000;
+        box-shadow: 0 0 18px #00ff9d,
+                    0 0 35px #00ff9dcc,
+                    inset 0 0 10px #000000aa;
+        transform: translateY(-1px);
+    }
+</style>
             </div>
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif" alt="Face">
