@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria 4 - SMUKLY NETWORK</title>
     <link rel="icon" href="server-icon.png" type="image/png">
-<link rel="shortcut icon" href="server-icon.png" type="image/png">
+    <link rel="shortcut icon" href="server-icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -27,7 +27,7 @@
             padding-top: 20px;
         }
 
-        /* Kafelkowa galeria – czysta, bez ramek */
+        /* Kafelkowa galeria */
         .gallery-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -49,6 +49,7 @@
             box-shadow: 0 0 6px rgba(255, 0, 255, 0.3);
             transition: all 0.2s ease;
             image-rendering: pixelated;
+            cursor: pointer; /* pokazuje, że można kliknąć */
         }
 
         .gallery-item img:hover {
@@ -58,6 +59,61 @@
 
         @media (max-width: 1000px) { .gallery-container { column-count: 2; } }
         @media (max-width: 600px) { .gallery-container { column-count: 1; } }
+
+        /* Lightbox z płynną animacją – retro styl */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 30px #0f0;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-family: monospace;
+            font-size: 60px;
+            color: #0f0;
+            text-shadow: 0 0 15px #0f0;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #0ff;
+            text-shadow: 0 0 20px #0ff;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -85,10 +141,53 @@
             <div class="content">
                 <div class="art-title-small">GALERIA 4</div>
 
-                <!-- Tu są Twoje zdjęcia – zamień nazwy plików na swoje -->
                 <div class="gallery-container">
-
-                    <!-- Dodawaj kolejne linijki w ten sam sposób -->
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o2.jpeg" alt="Praca 1" onclick="openLightbox('sieciowe_sztuki/o2.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o3.jpeg" alt="Praca 2" onclick="openLightbox('sieciowe_sztuki/o3.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o1.jpeg" alt="Praca 3" onclick="openLightbox('sieciowe_sztuki/o1.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o9.jpeg" alt="Praca 4" onclick="openLightbox('sieciowe_sztuki/o9.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o12.jpeg" alt="Praca 5" onclick="openLightbox('sieciowe_sztuki/o12.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o7.jpeg" alt="Praca 6" onclick="openLightbox('sieciowe_sztuki/o7.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o8.jpeg" alt="Praca 7" onclick="openLightbox('sieciowe_sztuki/o8.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o15.jpeg" alt="Praca 8" onclick="openLightbox('sieciowe_sztuki/o15.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o4.jpeg" alt="Praca 9" onclick="openLightbox('sieciowe_sztuki/o4.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o11.jpeg" alt="Praca 10" onclick="openLightbox('sieciowe_sztuki/o11.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o10.jpeg" alt="Praca 11" onclick="openLightbox('sieciowe_sztuki/o10.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o6.jpeg" alt="Praca 12" onclick="openLightbox('sieciowe_sztuki/o6.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o5.jpeg" alt="Praca 13" onclick="openLightbox('sieciowe_sztuki/o5.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o13.jpeg" alt="Praca 14" onclick="openLightbox('sieciowe_sztuki/o13.jpeg')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sieciowe_sztuki/o14.jpeg" alt="Praca 15" onclick="openLightbox('sieciowe_sztuki/o14.jpeg')">
+                    </div>
+                    <!-- Dodawaj kolejne zdjęcia w ten sam sposób: onclick="openLightbox('nazwa.jpg')" -->
                 </div>
             </div>
             <div class="sidebar">
@@ -109,5 +208,33 @@
         </div>
         <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
     </div>
+
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">X</span>
+        <img id="lightbox-img" src="" alt="Powiększone dzieło">
+    </div>
+
+    <script>
+    function openLightbox(src) {
+        const lightbox = document.getElementById('lightbox');
+        const img = document.getElementById('lightbox-img');
+        img.src = src;
+        lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('active');
+        setTimeout(() => {
+            document.getElementById('lightbox-img').src = '';
+        }, 400);
+    }
+
+    // Zamknij po kliknięciu w tło
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+    </script>
 </body>
 </html>
