@@ -31,17 +31,6 @@
             <div class="content">
                 <h2 style="color: #ffff00; text-align: center; border-bottom: 2px solid #00ff00;">SYSTEM INFO 24/7</h2>
                 
-                <!-- dodane elementy z screena -->
-                <div style="text-align:center; margin: 15px 0;">
-                    <div style="display:inline-block; background:#ffcc00; color:#000; font-family:'VT323',monospace; font-size:20px; padding:10px 35px; border:3px solid #000; border-radius:8px; box-shadow:0 0 0 5px #ffff00;">
-                        INFO 24/7
-                    </div>
-                </div>
-                <div style="text-align:center; margin:8px 0 20px;">
-                    <hr style="border:none; height:3px; background:#ffff00; width:55%; margin:0 auto;" />
-                </div>
-                <!-- koniec elementów z screena -->
-
                 <div class="info-grid">
                     <div class="info-box">
                         <span class="info-label">CZAS SYSTEMOWY:</span>
@@ -60,31 +49,43 @@
                         <span>POLAND / SMUKLY_NET</span>
                     </div>
                 </div>
+
                 <div style="margin-top: 30px; border: 1px dashed #ffff00; padding: 15px; font-style: italic; opacity: 0.8;">
                     "Smukly Network to nie tylko strona. To próba odtworzenia klimatu, w którym internet był miejscem dla ludzi, a nie dla algorytmów."
                 </div>
 
-                <!-- przycisk WIĘCEJ INFORMACJI - na dole, szerszy i mniejszy -->
-                <div style="text-align: center; margin: 30px 0 15px 0;">
-                    <a href="wiecej-info.html" style="
-                        display: block;
-                        max-width: 100%;
-                        width: 90%;
-                        margin: 0 auto;
-                        padding: 10px 20px;
-                        font-size: 17px;
-                        font-family: 'VT323', monospace;
-                        background: linear-gradient(to right, #00ff9d, #00b7ff);
-                        color: #000;
-                        border: 3px solid #00ff9d;
-                        text-decoration: none;
-                        text-transform: uppercase;
-                        letter-spacing: 2px;
-                        box-shadow: 0 0 12px rgba(0,255,157,0.5);
-                    ">
+                <!-- przycisk WIĘCEJ INFORMACJI na samym dole -->
+                <div style="text-align: center; margin: 35px 0 25px 0;">
+                    <a href="wiecej-info.html"
+                       style="display: inline-block;
+                              padding: 8px 40px;                /* mniejsza wysokość */
+                              font-size: 18px;
+                              font-family: 'VT323', monospace;
+                              background: #00ff9d;
+                              color: #000;
+                              text-decoration: none;
+                              text-transform: uppercase;
+                              letter-spacing: 2px;
+                              border: 2px solid #00ff9d;
+                              border-radius: 2px;
+                              transition: all 0.15s ease;
+                              box-shadow: 0 0 12px #00ff9d80;
+                              width: 85%;
+                              max-width: 420px;
+                              margin: 0 auto;">
                         WIĘCEJ INFORMACJI
-                    </a>
+                      </a>
                 </div>
+
+                <!-- efekt podświetlenia (lepiej wygląda w osobnym CSS, ale inline dla prostoty) -->
+                <style>
+                    .content a[href="wiecej-info.html"]:hover,
+                    .content a[href="wiecej-info.html"]:focus {
+                        background: #00ff9d;
+                        box-shadow: 0 0 22px #00ff9d, 0 0 36px #00ff9dcc;
+                        transform: translateY(-1px);
+                    }
+                </style>
 
             </div>
             <div class="sidebar">
@@ -107,6 +108,7 @@
             © 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE
         </footer>
     </div>
+
     <script>
         function updateClock() {
             const now = new Date();
