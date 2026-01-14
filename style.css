@@ -253,8 +253,6 @@ footer {
     color: #fff;
     text-shadow: 0 0 15px #0ff;
 }
-
-
 .big-button {
     display: inline-block;
     padding: 18px 48px;
@@ -272,4 +270,104 @@ footer {
 .big-button:hover {
     transform: scale(1.08);
     box-shadow: 0 0 40px #ffaa00ff, inset 0 0 20px #ffffff88;
+}
+/* ============================================= */
+/*          SEKCJA PROJEKTÓW - STUDIO SUL        */
+/* ============================================= */
+
+.projects-title {
+    text-align: center;
+    font-size: 2.4em;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff0080;
+    margin: 40px 0 50px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    margin: 0 15px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-card {
+    background: #000000;
+    border: 3px solid #00ff00;
+    box-shadow: 
+        0 0 0 4px #000000,
+        0 0 14px #00ff0099,
+        inset 0 0 8px #00ff0033;
+    padding: 18px;
+    transition: all 0.15s ease;
+    image-rendering: pixelated;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 0 0 4px #000000,
+        0 0 25px #00ff00cc,
+        inset 0 0 15px #00ff0066;
+}
+
+.card-title {
+    font-size: 1.9em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff00;
+    margin-bottom: 4px;
+}
+
+.card-date {
+    font-size: 1.05em;
+    color: #00ff00;
+    opacity: 0.65;
+    margin-bottom: 14px;
+}
+
+.card-cover {
+    width: 100%;
+    height: auto;
+    border: 2px solid #008800;
+    background: #000;
+    margin: 12px 0 18px;
+    image-rendering: pixelated;
+}
+
+.card-desc {
+    line-height: 1.35;
+    margin-bottom: 22px;
+    font-size: 1.12em;
+    color: #00ff99;
+}
+
+.card-links {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.card-links a {
+    color: #00ffff;
+    text-decoration: none;
+    text-shadow: 0 0 6px #00ffff;
+    margin: 0 8px;
+}
+
+.card-links a:hover {
+    color: #ffff00;
+    text-shadow: 0 0 12px #ffff00;
+}
+
+.coming-soon {
+    text-align: center;
+    margin: 70px 0 40px;
+    font-size: 1.3em;
+    opacity: 0.75;
+    color: #00ff88;
 }
