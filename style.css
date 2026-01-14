@@ -253,3 +253,22 @@ footer {
     color: #fff;
     text-shadow: 0 0 15px #0ff;
 }
+nowe
+.big-button {
+    display: inline-block;
+    padding: 18px 48px;
+    background: #ffaa00;
+    color: #000;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-decoration: none;
+    border: 3px solid #ffdd44;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ffaa00aa, inset 0 0 12px #ffffff44;
+    transition: all 0.25s;
+}
+
+.big-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px #ffaa00ff, inset 0 0 20px #ffffff88;
+}
