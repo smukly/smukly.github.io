@@ -1,118 +1,169 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDIO SUL – SMUKLY NETWORK</title>
-    <link rel="icon" href="server-icon.png" type="image/png">
-    <link rel="shortcut icon" href="server-icon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Dodatkowe style tylko dla nagłówka z obrazkiem */
-        .sul-header {
-            text-align: center;
-            padding: 50px 20px 80px;
-            background: #000;
-            position: relative;
-        }
-        .sul-logo {
-            max-width: 90%;
-            width: 700px;                /* główna szerokość na desktopie */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            filter: 
-                drop-shadow(0 0 8px #00ff9d)
-                drop-shadow(0 0 20px #00ff9d)
-                drop-shadow(0 0 40px #00cc77);
-            transition: transform 0.4s ease;
-        }
-        .sul-logo:hover {
-            transform: scale(1.03);
-        }
-        @media (max-width: 768px) {
-            .sul-logo {
-                width: 85%;
-            }
-            .sul-header {
-                padding: 40px 15px 60px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STUDIO SUL • Smuklky Network</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --neon: #39ff14;
+      --neon-dim: #1a8c00;
+      --accent: #ff00aa;
+      --text: #e0ffe0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Courier New", Courier, monospace;
+      line-height: 1.45;
+      min-height: 100dvh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 280px 1fr 220px;
+      gap: 2rem;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      background: linear-gradient(to right, #1a0033, #330066);
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 4px solid var(--neon);
+      text-shadow: 0 0 10px var(--neon);
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      letter-spacing: 8px;
+      color: var(--neon);
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.4);
+      padding: 1.5rem;
+      border-right: 2px dashed var(--neon-dim);
+    }
+
+    nav a {
+      display: block;
+      color: var(--neon);
+      text-decoration: none;
+      padding: 0.9rem 1.2rem;
+      margin: 0.4rem 0;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      border-color: var(--neon);
+      background: rgba(57,255,20,0.08);
+      color: white;
+      text-shadow: 0 0 6px var(--neon);
+    }
+
+    main {
+      padding: 2rem 1rem;
+    }
+
+    .intro {
+      font-size: 1.4rem;
+      color: var(--neon);
+      margin-bottom: 2rem;
+      text-shadow: 0 0 8px #000c;
+    }
+
+    .status {
+      background: rgba(0,255,0,0.07);
+      border: 1px dashed var(--neon);
+      padding: 1.2rem;
+      margin: 1.5rem 0;
+    }
+
+    aside {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 960px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      nav, aside {
+        border: none;
+        border-top: 2px dashed var(--neon-dim);
+        padding-top: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>SMUKLY NETWORK</h1>
-        </header>
-        
-        <div class="ticker-wrapper">
-            <div class="ticker">STUDIO SUL – w budowie / wkrótce więcej bangerów</div>
-        </div>
 
-        <!-- NOWY NAGŁÓWEK Z OBRAZKIEM -->
-        <div class="sul-header">
-            <img 
-                src="sieciowe_sztuki/studio-sul.png" 
-                alt="STUDIO SUL" 
-                class="sul-logo"
-            >
-        </div>
+<div class="container">
+  <header>
+    <h1>STUDIO SUL</h1>
+    <p>Smuklky Network • 2025</p>
+  </header>
 
-        <div class="main">
-            <div class="menu">
-                <a href="index.html" class="menu-btn">STRONA GŁÓWNA</a>
-                <a href="o-mnie.html" class="menu-btn">O MNIE</a>
-                <a href="sprzet.html" class="menu-btn">SPRZĘT</a>
-                <a href="muzyka.html" class="menu-btn">MUZYKA</a>
-                <a href="studio-sul.html" class="menu-btn active">STUDIO SUL</a>
-                <a href="sztuka.html" class="menu-btn">SZTUKA</a>
-                <a href="blog.html" class="menu-btn">BLOG</a>
-                <a href="kontakt.html" class="menu-btn">KONTAKT</a>
-                <a href="info.html" class="menu-btn">INFO 24/7</a>
-            </div>
+  <nav>
+    <a href="#" class="active">STRONA GŁÓWNA</a>
+    <a href="#">O MNIE</a>
+    <a href="#">SPRZĘT</a>
+    <a href="#">MUZYKA</a>
+    <a href="#">STUDIO SUL</a>
+    <a href="#">SZTUKA</a>
+    <a href="#">BLOG</a>
+    <a href="#">KONTAKT</a>
+    <a href="#">INFO 24/7</a>
+  </nav>
 
-            <div class="content">
-                <p>yooo – tu powstaje większość moich numerów.</p>
-                <p>Na razie studio jest w fazie rozwoju, ale już niedługo będzie tu więcej mięsa:</p>
-                <ul style="margin: 20px 0 30px 40px; font-size: 1.1em;">
-                    <li>pełny setup sprzętowy + soft</li>
-                    <li>akustyka i treatment</li>
-                    <li>projekty, które tu powstały</li>
-                    <li>fotki / wideo z wnętrza</li>
-                </ul>
-
-                <div style="text-align: center; margin: 50px 0 60px;">
-                    <a href="lista.html" class="retro-big-btn">
-                        LISTA PROJEKTÓW →
-                    </a>
-                </div>
-
-                <p style="text-align: center; opacity: 0.8; font-size: 1.1em;">
-                    Pełna lista bangerów i projektów → <strong><a href="lista.html">tutaj</a></strong><br>
-                    (przeniosłem projekty na osobną stronę, żeby nie zaśmiecać tej)
-                </p>
-            </div>
-
-            <div class="sidebar">
-                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
-                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
-                <img src="https://anlucas.neocities.org/prod_625_17265.gif" alt="Free Speach">
-                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
-                <img src="https://anlucas.neocities.org/bestview.gif" alt="Open Eyes">
-                <img src="https://anlucas.neocities.org/got_html.gif" alt="Got html">
-                <img src="https://anlucas.neocities.org/ribbon2.gif" alt="Strange World">
-                <img src="https://anlucas.neocities.org/christnow.gif" alt="Christ">
-                <img src="https://anlucas.neocities.org/email-icon.gif" alt="Any Questions">
-                <div style="margin-top: 15px;">
-                    <img src="https://anlucas.neocities.org/worldwideweb_badge.gif" alt="World Wide Web Badge" style="border: none;">
-                </div>
-            </div>
-        </div>
-
-        <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
+  <main>
+    <div class="intro">
+      yooo – tu powstaje większość moich numerów.
     </div>
+
+    <div class="status">
+      <strong>STUDIO SUL – w budowie</strong><br>
+      wkrótce więcej bangerów z wnętrza
+    </div>
+
+    <p>Na razie studio jest w fazie rozwoju, ale już niedługo będzie tu więcej mięsa:</p>
+    <ul>
+      <li>pełny setup sprzętowy + soft</li>
+      <li>akustyka i treatment</li>
+      <li>projekty, które tu powstały</li>
+      <li>fotki / video z wnętrza</li>
+    </ul>
+
+    <p style="margin-top:2rem">
+      Pełna <a href="#" style="color:var(--accent)">lista bangerów i projektów → tutaj</a>
+    </p>
+  </main>
+
+  <aside>
+    <!-- tu możesz zostawić te wszystkie śmieszne buttony jako easter eggi -->
+    <p style="text-align:center; margin:1rem 0; color:#555;">
+      best viewed with<br>
+      Open Eyes™<br>
+      StrangeWorld™<br>
+      CHRIST™
+    </p>
+  </aside>
+</div>
+
 </body>
 </html>
