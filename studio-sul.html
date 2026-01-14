@@ -8,15 +8,58 @@
     <link rel="shortcut icon" href="server-icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dodatkowe style tylko dla nagłówka z obrazkiem */
+        .sul-header {
+            text-align: center;
+            padding: 50px 20px 80px;
+            background: #000;
+            position: relative;
+        }
+        .sul-logo {
+            max-width: 90%;
+            width: 700px;                /* główna szerokość na desktopie */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: 
+                drop-shadow(0 0 8px #00ff9d)
+                drop-shadow(0 0 20px #00ff9d)
+                drop-shadow(0 0 40px #00cc77);
+            transition: transform 0.4s ease;
+        }
+        .sul-logo:hover {
+            transform: scale(1.03);
+        }
+        @media (max-width: 768px) {
+            .sul-logo {
+                width: 85%;
+            }
+            .sul-header {
+                padding: 40px 15px 60px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>SMUKLY NETWORK</h1>
         </header>
+        
         <div class="ticker-wrapper">
             <div class="ticker">STUDIO SUL – w budowie / wkrótce więcej bangerów</div>
         </div>
+
+        <!-- NOWY NAGŁÓWEK Z OBRAZKIEM -->
+        <div class="sul-header">
+            <img 
+                src="sieciowe_sztuki/studio-sul.png" 
+                alt="STUDIO SUL" 
+                class="sul-logo"
+            >
+        </div>
+
         <div class="main">
             <div class="menu">
                 <a href="index.html" class="menu-btn">STRONA GŁÓWNA</a>
@@ -31,112 +74,6 @@
             </div>
 
             <div class="content">
-
-                <!-- === WYBÓR NAGŁÓWKA RETRO – odkomentuj jeden z nich === -->
-
-                <!-- Wariant 1 – Klasyczny zielony CRT / phosphor terminal (najbezpieczniejszy i najbardziej retro) -->
-                <div style="
-                    text-align: center;
-                    padding: 70px 20px 90px;
-                    background: #000;
-                    color: #00ff41;
-                    font-family: 'Courier New', Courier, monospace;
-                    text-shadow: 
-                        0 0 4px #00ff41,
-                        0 0 12px #00ff41,
-                        0 0 24px #00c030,
-                        0 0 36px #009922;
-                    letter-spacing: 2px;
-                    line-height: 1.1;
-                ">
-                    <div style="font-size: 5.4rem; font-weight: bold; margin-bottom: 0.15em;">
-                        STUDIO SUL
-                    </div>
-                    <div style="font-size: 2.3rem; opacity: 0.92;">
-                        miejsce narodzin
-                    </div>
-                    <div style="font-size: 3.1rem; font-weight: bold; margin-top: 0.05em;">
-                        bangerów
-                    </div>
-                </div>
-
-                <!-- 
-                Wariant 2 – Neon + lekki glitch (bardziej agresywny cyberpunk)
-                <div style="
-                    text-align: center;
-                    padding: 80px 20px;
-                    background: #0a001f;
-                    color: #39ff14;
-                    font-family: 'Courier New', Courier, monospace;
-                    text-shadow: 
-                        0 0 6px #39ff14,
-                        0 0 18px #39ff14,
-                        0 0 35px #00cc00,
-                        0 0 70px #009900;
-                    animation: glitch 5s infinite alternate;
-                ">
-                    <div style="
-                        font-size: 5.9rem;
-                        font-weight: bold;
-                        letter-spacing: 7px;
-                        text-transform: uppercase;
-                        margin-bottom: 0.1em;
-                    ">
-                        STUDIO SUL
-                    </div>
-                    <div style="font-size: 2.4rem; letter-spacing: 2px; opacity: 0.9;">
-                        miejsce narodzin <span style="color:#ffff00; font-weight:bold;">bangerów</span>
-                    </div>
-                    <style>
-                        @keyframes glitch {
-                            0%, 100% { transform: translate(0); }
-                            20% { transform: translate(-3px, 3px); }
-                            40% { transform: translate(3px, -3px); }
-                            65% { transform: translate(-2px, 2px); }
-                        }
-                    </style>
-                </div>
-                -->
-
-                <!-- 
-                Wariant 3 – Synthwave / vaporwave pulsujący glow (najbardziej klimatyczny, ale delikatniejszy)
-                <div style="
-                    text-align: center;
-                    padding: 90px 30px;
-                    background: linear-gradient(to bottom, #0f0c29, #000814);
-                    color: #00ff9d;
-                    font-family: 'Courier New', Courier, monospace;
-                    text-shadow: 
-                        0 0 8px #00ff9d,
-                        0 0 22px #00ff9d,
-                        0 0 45px #00cc77,
-                        0 0 90px #009955;
-                    letter-spacing: 3px;
-                ">
-                    <div style="
-                        font-size: 6.6rem;
-                        font-weight: bold;
-                        margin-bottom: 0.1em;
-                        animation: pulse 4s infinite alternate;
-                    ">
-                        STUDIO SUL
-                    </div>
-                    <div style="font-size: 2.6rem; opacity: 0.9;">
-                        miejsce narodzin
-                        <br>
-                        <span style="font-size: 3.4rem; color: #ffff66; font-weight: bold;">bangerów</span>
-                    </div>
-                    <style>
-                        @keyframes pulse {
-                            from { text-shadow: 0 0 12px #00ff9d, 0 0 35px #00ff9d; }
-                            to   { text-shadow: 0 0 28px #00ff9d, 0 0 80px #00ff9d, 0 0 140px #00cc77; }
-                        }
-                    </style>
-                </div>
-                -->
-
-                <!-- === KONIEC WYBORU NAGŁÓWKA === -->
-
                 <p>yooo – tu powstaje większość moich numerów.</p>
                 <p>Na razie studio jest w fazie rozwoju, ale już niedługo będzie tu więcej mięsa:</p>
                 <ul style="margin: 20px 0 30px 40px; font-size: 1.1em;">
@@ -145,11 +82,13 @@
                     <li>projekty, które tu powstały</li>
                     <li>fotki / wideo z wnętrza</li>
                 </ul>
+
                 <div style="text-align: center; margin: 50px 0 60px;">
                     <a href="lista.html" class="retro-big-btn">
                         LISTA PROJEKTÓW →
                     </a>
                 </div>
+
                 <p style="text-align: center; opacity: 0.8; font-size: 1.1em;">
                     Pełna lista bangerów i projektów → <strong><a href="lista.html">tutaj</a></strong><br>
                     (przeniosłem projekty na osobną stronę, żeby nie zaśmiecać tej)
@@ -172,6 +111,7 @@
                 </div>
             </div>
         </div>
+
         <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
     </div>
 </body>
