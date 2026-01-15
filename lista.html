@@ -11,156 +11,148 @@
     <style>
         .ascii-table {
             width: 100%;
-            max-width: 900px;
-            margin: 30px auto;
+            max-width: 920px;
+            margin: 25px auto;
             font-family: 'VT323', monospace;
-            color: #d500f9;
+            color: #00ffff;
             text-align: left;
             border-collapse: collapse;
-            letter-spacing: 1.2px;
-            box-shadow: 0 0 18px rgba(213, 0, 249, 0.35);
+            letter-spacing: 1px;
+            background: rgba(10, 0, 40, 0.75);
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
         }
+
         .ascii-table th, .ascii-table td {
-            padding: 10px 14px;
-            border: 1.5px solid #d500f9;
+            padding: 12px 16px;
+            border: 1.5px solid #ff00ff;
         }
+
         .ascii-table thead th {
-            background: rgba(102, 0, 204, 0.25);
+            background: rgba(120, 0, 180, 0.6);
             color: #ffff00;
-            text-shadow: 0 0 6px #ffff00;
+            text-shadow: 0 0 8px #ffff00;
             text-transform: uppercase;
-            font-size: 1.35em;
+            font-size: 1.4em;
         }
-        .ascii-table tr:nth-child(even) {
-            background: rgba(40, 0, 80, 0.4);
+
+        .ascii-table tbody td {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
         }
+
         .ascii-table a {
-            color: #00f0ff;
+            color: #00ffff;
             text-decoration: none;
-            text-shadow: 0 0 4px rgba(0, 240, 255, 0.7);
         }
+
         .ascii-table a:hover {
             color: #ffff00;
             text-shadow: 0 0 12px #ffff00;
         }
 
-        /* ── Dwukolorowy neon CRT + linie ── */
+        /* ── Neonowy, dwukolorowy tytuł z CRT liniami ── */
         .title-header {
-            color: #ff00d9;                     /* Główny kolor: mocny magenta */
-            font-size: 3.6em;
-            text-align: center;
-            margin: 70px 0 45px;
-            letter-spacing: 7px;
-            font-family: 'VT323', monospace;
-            text-shadow: 
-                0 0 8px #ff00d9,
-                0 0 18px #ff00d9,
-                4px 4px 0 #00f0ff,             /* przesunięty cyan cień */
-                -1px -1px 6px #00f0ff;         /* delikatny dodatkowy glow cyan */
             position: relative;
-            filter: brightness(1.15);
+            font-family: 'VT323', monospace;
+            font-size: 3.8em;
+            text-align: center;
+            margin: 50px 0 30px;
+            letter-spacing: 8px;
+            color: #ff00ff;
+            text-shadow: 
+                0 0 7px #ff00ff,
+                0 0 15px #ff00ff,
+                3px 3px 0 #00ffff,
+                -2px -2px 0 #00ffff;
+            animation: subtle-glitch 4s infinite alternate;
+        }
+
+        .title-header span {
+            position: relative;
+            z-index: 2;
         }
 
         .title-header::before,
         .title-header::after {
             content: "";
             position: absolute;
-            left: 8%;
-            right: 8%;
-            height: 2px;
-            background: rgba(213, 0, 249, 0.45);   /* delikatny magenta pasek */
-            pointer-events: none;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            background: rgba(255, 0, 255, 0.5);
+            box-shadow: 0 0 12px rgba(255, 0, 255, 0.7);
         }
 
-        .title-header::before { top: -14px; }
-        .title-header::after  { bottom: -14px; }
+        .title-header::before { top: -18px; }
+        .title-header::after  { bottom: -18px; }
+
+        @keyframes subtle-glitch {
+            0%, 100% { transform: translate(0, 0); }
+            20%  { transform: translate(-1.5px, 1.5px); }
+            40%  { transform: translate(1px, -1px); }
+            60%  { transform: translate(-0.8px, 0.8px); }
+        }
 
         .soon-text {
-            color: #d500f9;
-            text-shadow: 0 0 8px #d500f9;
-            opacity: 0.75;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+            font-style: italic;
+            text-align: center;
+            padding: 12px;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>SMUKLY NETWORK</h1>
-        </header>
-        <div class="ticker-wrapper">
-            <div class="ticker">LISTA PROJEKTÓW / BANGERÓW – Studio SUL 2026</div>
-        </div>
-        <div class="main">
-            <div class="menu">
-                <a href="index.html" class="menu-btn">STRONA GŁÓWNA</a>
-                <a href="o-mnie.html" class="menu-btn">O MNIE</a>
-                <a href="sprzet.html" class="menu-btn">SPRZĘT</a>
-                <a href="muzyka.html" class="menu-btn">MUZYKA</a>
-                <a href="studio-sul.html" class="menu-btn">STUDIO SUL</a>
-                <a href="sztuka.html" class="menu-btn">SZTUKA</a>
-                <a href="blog.html" class="menu-btn">BLOG</a>
-                <a href="kontakt.html" class="menu-btn">KONTAKT</a>
-                <a href="info.html" class="menu-btn">INFO 24/7</a>
-                <hr style="border: 0; border-top: 1px solid #ffff00; margin: 15px 20px; opacity: 0.3;">
-                <a href="studio-sul.html" style="background: rgba(102, 0, 204, 0.3); color: #fff; border: 1px solid #ffff00; font-size: 14px; padding: 8px; margin: 0 10px; text-decoration: none; display: block; text-align: center; border-radius: 5px;">POWRÓT</a>
-            </div>
-            <div class="content">
-                <h2 class="title-header">SUL PROJECT ARCHIVE</h2>
-              
-                <table class="ascii-table">
-                    <thead>
-                        <tr>
-                            <th style="width:45%">TYTUŁ</th>
-                            <th style="width:30%">ARTYSTA</th>
-                            <th style="width:25%; text-align:center;">RELEASE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="last-breath-of-normality.html">LAST BREATHS OF NORMALITY</a></td>
-                            <td>SMUKLY</td>
-                            <td style="text-align:center;">15.09.2025</td>
-                        </tr>
-                        <tr>
-                            <td><a href="flowery-darkness.html">FLOWERY DARKNESS</a></td>
-                            <td>SMUKLY</td>
-                            <td style="text-align:center;">01.10.2025</td>
-                        </tr>
-                        <tr>
-                            <td><a href="blackout.html">BLACKOUT</a></td>
-                            <td>SMUKLY</td>
-                            <td style="text-align:center;">05.10.2025</td>
-                        </tr>
-                        <tr>
-                            <td><a href="bleed-out.html">BLEED OUT, pt.1/2</a></td>
-                            <td>SMUKLY</td>
-                            <td style="text-align:center;">11/22.11.2025</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" class="soon-text" style="text-align:center; font-style:italic;">...więcej dropów wkrótce...</td>
-                        </tr>
-                    </tbody>
-                </table>
+<body style="background: #0a001a; color: #e0e0ff; font-family: 'VT323', monospace;">
 
-                <p style="text-align: center; margin-top: 40px; font-size: 1.3em; opacity: 0.85; color: #00f0ff; text-shadow: 0 0 6px #00f0ff;">
-                    kliknij tytuł - znajdziesz tam info o albumie 🔥
-                </p>
-            </div>
-            <div class="sidebar">
-                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
-                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
-                <img src="https://anlucas.neocities.org/prod_625_17265.gif" alt="Free Speach">
-                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
-                <img src="https://anlucas.neocities.org/bestview.gif" alt="Open Eyes">
-                <img src="https://anlucas.neocities.org/got_html.gif" alt="Got html">
-                <img src="https://anlucas.neocities.org/ribbon2.gif" alt="Strange World">
-                <img src="https://anlucas.neocities.org/christnow.gif" alt="Christ">
-                <img src="https://anlucas.neocities.org/email-icon.gif" alt="Any Questions">
-                <div style="margin-top: 15px;"><img src="https://anlucas.neocities.org/worldwideweb_badge.gif" style="border: none;"></div>
-            </div>
+    <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 15px;">
+        <div class="content" style="text-align: center;">
+            <h2 class="title-header">
+                <span>SUL PROJECT ARCHIVE</span>
+            </h2>
+
+            <hr style="border: 0; height: 2px; background: linear-gradient(to right, transparent, #ff00ff, transparent); margin: 10px 0 25px;">
+
+            <table class="ascii-table">
+                <thead>
+                    <tr>
+                        <th>TYTUŁ</th>
+                        <th>ARTYSTA</th>
+                        <th>RELEASE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="last-breath-of-normality.html">LAST BREATHS OF NORMALITY</a></td>
+                        <td>SMUKLY</td>
+                        <td>15.09.2025</td>
+                    </tr>
+                    <tr>
+                        <td><a href="flowery-darkness.html">FLOWERY DARKNESS</a></td>
+                        <td>SMUKLY</td>
+                        <td>01.10.2025</td>
+                    </tr>
+                    <tr>
+                        <td><a href="blackout.html">BLACKOUT</a></td>
+                        <td>SMUKLY</td>
+                        <td>05.10.2025</td>
+                    </tr>
+                    <tr>
+                        <td><a href="bleed-out.html">BLEED OUT, pt.1/2</a></td>
+                        <td>SMUKLY</td>
+                        <td>11/22.11.2025</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="soon-text">...więcej dropów wkrótce...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 35px; font-size: 1.4em; color: #00ffff; text-shadow: 0 0 8px #00ffff;">
+                kliknij tytuł – znajdziesz tam info o albumie 🔥
+            </p>
         </div>
-        <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
     </div>
+
 </body>
 </html>
