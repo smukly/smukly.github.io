@@ -44,35 +44,36 @@
             text-shadow: 0 0 12px #ffff00;
         }
 
-        /* ── Wariant C – Bardzo retro CRT + delikatne linie ── */
+        /* ── Dwukolorowy neon CRT + linie ── */
         .title-header {
-            color: #e900ff;
-            font-size: 3.5em;
+            color: #ff00d9;                     /* Główny kolor: mocny magenta */
+            font-size: 3.6em;
             text-align: center;
-            margin: 60px 0 40px;
-            letter-spacing: 6px;
+            margin: 70px 0 45px;
+            letter-spacing: 7px;
+            font-family: 'VT323', monospace;
             text-shadow: 
-                2px 2px 0 #000,
-                -2px -2px 0 #000,
-                0 0 15px #ff00aa,
-                0 0 30px #d500f9;
+                0 0 8px #ff00d9,
+                0 0 18px #ff00d9,
+                4px 4px 0 #00f0ff,             /* przesunięty cyan cień */
+                -1px -1px 6px #00f0ff;         /* delikatny dodatkowy glow cyan */
             position: relative;
-            filter: brightness(1.1);
+            filter: brightness(1.15);
         }
 
         .title-header::before,
         .title-header::after {
             content: "";
             position: absolute;
-            left: 10%;
-            right: 10%;
+            left: 8%;
+            right: 8%;
             height: 2px;
-            background: rgba(213, 0, 249, 0.4);
+            background: rgba(213, 0, 249, 0.45);   /* delikatny magenta pasek */
             pointer-events: none;
         }
 
-        .title-header::before { top: -12px; }
-        .title-header::after  { bottom: -12px; }
+        .title-header::before { top: -14px; }
+        .title-header::after  { bottom: -14px; }
 
         .soon-text {
             color: #d500f9;
