@@ -14,7 +14,7 @@
             max-width: 900px;
             margin: 30px auto;
             font-family: 'VT323', monospace;
-            color: #d500f9; /* mocny fiolet/magenta – główny akcent SUL */
+            color: #d500f9;
             text-align: left;
             border-collapse: collapse;
             letter-spacing: 1.2px;
@@ -25,17 +25,17 @@
             border: 1.5px solid #d500f9;
         }
         .ascii-table thead th {
-            background: rgba(102, 0, 204, 0.25); /* ciemniejszy fiolet jak w przyciskach SUL */
-            color: #ffff00; /* klasyczny żółty akcent */
+            background: rgba(102, 0, 204, 0.25);
+            color: #ffff00;
             text-shadow: 0 0 6px #ffff00;
             text-transform: uppercase;
             font-size: 1.35em;
         }
         .ascii-table tr:nth-child(even) {
-            background: rgba(40, 0, 80, 0.4); /* bardzo ciemny fiolet – tło wierszy */
+            background: rgba(40, 0, 80, 0.4);
         }
         .ascii-table a {
-            color: #00f0ff; /* neon cyjan – linki */
+            color: #00f0ff;
             text-decoration: none;
             text-shadow: 0 0 4px rgba(0, 240, 255, 0.7);
         }
@@ -43,24 +43,39 @@
             color: #ffff00;
             text-shadow: 0 0 12px #ffff00;
         }
+
+        /* ── Retro-futurystyczny scanline efekt ── */
         .title-header {
             color: #d500f9;
-            font-size: 2.8em;
+            font-size: 3.3em;
             text-align: center;
-            margin: 45px 0 35px;
-            text-shadow:
-                0 0 8px #d500f9,
-                0 0 16px #9900ff,
-                2px 2px 0 #000,
-                -2px -2px 0 #000;
-            letter-spacing: 5px;
-            animation: subtle-flicker 5s infinite alternate;
+            margin: 60px 0 45px;
+            letter-spacing: 9px;
+            text-shadow: 
+                0 0 12px #d500f9,
+                0 0 25px #ff00aa;
+            position: relative;
         }
-        @keyframes subtle-flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.92; }
-            75% { opacity: 0.97; }
+
+        .title-header::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(213, 0, 249, 0.68) 50%,
+                transparent 100%
+            );
+            pointer-events: none;
+            animation: scanline 10s linear infinite;
         }
+
+        @keyframes scanline {
+            0%   { transform: translateY(-100%); }
+            100% { transform: translateY(100%);  }
+        }
+
         .soon-text {
             color: #d500f9;
             text-shadow: 0 0 8px #d500f9;
@@ -92,7 +107,7 @@
             </div>
             <div class="content">
                 <h2 class="title-header">SUL PROJECT ARCHIVE</h2>
-               
+              
                 <table class="ascii-table">
                     <thead>
                         <tr>
@@ -128,6 +143,7 @@
                         </tr>
                     </tbody>
                 </table>
+
                 <p style="text-align: center; margin-top: 40px; font-size: 1.3em; opacity: 0.85; color: #00f0ff; text-shadow: 0 0 6px #00f0ff;">
                     kliknij tytuł - znajdziesz tam info o albumie 🔥
                 </p>
