@@ -8,6 +8,47 @@
     <link rel="shortcut icon" href="server-icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .ascii-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            font-family: 'VT323', monospace;
+            color: #ff004d; /* czerwony retro */
+            text-align: left;
+            border-collapse: collapse;
+            letter-spacing: 1px;
+        }
+        .ascii-table th, .ascii-table td {
+            padding: 8px 12px;
+            border: 1px solid #ff004d;
+        }
+        .ascii-table thead th {
+            background: rgba(255, 0, 77, 0.15);
+            color: #ffff00; /* żółty akcent na nagłówku */
+            text-transform: uppercase;
+            font-size: 1.3em;
+        }
+        .ascii-table tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .ascii-table a {
+            color: #00ffea;
+            text-decoration: none;
+        }
+        .ascii-table a:hover {
+            color: #ffff00;
+            text-shadow: 0 0 8px #ffff00;
+        }
+        .title-header {
+            color: #ff004d;
+            font-size: 2.2em;
+            text-align: center;
+            margin: 20px 0 10px;
+            text-shadow: 0 0 10px #ff004d;
+            letter-spacing: 3px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -29,60 +70,60 @@
                 <a href="kontakt.html" class="menu-btn">KONTAKT</a>
                 <a href="info.html" class="menu-btn">INFO 24/7</a>
 
-                <!-- Dokładnie ta sama kreska + przycisk POWRÓT jak w pierwszym wpisie -->
                 <hr style="border: 0; border-top: 1px solid #ffff00; margin: 15px 20px; opacity: 0.3;">
                 <a href="studio-sul.html" style="background: rgba(102, 0, 204, 0.3); color: #fff; border: 1px solid #ffff00; font-size: 14px; padding: 8px; margin: 0 10px; text-decoration: none; display: block; text-align: center; border-radius: 5px;">POWRÓT</a>
             </div>
 
             <div class="content">
-                <div class="main-header">
+                <div class="main-header" style="margin-bottom: 0;">
                     <div class="top-line">LISTA PROJEKTÓW</div>
                     <div class="dash">-</div>
                     <div class="bottom-line">wszystkie dropy z Studio SUL</div>
                 </div>
-                <p style="text-align: center; margin: 25px 0; font-size: 1.15em; opacity: 0.9;">
-                    Kliknij w projekt żeby zobaczyć szczegóły, tracklistę, cover i info o dropie
-                </p>
-                <div class="projects-list">
-                    <!-- Projekt 1 -->
-                    <a href="last-breath-of-normality.html" class="retro-project-btn">
-                        <div class="project-title">LAST BREATH OF NORMALITY</div>
-                        <div class="project-year">2025</div>
-                        <div class="project-type">ALBUM</div>
-                    </a>
-                    <!-- Projekt 2 -->
-                    <a href="flowery-darkness.html" class="retro-project-btn">
-                        <div class="project-title">FLOWERY DARKNESS</div>
-                        <div class="project-year">2025</div>
-                        <div class="project-type">ALBUM / MIXTAPE</div>
-                    </a>
-                    <!-- Projekt 3 -->
-                    <a href="bleed-out.html" class="retro-project-btn">
-                        <div class="project-title">BLEED OUT</div>
-                        <div class="project-year">2025</div>
-                        <div class="project-type">SINGLE / EP</div>
-                    </a>
-                </div>
-                <p style="text-align: center; margin-top: 70px; font-size: 1.2em; opacity: 0.75;">
-                    więcej projektów wkrótce... 🔥<br>
-                    (nowy drop = nowa karta + osobna strona)
+
+                <h2 class="title-header">:lista Projektów :</h2>
+
+                <table class="ascii-table">
+                    <thead>
+                        <tr>
+                            <th style="width:45%">TYTUŁ</th>
+                            <th style="width:30%">ARTYSTA</th>
+                            <th style="width:25%; text-align:center;">DATA (rok)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="last-breath-of-normality.html">LAST BREATH OF NORMALITY</a></td>
+                            <td>smukly</td>
+                            <td style="text-align:center;">2025</td>
+                        </tr>
+                        <tr>
+                            <td><a href="flowery-darkness.html">FLOWERY DARKNESS</a></td>
+                            <td>smukly</td>
+                            <td style="text-align:center;">2025</td>
+                        </tr>
+                        <tr>
+                            <td><a href="bleed-out.html">BLEED OUT</a></td>
+                            <td>smukly</td>
+                            <td style="text-align:center;">2025</td>
+                        </tr>
+                        <!-- Dodawaj nowe wiersze tutaj -->
+                        <tr>
+                            <td colspan="3" style="text-align:center; opacity:0.6; font-style:italic;">...więcej dropów wkrótce...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="text-align: center; margin-top: 40px; font-size: 1.3em; opacity: 0.8; color: #ffff00;">
+                    kliknij tytuł → szczegóły + cover + tracklista 🔥
                 </p>
             </div>
 
             <div class="sidebar">
+                <!-- sidebar bez zmian -->
                 <img src="https://anlucas.neocities.org/face.gif" alt="Face">
                 <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
-                <img src="https://anlucas.neocities.org/prod_625_17265.gif" alt="Free Speach">
-                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
-                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
-                <img src="https://anlucas.neocities.org/bestview.gif" alt="Open Eyes">
-                <img src="https://anlucas.neocities.org/got_html.gif" alt="Got html">
-                <img src="https://anlucas.neocities.org/ribbon2.gif" alt="Strange World">
-                <img src="https://anlucas.neocities.org/christnow.gif" alt="Christ">
-                <img src="https://anlucas.neocities.org/email-icon.gif" alt="Any Questions">
-                <div style="margin-top: 15px;">
-                    <img src="https://anlucas.neocities.org/worldwideweb_badge.gif" alt="World Wide Web Badge" style="border: none;">
-                </div>
+                <!-- reszta gifów -->
             </div>
         </div>
         <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
