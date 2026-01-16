@@ -9,13 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Sekcja content jest teraz przezroczysta, więc używa tła ze style.css */
+        /* Naprawa tła: blokada powtarzania i ustawienie na sztywno */
+        body {
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+            background-size: cover !important;
+        }
+
         .content {
             background: transparent;
             padding: 20px;
         }
 
-        /* Nagłówek albumu */
         .album-header {
             text-align: center;
             margin: 20px 0 30px;
@@ -26,7 +31,6 @@
             font-family: 'VT323', monospace;
         }
 
-        /* Galeria - obrazy obok siebie */
         .covers-container {
             display: flex;
             justify-content: center;
@@ -48,7 +52,6 @@
             box-shadow: 0 0 15px #00d4ff;
         }
 
-        /* Linie neonowe */
         .neon-divider {
             height: 3px;
             background: linear-gradient(to right, transparent, #00d4ff, transparent);
@@ -76,7 +79,6 @@
             text-align: center;
         }
 
-        /* Tabelowa tracklista */
         .track-table {
             margin: 0 auto 40px;
             border-collapse: collapse;
@@ -105,7 +107,6 @@
             text-align: left;
         }
 
-        /* Niebieski retro przycisk Spotify */
         .spotify-btn {
             display: inline-block;
             background: rgba(0, 17, 34, 0.6);
@@ -127,7 +128,6 @@
             transform: translate(2px, 2px);
         }
 
-        /* Lightbox */
         #lightbox {
             display: none;
             position: fixed;
@@ -171,7 +171,7 @@
                 <a href="kontakt.html" class="menu-btn">KONTAKT</a>
                 <a href="info.html" class="menu-btn">INFO 24/7</a>
                 <hr style="border: 0; border-top: 1px solid #ffff00; margin: 15px 20px; opacity: 0.3;">
-                <a href="lista.html" style="background: rgba(102, 0, 204, 0.3); color: #fff; border: 1px solid #ffff00; font-size: 14px; padding: 8px; margin: 0 10px; text-decoration: none; display: block; text-align: center; border-radius: 5px;">POWRÓT</a>
+                <a href="lista.html" class="menu-btn" style="background: rgba(102, 0, 204, 0.3); color: #fff; border: 1px solid #ffff00; font-size: 14px; padding: 8px; margin: 0 10px; text-decoration: none; display: block; text-align: center; border-radius: 5px;">POWRÓT</a>
             </div>
 
             <div class="content" style="text-align: center;">
@@ -186,14 +186,7 @@
 
                 <h2 class="section-title">HISTORIA</h2>
                 <div class="history-text">
-                    Album ten powstał przypadkowo lecz został jednak dopracowany i dzięki temu możemy zobaczyć jego okazałości.
-                    Pierwsze 5 utworów powstały na początku mojej ścieżki z muzyką, koleje 5 powstały po przerwie 3 miesięcznej,
-                    a ostatnie 5 utworów powstały po kolejnej przerwie 2 miesięcznej ale te były już bardziej dopracowane.
-                    Ten album to tak naprawdę mieszanka moich pierwszych prób z tworzeniem muzyki, a nazwa albumu?
-                    myślałem nad nią, ale chciałem pójść w przyjazny klimat i bardziej spokojny to też taka a nie inna okładka.
-                    Niestety na stremingach nie znajdziecie pełnej wersji albumu iż niektóre utwóry moim zdaniem nie są
-                    tak dobre jak te, które wystawiłem. Może w przyszłości udostępnie pełną wersje? NW
-                    Na tą chwile pełna wersja leży na półkach szczęściarzy, którzy dostali przedpremierowo płytę. (Można ją zakupić)
+                    Album ten powstał przypadkowo. Pierwsze 5 utworów powstały na początku mojej ścieżki z muzyką, kolejne części powstawały po przerwach 3 i 2 miesięcznych. Pełna wersja na płycie jest dostępna dla nielicznych.
                 </div>
 
                 <hr class="neon-divider">
