@@ -9,20 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Motyw Flowery Darkness - Deep Black & White Hairline Overlay */
+        /* Motyw BLEED OUT - Krwista Czerwień i Głęboka Czerń */
         
         .content {
-            background: transparent; /* Przywrócone oryginalne tło strony */
+            background: transparent; /* Oryginalne tło strony */
             padding: 20px;
         }
 
         .album-header {
             text-align: center;
             margin: 35px 0 45px;
-            color: #ffffff; /* Biały napis */
+            color: #ff0000; /* Krwista czerwień */
             font-size: 3.8em;
             letter-spacing: 8px;
-            text-shadow: 2px 2px 0px #000, 0 0 10px rgba(255, 255, 255, 0.3);
+            text-shadow: 2px 2px 0px #000, 0 0 15px rgba(255, 0, 0, 0.4);
             font-family: 'VT323', monospace;
         }
 
@@ -36,7 +36,7 @@
         .cover-art {
             width: 150px;
             height: auto;
-            border: 1px solid #ffffff; /* Cienka biała kreseczka */
+            border: 1px solid #ff0000; /* Czerwona kreseczka */
             cursor: pointer;
             transition: all 0.3s ease;
             image-rendering: pixelated;
@@ -44,19 +44,19 @@
 
         .cover-art:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
         }
 
         .neon-divider {
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+            background: linear-gradient(to right, transparent, rgba(255, 0, 0, 0.7), transparent);
             margin: 40px auto;
             width: 80%;
             border: none;
         }
 
         .section-title {
-            color: #ffffff;
+            color: #ff0000;
             font-size: 2.2em;
             letter-spacing: 4px;
             margin: 30px 0 15px;
@@ -67,14 +67,14 @@
         .history-text {
             max-width: 800px;
             margin: 0 auto 40px;
-            color: #cccccc; /* Jasnoszary tekst historii dla czytelności */
+            color: #b0b0b0; 
             font-size: 1.25em;
             line-height: 1.5;
             text-align: center;
         }
 
         .track-table {
-            margin: 0 auto 40px;
+            margin: 0 auto 20px;
             border-collapse: collapse;
             font-family: 'VT323', monospace;
             font-size: 1.3em;
@@ -85,39 +85,39 @@
 
         .track-table td {
             padding: 5px 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 0, 0, 0.2);
         }
 
         .track-num {
-            color: #ffffff;
+            color: #ff0000;
             font-weight: bold;
             text-align: right;
             width: 40px;
         }
 
         .track-time {
-            color: #888888;
+            color: #660000;
             text-align: left;
         }
 
         .spotify-btn {
             display: inline-block;
-            background: #000000;
-            color: #ffffff;
+            background: #1a0000;
+            color: #ff0000;
             padding: 10px 25px;
             text-decoration: none;
             font-family: 'VT323', monospace;
             font-size: 1.6em;
-            border: 1px solid #ffffff;
-            box-shadow: 4px 4px 0px #333333;
-            margin-bottom: 50px;
+            border: 1px solid #ff0000;
+            box-shadow: 4px 4px 0px #440000;
+            margin-bottom: 30px;
             transition: all 0.1s;
         }
 
         .spotify-btn:hover {
-            background: #ffffff;
+            background: #ff0000;
             color: #000000;
-            box-shadow: 2px 2px 0px #888888;
+            box-shadow: 2px 2px 0px #ffffff;
             transform: translate(2px, 2px);
         }
 
@@ -134,7 +134,7 @@
         #lightbox img {
             max-width: 85%;
             max-height: 85%;
-            border: 1px solid #ffffff;
+            border: 1px solid #ff0000;
         }
     </style>
 </head>
@@ -178,7 +178,7 @@
 
                 <h2 class="section-title">HISTORIA</h2>
                 <div class="history-text">
-                    Album ten miał z góry być powrotem i również trochę podobny do Flowery Darkenss lecz
+                    Album ten miał z góry być powrotem i również trochę podobny do Flowery Darkness lecz
                     podzieliłem go na części, na tą chwile są 2 części lecz oryginalnie miałby być 3.
                     Ten Album utorzsamia się trochę ze mną tamtego czasu gdy tworzyłem ten album pod wpływem
                     prywatnych wydarzeń w życiu. Lecz mimo to uważam ten album za jedno z moich lepszych dzieł,
@@ -206,8 +206,27 @@
 
                 <div>
                     <a href="https://open.spotify.com/album/1B69EDIrZ8kUXdVFkXLXwa?si=Psqi5GIuQi-yFjpvf1bpFA" target="_blank" class="spotify-btn">> SŁUCHAJ NA SPOTIFY PT.1 <</a>
+                </div>
+
+                <hr class="neon-divider" style="width: 50%; opacity: 0.5;">
+
+                <h2 class="section-title">TRACKLISTA pt.2</h2>
+                <table class="track-table">
+                    <tr><td class="track-num">01.</td><td>bloody mind</td><td class="track-time">(2.44)</td></tr>
+                    <tr><td class="track-num">02.</td><td>short prayer</td><td class="track-time">(2.49)</td></tr>
+                    <tr><td class="track-num">03.</td><td>pain in nothingness</td><td class="track-time">(2.58)</td></tr>
+                    <tr><td class="track-num">04.</td><td>severe bleeding</td><td class="track-time">(2.03)</td></tr>
+                    <tr><td class="track-num">05.</td><td>liters of spilled blood</td><td class="track-time">(1.58)</td></tr>
+                    <tr><td class="track-num">06.</td><td>heavy breath</td><td class="track-time">(2.39)</td></tr>
+                    <tr><td class="track-num">07.</td><td>shamanic thoughts</td><td class="track-time">(2.27)</td></tr>
+                    <tr><td class="track-num">08.</td><td>weight of life</td><td class="track-time">(2.38)</td></tr>
+                </table>
+
+                <div>
                     <a href="https://open.spotify.com/album/69KOVUQlXKsBwOmFbxjZf7?si=3elYJUCWQZOizY-mst9QTA" target="_blank" class="spotify-btn">> SŁUCHAJ NA SPOTIFY PT.2 <</a>
                 </div>
+                
+                <div style="margin-bottom: 50px;"></div>
             </div>
 
             <div class="sidebar">
