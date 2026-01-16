@@ -19,16 +19,16 @@
             font-family: 'VT323', monospace;
         }
 
-        /* OKŁADKI IDEALNIE POZIOMO, BLISKO SIEBIE I ZAWSZE W JEDNEJ LINI */
+        /* OKŁADKI – idealnie koło siebie + naprawiony hover */
         .covers-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 22px;
+            gap: 24px;
             margin: 0 auto 65px;
             flex-wrap: nowrap;
             overflow-x: auto;
-            padding: 0 10px;
+            padding: 10px 0;
             scrollbar-width: none;
         }
         .covers-container::-webkit-scrollbar { display: none; }
@@ -39,13 +39,15 @@
             box-shadow: 0 0 25px rgba(0,212,255,0.45);
             image-rendering: pixelated;
             cursor: zoom-in;
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
+            transition: all 0.35s ease;
+            object-fit: contain;
+            background: transparent !important;
         }
         .cover-art:hover {
-            transform: scale(1.09);
-            box-shadow: 0 0 45px rgba(0,212,255,0.95);
+            transform: scale(1.10) translateY(-8px);
+            box-shadow: 0 0 50px rgba(0,212,255,0.95);
             border-color: #00ffff;
+            z-index: 10;
         }
 
         .neon-divider {
@@ -78,17 +80,19 @@
             padding: 0 20px;
         }
 
+        /* TRACKLISTA – bez żadnych "nr." i "kropki", czysto i minimalistycznie */
         .tracklist {
             max-width: 420px;
-            margin: 0 auto 45px;
+            margin: 0 auto 50px;
             padding: 0;
+            list-style: none;
             counter-reset: track 0;
         }
         .tracklist li {
-            padding: 5px 0 5px 62px;
+            padding: 6px 0 6px 58px;
             position: relative;
             color: #e0f8ff;
-            font-size: 1.22em;
+            font-size: 1.23em;
             letter-spacing: 1.1px;
             font-family: 'VT323', monospace;
             text-shadow: 0 0 5px #00d4ff;
@@ -100,13 +104,15 @@
             left: 0;
             color: #00d4ff;
             font-weight: bold;
-            opacity: 0.85;
+            opacity: 0.88;
+            width: 50px;
+            text-align: right;
         }
         .tracklist li span {
             float: right;
-            font-size: 0.9em;
+            font-size: 0.88em;
             opacity: 0.7;
-            margin-right: 8px;
+            margin-right: 6px;
         }
 
         .spotify-btn {
@@ -127,8 +133,30 @@
         }
         .spotify-btn:hover {
             background: #002244;
-            box-shadow: 0 0 24px #00d4ff;
-            transform: translateY(-2px);
+            box-shadow: 0 0 26px #00d4ff;
+            transform: translateY(-3px);
+        }
+
+        /* NAPRAWIONY SIDEBAR – wszystko równo, bez rozjechania */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 8px;
+            background: rgba(0, 5, 20, 0.6);
+            border-left: 1px solid #00aaff;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 997;
+        }
+        .sidebar img {
+            image-rendering: pixelated;
+            max-width: 88px;
+            height: auto;
+            display: block;
         }
 
         /* Fullscreen */
@@ -137,7 +165,7 @@
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
             background: rgba(0,0,0,0.97);
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(8px);
             z-index: 9999;
             justify-content: center;
             align-items: center;
@@ -147,13 +175,13 @@
         .fullscreen-overlay img {
             max-width: 94%; max-height: 94vh;
             border: 4px solid #00d4ff;
-            box-shadow: 0 0 50px #00d4ff;
+            box-shadow: 0 0 60px #00d4ff;
             image-rendering: pixelated;
         }
         .close-fullscreen {
             position: absolute;
-            top: 25px; right: 35px;
-            font-size: 4.5em;
+            top: 20px; right: 30px;
+            font-size: 5em;
             color: #00d4ff;
             text-shadow: 0 0 20px #00d4ff;
             cursor: pointer;
@@ -210,7 +238,7 @@
 
                 <h2 class="section-title">TRACKLISTA</h2>
 
-                <ol class="tracklist">
+                <ul class="tracklist">
                     <li>Between Dreams <span>5:09</span></li>
                     <li>Hypnoshere <span>4:41</span></li>
                     <li>Phase Null <span>2:51</span></li>
@@ -226,7 +254,7 @@
                     <li>Another Glow <span>1:37</span></li>
                     <li>Freedom Of The Soul <span>2:05</span></li>
                     <li>The Last Step <span>2:15</span></li>
-                </ol>
+                </ul>
 
                 <a href="https://open.spotify.com/album/7F4fMdEdIvRZ3rYK7uJnmk?si=4x62MdmjTDuxrPTrYcjmag" 
                    class="spotify-btn" target="_blank">
@@ -234,6 +262,7 @@
                 </a>
             </div>
 
+            <!-- NAPRAWIONY SIDEBAR -->
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif" alt="Face">
                 <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
@@ -246,7 +275,7 @@
                 <img src="https://anlucas.neocities.org/christnow.gif" alt="Christ">
                 <img src="https://anlucas.neocities.org/email-icon.gif" alt="Any Questions">
                 <div style="margin-top: 15px;">
-                    <img src="https://anlucas.neocities.org/worldwideweb_badge.gif" alt="World Wide Web Badge" style="border: none;">
+                    <img src="https://anlucas.neocities.org/worldwideweb_badge.gif" alt="World Wide Web Badge">
                 </div>
             </div>
         </div>
