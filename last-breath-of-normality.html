@@ -9,9 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Tylko dodatki do albumu – reszta działa dokładnie jak w Twoim style.css */
         .album-header {
             text-align: center;
-            margin: 40px 0 55px;
+            margin: 50px 0 60px;
             color: #00d4ff;
             font-size: 3.8em;
             letter-spacing: 6px;
@@ -22,9 +23,8 @@
         .covers-container {
             display: flex;
             justify-content: center;
-            gap: 24px;
-            margin: 0 auto 65px;
-            flex-wrap: nowrap;
+            gap: 30px;
+            margin-bottom: 70px;
         }
         .cover-art {
             width: 260px;
@@ -32,12 +32,11 @@
             box-shadow: 0 0 25px rgba(0,212,255,0.45);
             image-rendering: pixelated;
             cursor: zoom-in;
-            transition: transform 0.35s ease;
+            transition: transform 0.3s ease;
         }
         .cover-art:hover {
-            transform: scale(1.10) translateY(-8px);
-            box-shadow: 0 0 50px rgba(0,212,255,0.95);
-            border-color: #00ffff;
+            transform: scale(1.1);
+            box-shadow: 0 0 45px rgba(0,212,255,0.9);
         }
 
         .neon-divider {
@@ -52,7 +51,7 @@
 
         .section-title {
             color: #00d4ff;
-            font-size: 2.3em;
+            font-size: 2.4em;
             letter-spacing: 4px;
             margin: 40px 0 20px;
             text-align: center;
@@ -103,27 +102,27 @@
 
         .spotify-btn {
             display: block;
-            width: 270px;
-            margin: 35px auto 70px;
-            padding: 9px 0;
+            width: 280px;
+            margin: 40px auto 80px;
+            padding: 10px 0;
             text-align: center;
             background: #001122;
             color: #00ffff;
             font-family: 'VT323', monospace;
-            font-size: 1.35em;
+            font-size: 1.4em;
             letter-spacing: 2px;
             text-decoration: none;
             border: 2px solid #00d4ff;
-            box-shadow: 0 0 15px #00d4ff;
+            box-shadow: 0 0 18px #00d4ff;
             transition: all 0.3s;
         }
         .spotify-btn:hover {
             background: #002244;
-            box-shadow: 0 0 26px #00d4ff;
+            box-shadow: 0 0 28px #00d4ff;
             transform: translateY(-3px);
         }
 
-        /* Fullscreen */
+        /* Fullscreen – bez zmian */
         .fullscreen-overlay {
             display: none;
             position: fixed;
@@ -155,8 +154,10 @@
 </head>
 <body>
     <div class="container">
-        <header><h1>SMUKLY NETWORK</h1></header>
-        
+        <header>
+            <h1>SMUKLY NETWORK</h1>
+        </header>
+
         <div class="ticker-wrapper">
             <div class="ticker">LAST BREATHS OF NORMALITY – 15.09.2025</div>
         </div>
@@ -180,8 +181,8 @@
                 <h1 class="album-header">LAST BREATHS OF NORMALITY</h1>
 
                 <div class="covers-container">
-                    <img src="okladka1.png" alt="Front Cover" class="cover-art" onclick="openFullscreen('okladka1.png')">
-                    <img src="okladka2.png" alt="Back Cover" class="cover-art" onclick="openFullscreen('okladka2.png')">
+                    <img src="okladka1.png" alt="Front" class="cover-art" onclick="openFullscreen('okladka1.png')">
+                    <img src="okladka2.png" alt="Back" class="cover-art" onclick="openFullscreen('okladka2.png')">
                 </div>
 
                 <hr class="neon-divider">
@@ -189,7 +190,7 @@
                 <h2 class="section-title">HISTORIA</h2>
                 <div class="history-text">
                     Album ten powstał przypadkowo lecz został jednak dopracowany i dzięki temu możemy zobaczyć jego okazałości.
-                    Pierwsze 5 utworów powstały na początku mojej ściezki z muzyką, kolejne 5 powstały po przerwie 3 miesięcznej,
+                    Pierwsze 5 utworów powstały na początku mojej ścieżki z muzyką, kolejne 5 powstały po przerwie 3 miesięcznej,
                     a ostatnie 5 utworów powstały po kolejnej przerwie 2 miesięcznej ale te były już bardziej dopracowane.
                     Ten album to tak naprawdę mieszanka moich pierwszych prób z tworzeniem muzyki, a nazwa albumu?
                     myślałem nad nią, ale chciałem pójść w przyjazny klimat i bardziej spokojny to też taka a nie inna okładka.
@@ -226,7 +227,7 @@
                 </a>
             </div>
 
-            <!-- DOKŁADNIE TAKI SAM SIDEBAR JAK NA studio-sul.html I WSZYSTKICH INNYCH PODSTRONACH -->
+            <!-- SIDEBAR DOKŁADNIE TAKI SAM JAK NA GŁÓWNEJ I NA STUDIO-SUL -->
             <div class="sidebar">
                 <img src="https://anlucas.neocities.org/face.gif" alt="Face">
                 <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
@@ -244,7 +245,9 @@
             </div>
         </div>
 
-        <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
+        <footer>
+            © 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE
+        </footer>
     </div>
 
     <!-- Fullscreen -->
