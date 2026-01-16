@@ -1,230 +1,370 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAST BREATHS OF NORMALITY – SMUKLY NETWORK</title>
-    <link rel="icon" href="server-icon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Tło identyczne jak w index.html */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #00ff00;
-            font-family: "Courier New", Courier, monospace;
-            min-height: 100vh;
-            background-image:
-                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0,255,0,0.1) 20px, rgba(0,255,0,0.2) 21px),
-                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,255,0,0.1) 20px, rgba(0,255,0,0.2) 21px),
-                linear-gradient(to bottom, rgba(0,50,0,0.8), #000 70%),
-                radial-gradient(circle at center, transparent 40%, #000 70%);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 200% 200%;
-            animation: tunnel-move 30s linear infinite;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LAST BREATHS OF NORMALITY – SMUKLY NETWORK</title>
+  <link rel="icon" href="server-icon.png" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"/>
 
-        @keyframes tunnel-move {
-            0% { background-position: 0 0, 0 0, 0 0, center center; }
-            100% { background-position: 0 1000px, 0 1000px, 0 0, center center; }
-        }
+  <style>
+    :root {
+      --purple-dark: #2a004c;
+      --purple-mid: #4a008c;
+      --yellow-neon: #ffff00;
+      --pink-neon: #ff00ff;
+      --green-neon: #00ff9d;
+    }
 
-        /* Przycisk POWRÓT – dokładnie jak w lista.html */
-        .menu {
-            width: 200px;
-            padding: 20px 10px;
-            background-color: rgba(17, 0, 68, 0.95);
-            border-right: 3px solid #ffff00;
-            border-radius: 8px;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000 url('https://files.catbox.moe/5q3z1k.png') repeat; /* zielony grid z Twojej strony */
+      background-size: 48px 48px;
+      font-family: 'VT323', monospace;
+      color: #e0e0ff;
+      min-height: 100vh;
+      image-rendering: pixelated;
+    }
 
-        .menu a.back-btn {
-            background: linear-gradient(to right, #ff9900, #ffcc00);
-            color: black;
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid #ffff66;
-            border-radius: 10px;
-            padding: 12px;
-            margin: 15px 0;
-            display: block;
-            text-align: center;
-            box-shadow: 4px 4px 8px #000;
-            transition: all 0.3s;
-        }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
 
-        .menu a.back-btn:hover {
-            background: linear-gradient(to right, #ffcc00, #ffff66);
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px #ffff00, 0 6px 12px #000;
-        }
+    header {
+      background: linear-gradient(to bottom, #5e00b3, #3c0080);
+      border: 5px solid var(--yellow-neon);
+      border-bottom: none;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 6px 25px rgba(255,0,255,0.4);
+    }
 
-        /* Reszta stylów dla albumu */
-        .album-header {
-            font-family: 'VT323', monospace;
-            font-size: 3.8rem;
-            color: #00ffff;
-            text-align: center;
-            margin: 25px 0 40px;
-            text-shadow: 0 0 12px #00ffff, 0 0 24px #0088cc;
-            letter-spacing: 5px;
-        }
+    header h1 {
+      font-size: 4.2rem;
+      color: var(--yellow-neon);
+      text-shadow: 0 0 14px var(--yellow-neon), 0 0 28px var(--pink-neon);
+      letter-spacing: 12px;
+    }
 
-        .covers-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 0 auto 50px;
-            max-width: 900px;
-            flex-wrap: wrap;
-        }
+    .ticker-wrapper {
+      background: #000;
+      border-bottom: 5px solid var(--green-neon);
+      padding: 12px 0;
+      text-align: center;
+      color: var(--green-neon);
+      font-size: 1.55rem;
+      letter-spacing: 5px;
+      text-shadow: 0 0 12px var(--green-neon);
+    }
 
-        .cover-art {
-            width: 320px;
-            border: 3px solid #00aaff;
-            box-shadow: 0 0 25px rgba(0,212,255,0.45);
-            image-rendering: pixelated;
-            transition: transform 0.25s;
-        }
+    .main {
+      display: flex;
+      gap: 28px;
+      margin: 30px 0 70px;
+    }
 
-        .cover-art:hover {
-            transform: scale(1.04);
-        }
+    .menu {
+      width: 260px;
+      flex-shrink: 0;
+      background: rgba(60,0,128,0.75);
+      border: 5px solid var(--yellow-neon);
+      border-radius: 12px;
+      padding: 25px 15px;
+      box-shadow: 0 0 25px rgba(255,255,0,0.3);
+    }
 
-        .section-title {
-            color: #ffff00;
-            font-size: 2.4em;
-            text-align: center;
-            margin: 40px 0 20px;
-            text-shadow: 0 0 10px #ffff00;
-        }
+    .menu a {
+      display: block;
+      background: var(--yellow-neon);
+      color: #000;
+      font-size: 1.45rem;
+      padding: 16px 12px;
+      margin: 12px 0;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+      transition: 0.25s;
+    }
 
-        .history-text {
-            max-width: 780px;
-            margin: 0 auto 50px;
-            color: #ccffcc;
-            font-size: 1.32em;
-            line-height: 1.55;
-            text-align: justify;
-        }
+    .menu a:hover {
+      background: var(--pink-neon);
+      color: var(--yellow-neon);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255,0,255,0.7);
+    }
 
-        .tracklist ol {
-            list-style: none;
-            counter-reset: track;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0;
-        }
+    .menu hr {
+      border: 0;
+      border-top: 3px solid var(--green-neon);
+      margin: 20px 0;
+      opacity: 0.55;
+    }
 
-        .tracklist li {
-            counter-increment: track;
-            margin: 14px 0;
-            padding-left: 60px;
-            position: relative;
-            font-size: 1.35em;
-            color: #e8ffe8;
-        }
+    .menu .back-btn {
+      background: #6600cc;
+      color: var(--yellow-neon);
+      border: 4px solid var(--yellow-neon);
+      margin-top: 20px;
+      font-size: 1.35rem;
+    }
 
-        .tracklist li::before {
-            content: "0" counter(track);
-            position: absolute;
-            left: 0;
-            color: #ffff00;
-            font-size: 1.4em;
-            opacity: 0.9;
-            font-weight: bold;
-        }
+    .menu .back-btn:hover {
+      background: var(--pink-neon);
+    }
 
-        .neon-divider {
-            height: 3px;
-            background: linear-gradient(to right, transparent, #00ff00, transparent);
-            box-shadow: 0 0 18px #00ff00;
-            margin: 50px auto;
-            width: 80%;
-            max-width: 720px;
-        }
-    </style>
+    /* ŚRODEK STRONY – to właśnie wklejamy i dopasowujemy */
+    .content {
+      flex: 1;
+      background: #8b0000; /* czerwony kolor z Twojego screena */
+      border: 6px solid var(--yellow-neon);
+      border-radius: 12px;
+      padding: 45px 40px;
+      box-shadow: inset 0 0 35px rgba(0,0,0,0.75);
+      min-height: 800px;
+    }
+
+    .album-header {
+      font-size: 5rem;
+      color: #ff00ff;
+      text-align: center;
+      text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff1493, 0 0 60px #c71585;
+      letter-spacing: 10px;
+      margin: 0 0 60px;
+      animation: pulse-glow 4s infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      from { text-shadow: 0 0 20px #ff00ff; }
+      to   { text-shadow: 0 0 45px #ff00ff, 0 0 70px #ff1493; }
+    }
+
+    .covers-container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-bottom: 70px;
+    }
+
+    .cover-art {
+      width: 380px;
+      border: 6px solid var(--yellow-neon);
+      box-shadow: 0 0 30px rgba(255,255,0,0.7);
+      image-rendering: pixelated;
+      transition: all 0.3s;
+    }
+
+    .cover-art:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 60px rgba(255,255,0,1);
+    }
+
+    .neon-divider {
+      height: 6px;
+      background: linear-gradient(to right, transparent, var(--yellow-neon), transparent);
+      box-shadow: 0 0 30px var(--yellow-neon);
+      margin: 60px auto;
+      width: 85%;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+      color: var(--yellow-neon);
+      text-align: center;
+      text-shadow: 0 0 20px var(--yellow-neon);
+      margin: 60px 0 30px;
+      letter-spacing: 6px;
+    }
+
+    .history-text {
+      font-size: 1.75rem;
+      line-height: 1.7;
+      color: #ffe4e1;
+      max-width: 920px;
+      margin: 0 auto 60px;
+      text-align: justify;
+    }
+
+    .tracklist {
+      max-width: 820px;
+      margin: 0 auto 70px;
+      font-size: 1.65rem;
+      color: #f0fff0;
+    }
+
+    .tracklist ol {
+      list-style: none;
+      counter-reset: track;
+      padding: 0;
+    }
+
+    .tracklist li {
+      counter-increment: track;
+      margin: 22px 0;
+      padding-left: 80px;
+      position: relative;
+    }
+
+    .tracklist li::before {
+      content: "0" counter(track);
+      position: absolute;
+      left: 0;
+      color: var(--yellow-neon);
+      font-size: 1.9rem;
+      opacity: 0.9;
+    }
+
+    .tracklist li span {
+      float: right;
+      color: #d0d0ff;
+      opacity: 0.9;
+    }
+
+    .spotify-btn {
+      display: block;
+      width: 380px;
+      margin: 50px auto;
+      padding: 18px 0;
+      background: linear-gradient(90deg, #ff00ff, #c71585);
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      text-decoration: none;
+      border: 5px solid var(--yellow-neon);
+      border-radius: 14px;
+      box-shadow: 0 0 35px rgba(255,0,255,0.7);
+      transition: 0.3s;
+    }
+
+    .spotify-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 60px rgba(255,0,255,1);
+    }
+
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .sidebar img {
+      width: 100%;
+      max-width: 200px;
+      border: 4px solid var(--yellow-neon);
+      border-radius: 8px;
+      box-shadow: 0 0 18px rgba(255,255,0,0.5);
+      image-rendering: pixelated;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 0;
+      color: var(--green-neon);
+      font-size: 1.5rem;
+      text-shadow: 0 0 12px var(--green-neon);
+      border-top: 6px solid var(--yellow-neon);
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>SMUKLY NETWORK</h1>
-    </header>
+  <header>
+    <h1>SMUKLY NETWORK</h1>
+  </header>
 
-    <div class="ticker-wrapper">
-        <div class="ticker">LAST BREATHS OF NORMALITY – 15.09.2025</div>
+  <div class="ticker-wrapper">
+    LAST BREATHS OF NORMALITY – 15.09.2025
+  </div>
+
+  <div class="main">
+    <div class="menu">
+      <a href="index.html">STRONA GŁÓWNA</a>
+      <a href="o-mnie.html">O MNIE</a>
+      <a href="sprzet.html">SPRZĘT</a>
+      <a href="muzyka.html">MUZYKA</a>
+      <a href="studio-sul.html">STUDIO SUL</a>
+      <a href="sztuka.html">SZTUKA</a>
+      <a href="blog.html">BLOG</a>
+      <a href="kontakt.html">KONTAKT</a>
+      <a href="info.html">INFO 24/7</a>
+
+      <hr>
+
+      <a href="lista.html" class="back-btn">POWRÓT DO LISTY</a>
     </div>
 
-    <div class="main">
-        <div class="menu">
-            <a href="index.html">STRONA GŁÓWNA</a>
-            <a href="o-mnie.html">O MNIE</a>
-            <a href="sprzet.html">SPRZĘT</a>
-            <a href="muzyka.html">MUZYKA</a>
-            <a href="studio-sul.html">STUDIO SUL</a>
-            <a href="sztuka.html">SZTUKA</a>
-            <a href="blog.html">BLOG</a>
-            <a href="kontakt.html">KONTAKT</a>
-            <a href="info.html">INFO 24/7</a>
-            <hr style="border:0; border-top:1px solid #ffff00; margin:15px 20px; opacity:0.3;">
-            <a href="lista.html" class="back-btn">POWRÓT DO LISTY</a>
-        </div>
+    <!-- ŚRODEK – dokładnie to, co chciałeś wkleić i dopasować -->
+    <div class="content">
+      <h1 class="album-header">LAST BREATHS OF NORMALITY</h1>
 
-        <div class="content">
-            <h1 class="album-header">LAST BREATHS OF NORMALITY</h1>
+      <div class="covers-container">
+        <img src="okladka1.png" alt="Okładka przód" class="cover-art">
+        <img src="okladka2.png" alt="Okładka tył" class="cover-art">
+      </div>
 
-            <div class="covers-container">
-                <img src="okladka1.png" alt="Okładka przód" class="cover-art">
-                <img src="okladka2.png" alt="Okładka tył" class="cover-art">
-            </div>
+      <hr class="neon-divider">
 
-            <hr class="neon-divider">
+      <h2 class="section-title">HISTORIA</h2>
+      <div class="history-text">
+        Album ten powstał przypadkowo lecz został jednak dopracowany i dzięki temu możemy zobaczyć jego okazałości.<br><br>
+        Pierwsze 5 utworów powstały na początku mojej ścieżki z muzyką, kolejne 5 powstały po przerwie 3 miesięcznej,<br>
+        a ostatnie 5 utworów powstały po kolejnej przerwie 2 miesięcznej ale te były już bardziej dopracowane.<br><br>
+        Ten album to tak naprawdę mieszanka moich pierwszych prób z tworzeniem muzyki, a nazwa albumu?<br>
+        myślałem nad nią, ale chciałem pójść w przyjazny klimat i bardziej spokojny to też taka a nie inna okładka.<br><br>
+        Niestety na streamingach nie znajdziecie pełnej wersji albumu iż niektóre utwory moim zdaniem nie są<br>
+        tak dobre jak te, które wystawiłem. Może w przyszłości udostępnię pełną wersje? NW<br><br>
+        Na tą chwilę pełna wersja leży na półkach szczęściarzy, którzy dostali przedpremierowo płytę. (Można ją zakupić)
+      </div>
 
-            <h2 class="section-title">HISTORIA</h2>
-            <div class="history-text">
-                Album ten powstał przypadkowo, lecz został jednak dopracowany i dzięki temu możemy zobaczyć jego okazałość.<br><br>
-                Pierwsze 5 utworów powstały na początku mojej ścieżki z muzyką, kolejne 5 powstały po przerwie 3-miesięcznej,<br>
-                a ostatnie 5 utworów powstało po kolejnej przerwie 2-miesięcznej, ale te były już znacznie bardziej dopracowane.<br><br>
-                Ten album to tak naprawdę mieszanka moich pierwszych prób z tworzeniem muzyki. Nazwa albumu?<br>
-                Długo się nad nią zastanawiałem, ale ostatecznie chciałem iść w przyjazny, spokojny klimat – stąd taka, a nie inna okładka.<br><br>
-                Niestety na streamingach nie znajdziecie pełnej wersji albumu, bo niektóre utwory moim zdaniem nie są<br>
-                wystarczająco dobre, żeby je pokazać światu. Może kiedyś udostępnię całość? Na razie NW.<br><br>
-                Pełna wersja leży obecnie na półkach u tych szczęściarzy, którzy dostali przedpremierowo fizyczną płytę.<br>
-                (Nadal można ją zakupić.)
-            </div>
+      <hr class="neon-divider">
 
-            <hr class="neon-divider">
+      <h2 class="section-title">TRACKLISTA</h2>
+      <div class="tracklist">
+        <ol>
+          <li>Between Dreams <span>5:09</span></li>
+          <li>Hypnoshere <span>4:41</span></li>
+          <li>Phase Null <span>2:51</span></li>
+          <li>Fading Memory <span>1:10</span></li>
+          <li>Null Transmission <span>0:37</span></li>
+          <li>Dreamloop <span>3:34</span></li>
+          <li>Static Depth <span>2:46</span></li>
+          <li>Pulse Failure <span>2:25</span></li>
+          <li>Code Of Flesh <span>2:36</span></li>
+          <li>In Future <span>2:33</span></li>
+          <li>Lost Dream <span>2:35</span></li>
+          <li>Critical Pulse <span>2:41</span></li>
+          <li>Another Glow <span>1:37</span></li>
+          <li>Freedom Of The Soul <span>2:05</span></li>
+          <li>The Last Step <span>2:15</span></li>
+        </ol>
+      </div>
 
-            <h2 class="section-title">TRACKLISTA</h2>
-            <div class="tracklist">
-                <ol>
-                    <li>Between Dreams <span>5:09</span></li>
-                    <li>Hypnoshere <span>4:41</span></li>
-                    <li>Phase Null <span>2:51</span></li>
-                    <li>Fading Memory <span>1:10</span></li>
-                    <li>Null Transmission <span>0:37</span></li>
-                    <li>Dreamloop <span>3:34</span></li>
-                    <li>Static Depth <span>2:46</span></li>
-                    <li>Pulse Failure <span>2:25</span></li>
-                    <li>Code Of Flesh <span>2:36</span></li>
-                    <li>In Future <span>2:33</span></li>
-                    <li>Lost Dream <span>2:35</span></li>
-                    <li>Critical Pulse <span>2:41</span></li>
-                    <li>Another Glow <span>1:37</span></li>
-                    <li>Freedom Of The Soul <span>2:05</span></li>
-                    <li>The Last Step <span>2:15</span></li>
-                </ol>
-            </div>
-        </div>
-
-        <div class="sidebar">
-            <!-- tutaj Twoje gify -->
-        </div>
+      <a href="https://open.spotify.com/album/7F4fMdEdIvRZ3rYK7uJnmk?si=4x62MdmjTDuxrPTrYcjmag"
+         class="spotify-btn" target="_blank">
+        ▶ SŁUCHAJ NA SPOTIFY
+      </a>
     </div>
 
-    <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
+    <div class="sidebar">
+      <!-- tu Twoje gify z listy projektów -->
+      <img src="https://anlucas.neocities.org/face.gif" alt="">
+      <img src="https://anlucas.neocities.org/hash_now.gif" alt="">
+      <img src="https://anlucas.neocities.org/prod_625_17265.gif" alt="">
+      <!-- ...dodaj resztę -->
+    </div>
+  </div>
+
+  <footer>
+    © 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE
+  </footer>
 </div>
 
 </body>
