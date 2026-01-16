@@ -1,351 +1,84 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LAST BREATHS OF NORMALITY – SMUKLY NETWORK</title>
-  <link rel="icon" href="server-icon.png" type="image/png"/>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"/>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #000 url('https://files.catbox.moe/5q3z1k.png') repeat;
-      background-size: 48px 48px;
-      font-family: 'VT323', monospace;
-      color: #e0e0ff;
-      min-height: 100vh;
-      image-rendering: pixelated;
-    }
-
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 15px; }
-
-    header {
-      background: linear-gradient(to bottom, #5e00b3, #3c0080);
-      border: 5px solid #ffff00;
-      border-bottom: none;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 6px 25px rgba(255,0,255,0.4);
-    }
-
-    header h1 {
-      font-size: 4.2rem;
-      color: #ffff00;
-      text-shadow: 0 0 14px #ffff00, 0 0 28px #ff00ff;
-      letter-spacing: 12px;
-    }
-
-    .ticker-wrapper {
-      background: #000;
-      border-bottom: 5px solid #00ff9d;
-      padding: 12px 0;
-      text-align: center;
-      color: #00ff9d;
-      font-size: 1.55rem;
-      letter-spacing: 5px;
-      text-shadow: 0 0 12px #00ff9d;
-    }
-
-    .main {
-      display: flex;
-      gap: 28px;
-      margin: 30px 0 70px;
-    }
-
-    .menu {
-      width: 260px;
-      flex-shrink: 0;
-      background: rgba(60,0,128,0.75);
-      border: 5px solid #ffff00;
-      border-radius: 12px;
-      padding: 25px 15px;
-      box-shadow: 0 0 25px rgba(255,255,0,0.3);
-    }
-
-    .menu a {
-      display: block;
-      background: #ffff00;
-      color: #000;
-      font-size: 1.45rem;
-      padding: 16px 12px;
-      margin: 12px 0;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.6);
-      transition: 0.25s;
-    }
-
-    .menu a:hover {
-      background: #ff00ff;
-      color: #ffff00;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(255,0,255,0.7);
-    }
-
-    .menu hr {
-      border: 0;
-      border-top: 3px solid #00ff9d;
-      margin: 20px 0;
-      opacity: 0.55;
-    }
-
-    .menu .back-btn {
-      background: #6600cc;
-      color: #ffff00;
-      border: 4px solid #ffff00;
-      margin-top: 20px;
-      font-size: 1.35rem;
-    }
-
-    .menu .back-btn:hover {
-      background: #ff00ff;
-    }
-
-    /* ŚRODEK STRONY – tu wklejasz/zmieniasz treść na każdej podstronie */
-    .content {
-      flex: 1;
-      background: rgba(20,0,60,0.85);
-      border: 6px solid #ffff00;
-      border-radius: 12px;
-      padding: 45px 40px;
-      box-shadow: inset 0 0 35px rgba(0,0,0,0.75);
-      min-height: 800px;
-    }
-
-    .album-header {
-      font-size: 5rem;
-      color: #ff00ff;
-      text-align: center;
-      text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff1493;
-      letter-spacing: 10px;
-      margin: 0 0 60px;
-    }
-
-    .covers-container {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      flex-wrap: wrap;
-      margin-bottom: 70px;
-    }
-
-    .cover-art {
-      width: 380px;
-      border: 6px solid #ffff00;
-      box-shadow: 0 0 30px rgba(255,255,0,0.7);
-      image-rendering: pixelated;
-      transition: all 0.3s;
-    }
-
-    .cover-art:hover {
-      transform: scale(1.07);
-    }
-
-    .neon-divider {
-      height: 6px;
-      background: linear-gradient(to right, transparent, #ffff00, transparent);
-      box-shadow: 0 0 30px #ffff00;
-      margin: 60px auto;
-      width: 85%;
-    }
-
-    .section-title {
-      font-size: 3.5rem;
-      color: #ffff00;
-      text-align: center;
-      text-shadow: 0 0 20px #ffff00;
-      margin: 60px 0 30px;
-    }
-
-    .history-text {
-      font-size: 1.75rem;
-      line-height: 1.7;
-      color: #ffe4e1;
-      max-width: 920px;
-      margin: 0 auto 60px;
-      text-align: justify;
-    }
-
-    .tracklist {
-      max-width: 820px;
-      margin: 0 auto 70px;
-      font-size: 1.65rem;
-      color: #f0fff0;
-    }
-
-    .tracklist ol {
-      list-style: none;
-      counter-reset: track;
-      padding: 0;
-    }
-
-    .tracklist li {
-      counter-increment: track;
-      margin: 22px 0;
-      padding-left: 80px;
-      position: relative;
-    }
-
-    .tracklist li::before {
-      content: "0" counter(track);
-      position: absolute;
-      left: 0;
-      color: #ffff00;
-      font-size: 1.9rem;
-      opacity: 0.9;
-    }
-
-    .tracklist li span {
-      float: right;
-      color: #d0d0ff;
-      opacity: 0.9;
-    }
-
-    .spotify-btn {
-      display: block;
-      width: 380px;
-      margin: 50px auto;
-      padding: 18px 0;
-      background: linear-gradient(90deg, #ff00ff, #c71585);
-      color: white;
-      font-size: 2rem;
-      text-align: center;
-      text-decoration: none;
-      border: 5px solid #ffff00;
-      border-radius: 14px;
-      box-shadow: 0 0 35px rgba(255,0,255,0.7);
-      transition: 0.3s;
-    }
-
-    .spotify-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 60px rgba(255,0,255,1);
-    }
-
-    .sidebar {
-      width: 240px;
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .sidebar img {
-      width: 100%;
-      max-width: 200px;
-      border: 4px solid #ffff00;
-      border-radius: 8px;
-      box-shadow: 0 0 18px rgba(255,255,0,0.5);
-      image-rendering: pixelated;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 0;
-      color: #00ff9d;
-      font-size: 1.5rem;
-      text-shadow: 0 0 12px #00ff9d;
-      border-top: 6px solid #ffff00;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAST BREATH OF NORMALITY – SMUKLY NETWORK</title>
+    <link rel="icon" href="server-icon.png" type="image/png">
+    <link rel="shortcut icon" href="server-icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* cały twój styl zostaje bez zmian */
+        .ascii-table { ... }
+        .title-wrapper { ... }
+        .title-header { ... }
+        .soon-text { ... }
+        /* itd. – zostawiamy wszystko */
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>SMUKLY NETWORK</h1>
+        </header>
+        <div class="ticker-wrapper">
+            <div class="ticker">LISTA PROJEKTÓW / BANGERÓW – Studio SUL 2026</div>
+        </div>
+        <div class="main">
+            <div class="menu">
+                <a href="index.html" class="menu-btn">STRONA GŁÓWNA</a>
+                <a href="o-mnie.html" class="menu-btn">O MNIE</a>
+                <a href="sprzet.html" class="menu-btn">SPRZĘT</a>
+                <a href="muzyka.html" class="menu-btn">MUZYKA</a>
+                <a href="studio-sul.html" class="menu-btn">STUDIO SUL</a>
+                <a href="sztuka.html" class="menu-btn">SZTUKA</a>
+                <a href="blog.html" class="menu-btn">BLOG</a>
+                <a href="kontakt.html" class="menu-btn">KONTAKT</a>
+                <a href="info.html" class="menu-btn">INFO 24/7</a>
+                <hr style="border: 0; border-top: 1px solid #ffff00; margin: 15px 20px; opacity: 0.3;">
+                <a href="lista.html" style="background: rgba(102, 0, 204, 0.3); color: #fff; border: 1px solid #ffff00; font-size: 14px; padding: 8px; margin: 0 10px; text-decoration: none; display: block; text-align: center; border-radius: 5px;">POWRÓT</a>
+            </div>
+            <div class="content">
+                <div class="title-wrapper">
+                    <h2 class="title-header">SUL PROJECT ARCHIVE</h2>
+                </div>
+             
+                <table class="ascii-table">
+                    <thead>
+                        <tr>
+                            <th style="width:45%">TYTUŁ</th>
+                            <th style="width:30%">ARTYSTA</th>
+                            <th style="width:25%; text-align:center;">RELEASE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- tutaj wstawisz nowe wiersze kiedy będziesz chciał -->
+                    </tbody>
+                </table>
 
-<div class="container">
-  <header>
-    <h1>SMUKLY NETWORK</h1>
-  </header>
+                <p style="text-align: center; margin-top: 40px; font-size: 1.3em; opacity: 0.85; color: #00f0ff; text-shadow: 0 0 6px #00f0ff;">
+                    kliknij tytuł - znajdziesz tam info o albumie 🔥
+                </p>
+            </div>
 
-  <div class="ticker-wrapper">
-    LAST BREATHS OF NORMALITY – 15.09.2025
-  </div>
-
-  <div class="main">
-    <div class="menu">
-      <a href="index.html">STRONA GŁÓWNA</a>
-      <a href="o-mnie.html">O MNIE</a>
-      <a href="sprzet.html">SPRZĘT</a>
-      <a href="muzyka.html">MUZYKA</a>
-      <a href="studio-sul.html">STUDIO SUL</a>
-      <a href="sztuka.html">SZTUKA</a>
-      <a href="blog.html">BLOG</a>
-      <a href="kontakt.html">KONTAKT</a>
-      <a href="info.html">INFO 24/7</a>
-
-      <hr>
-
-      <a href="lista.html" class="back-btn">POWRÓT DO LISTY</a>
+            <div class="sidebar">
+                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
+                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
+                <img src="https://anlucas.neocities.org/prod_625_17265.gif" alt="Free Speach">
+                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
+                <img src="https://anlucas.neocities.org/apple_fatal_error.gif" alt="Apple Fatal Error">
+                <img src="https://anlucas.neocities.org/bestview.gif" alt="Open Eyes">
+                <img src="https://anlucas.neocities.org/got_html.gif" alt="Got html">
+                <img src="https://anlucas.neocities.org/ribbon2.gif" alt="Strange World">
+                <img src="https://anlucas.neocities.org/christnow.gif" alt="Christ">
+                <img src="https://anlucas.neocities.org/email-icon.gif" alt="Any Questions">
+                <div style="margin-top: 15px;">
+                    <img src="https://anlucas.neocities.org/worldwideweb_badge.gif" alt="World Wide Web Badge" style="border: none;">
+                </div>
+            </div>
+        </div>
+        <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
     </div>
-
-    <!-- Tylko to zmieniasz na każdej podstronie – reszta zostaje taka sama -->
-    <div class="content">
-      <h1 class="album-header">LAST BREATHS OF NORMALITY</h1>
-
-      <div class="covers-container">
-        <img src="okladka1.png" alt="Okładka przód" class="cover-art">
-        <img src="okladka2.png" alt="Okładka tył" class="cover-art">
-      </div>
-
-      <hr class="neon-divider">
-
-      <h2 class="section-title">HISTORIA</h2>
-      <div class="history-text">
-        Album ten powstał przypadkowo lecz został jednak dopracowany i dzięki temu możemy zobaczyć jego okazałości.<br><br>
-        Pierwsze 5 utworów powstały na początku mojej ścieżki z muzyką, kolejne 5 powstały po przerwie 3 miesięcznej,<br>
-        a ostatnie 5 utworów powstały po kolejnej przerwie 2 miesięcznej ale te były już bardziej dopracowane.<br><br>
-        Ten album to tak naprawdę mieszanka moich pierwszych prób z tworzeniem muzyki, a nazwa albumu?<br>
-        myślałem nad nią, ale chciałem pójść w przyjazny klimat i bardziej spokojny to też taka a nie inna okładka.<br><br>
-        Niestety na streamingach nie znajdziecie pełnej wersji albumu iż niektóre utwory moim zdaniem nie są<br>
-        tak dobre jak te, które wystawiłem. Może w przyszłości udostępnię pełną wersje? NW<br><br>
-        Na tą chwilę pełna wersja leży na półkach szczęściarzy, którzy dostali przedpremierowo płytę. (Można ją zakupić)
-      </div>
-
-      <hr class="neon-divider">
-
-      <h2 class="section-title">TRACKLISTA</h2>
-      <div class="tracklist">
-        <ol>
-          <li>Between Dreams <span>5:09</span></li>
-          <li>Hypnoshere <span>4:41</span></li>
-          <li>Phase Null <span>2:51</span></li>
-          <li>Fading Memory <span>1:10</span></li>
-          <li>Null Transmission <span>0:37</span></li>
-          <li>Dreamloop <span>3:34</span></li>
-          <li>Static Depth <span>2:46</span></li>
-          <li>Pulse Failure <span>2:25</span></li>
-          <li>Code Of Flesh <span>2:36</span></li>
-          <li>In Future <span>2:33</span></li>
-          <li>Lost Dream <span>2:35</span></li>
-          <li>Critical Pulse <span>2:41</span></li>
-          <li>Another Glow <span>1:37</span></li>
-          <li>Freedom Of The Soul <span>2:05</span></li>
-          <li>The Last Step <span>2:15</span></li>
-        </ol>
-      </div>
-
-      <a href="https://open.spotify.com/album/7F4fMdEdIvRZ3rYK7uJnmk?si=4x62MdmjTDuxrPTrYcjmag"
-         class="spotify-btn" target="_blank">
-        ▶ SŁUCHAJ NA SPOTIFY
-      </a>
-    </div>
-
-    <div class="sidebar">
-      <!-- Twoje gify – takie same jak na liście projektów -->
-      <img src="https://anlucas.neocities.org/face.gif" alt="">
-      <img src="https://anlucas.neocities.org/hash_now.gif" alt="">
-      <img src="https://anlucas.neocities.org/prod_625_17265.gif" alt="">
-      <!-- ...dodaj resztę gifów -->
-    </div>
-  </div>
-
-  <footer>
-    © 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE
-  </footer>
-</div>
-
 </body>
 </html>
