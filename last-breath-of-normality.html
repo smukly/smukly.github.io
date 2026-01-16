@@ -21,112 +21,119 @@
         .covers-container {
             display: flex;
             justify-content: center;
-            gap: 25px;              /* idealnie koło siebie, ale nie sklejone */
-            margin: 0 auto 60px;
+            gap: 30px;
+            margin: 0 auto 70px;
             flex-wrap: nowrap;
         }
         .cover-art {
-            width: 280px;
+            width: 270px;
             border: 4px solid #00aaff;
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
             image-rendering: pixelated;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
         .cover-art:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.9);
+            transform: scale(1.07);
+            box-shadow: 0 0 45px rgba(0, 212, 255, 0.95);
         }
 
         .section-title {
             color: #00ffff;
             font-size: 2.6em;
             letter-spacing: 5px;
-            margin: 50px 0 25px;
+            margin: 60px 0 30px;
             text-align: center;
             text-shadow: 0 0 15px #00ffff;
             font-family: 'VT323', monospace;
         }
 
-        /* TRACKLISTA W RETRO TABELI */
-        .tracklist-table {
-            max-width: 680px;
+        .history-text {
+            max-width: 860px;
             margin: 0 auto 70px;
+            color: #a0e0ff;
+            font-size: 1.38em;
+            line-height: 1.68;
+            text-shadow: 0 0 6px rgba(0, 212, 255, 0.4);
+            padding: 0 20px;
+        }
+
+        /* RETRO TABELA TRACKLISTY */
+        .tracklist-table {
+            max-width: 720px;
+            margin: 0 auto 80px;
             border-collapse: separate;
-            border-spacing: 0 8px;
+            border-spacing: 0 10px;
             font-family: 'VT323', monospace;
         }
         .tracklist-table td {
-            padding: 10px 16px;
-            background: rgba(0, 20, 40, 0.6);
-            border: 1px solid #00aaff;
-            text-shadow: 0 0 8px #00d4ff;
+            padding: 14px 18px;
+            background: rgba(0, 25, 55, 0.75);
+            border: 2px solid #00aaff;
             color: #e0f8ff;
-            font-size: 1.4em;
+            font-size: 1.42em;
+            text-shadow: 0 0 8px #00d4ff;
         }
         .tracklist-table tr td:first-child {
+            width: 90px;
             text-align: right;
-            width: 80px;
+            background: rgba(0, 70, 140, 0.8);
             color: #00ffff;
             font-weight: bold;
-            background: rgba(0, 50, 100, 0.7);
-            text-shadow: 0 0 12px #00ffff;
+            text-shadow: 0 0 14px #00ffff;
         }
         .tracklist-table tr:hover td {
-            background: rgba(0, 80, 150, 0.7);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            background: rgba(0, 100, 180, 0.85);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+            transform: translateY(-2px);
+            transition: all 0.3s;
         }
 
-        /* MEGA RETRO PRZYCISK SPOTIFY */
+        /* MEGA NEONOWY PRZYCISK SPOTIFY */
         .spotify-btn {
             display: block;
-            width: 420px;
-            max-width: 90%;
-            margin: 60px auto;
-            padding: 18px 0;
+            width: 480px;
+            max-width: 92%;
+            margin: 80px auto 100px;
+            padding: 22px 0;
             text-align: center;
-            background: linear-gradient(to bottom, #001122, #003366);
+            background: linear-gradient(145deg, #001122, #002244);
             color: #00ffff !important;
             font-family: 'VT323', monospace;
-            font-size: 2em;
-            letter-spacing: 4px;
+            font-size: 2.3em;
+            letter-spacing: 6px;
             text-decoration: none;
-            border: 3px solid #00ffff;
+            border: 4px solid #00ffff;
             box-shadow: 
-                0 0 20px #00ffff,
-                inset 0 0 20px rgba(0, 255, 255, 0.3);
-            transition: all 0.3s;
+                0 0 30px #00ffff,
+                inset 0 0 30px rgba(0, 255, 255, 0.2);
             position: relative;
             overflow: hidden;
+            transition: all 0.4s;
         }
         .spotify-btn::before {
             content: "";
             position: absolute;
-            top: 0; left: -100%;
-            width: 100%;
+            top: 0; left: -150%;
+            width: 150%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,255,255,0.2), transparent);
-            transition: 0.7s;
+            background: linear-gradient(90deg, transparent, rgba(0,255,255,0.3), transparent);
+            transition: 0.8s;
         }
         .spotify-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 40px #00ffff, 0 10px 20px rgba(0,255,255,0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 0 50px #00ffff, 0 15px 30px rgba(0,255,255,0.5);
         }
         .spotify-btn:hover::before {
-            left: 100%;
-        }
-        .spotify-btn span {
-            position: relative;
-            z-index: 2;
+            left: 150%;
         }
 
         .neon-divider {
             height: 4px;
             background: linear-gradient(to right, transparent, #00ffff, transparent);
-            box-shadow: 0 0 20px #00ffff;
-            margin: 60px auto;
-            width: 80%;
-            max-width: 760px;
-            border: none;
+            box-shadow: 0 0 25px #00ffff;
+            margin: 70px auto;
+            width: 84%;
+            max-width: 800px;
         }
     </style>
 </head>
@@ -140,7 +147,6 @@
 
         <div class="main">
             <div class="menu">
-                <!-- twój menu bez zmian -->
                 <a href="index.html" class="menu-btn">STRONA GŁÓWNA</a>
                 <a href="o-mnie.html" class="menu-btn">O MNIE</a>
                 <a href="sprzet.html" class="menu-btn">SPRZĘT</a>
@@ -164,8 +170,22 @@
 
                 <hr class="neon-divider">
 
+                <h2 class="section-title">HISTORIA</h2>
+                <div class="history-text">
+                    Album ten powstał przypadkowo lecz został jednak dopracowany i dzięki temu możemy zobaczyć jego okazałości.
+                    Pierwsze 5 utworów powstały na początku mojej ścieżki z muzyką, kolejne 5 powstały po przerwie 3 miesięcznej,
+                    a ostatnie 5 utworów powstały po kolejnej przerwie 2 miesięcznej ale te były już bardziej dopracowane.
+                    Ten album to tak naprawdę mieszanka moich pierwszych prób z tworzeniem muzyki, a nazwa albumu?
+                    myślałem nad nią, ale chciałem pójść w przyjazny klimat i bardziej spokojny to też taka a nie inna okładka.
+                    Niestety na streamingach nie znajdziecie pełnej wersji albumu iż niektóre utwory moim zdaniem nie są
+                    tak dobre jak te, które wystawiłem. Może w przyszłości udostępnię pełną wersje? NW
+                    Na tą chwilę pełna wersja leży na półkach szczęściarzy, którzy dostali przedpremierowo płytę. (Można ją zakupić)
+                </div>
+
+                <hr class="neon-divider">
+
                 <h2 class="section-title">TRACKLISTA</h2>
-                
+
                 <table class="tracklist-table">
                     <tr><td>01</td><td>Between Dreams</td><td>5:09</td></tr>
                     <tr><td>02</td><td>Hypnoshere</td><td>4:41</td></tr>
@@ -184,27 +204,19 @@
                     <tr><td>15</td><td>The Last Step</td><td>2:15</td></tr>
                 </table>
 
-                <!-- MEGA RETRO PRZYCISK -->
                 <a href="https://open.spotify.com/album/7F4fMdEdIvRZ3rYK7uJnmk?si=4x62MdmjTDuxrPTrYcjmag" 
                    class="spotify-btn" target="_blank">
-                    <span>▶ POSŁUCHAJ NA SPOTIFY</span>
+                    ▶ POSŁUCHAJ NA SPOTIFY
                 </a>
-
-                <hr class="neon-divider">
-
-                <h2 class="section-title">HISTORIA</h2>
-                <div class="history-text">
-                    Album ten powstał przypadkowo lecz został jednak dopracowany i dzięki temu możemy zobaczyć jego okazałości.
-                    Pierwsze 5 utworów powstały na początku mojej ścieżki z muzyką, kolejne  kolejne 5 powstały po przerwie 3 miesięcznej,
-                    a ostatnie 5 utworów powstały po kolejnej przerwie 2 miesięcznej ale te były już bardziej dopracowane...
-                    <!-- reszta tekstu bez zmian -->
-                </div>
             </div>
 
             <div class="sidebar">
-                <!-- twoje gify -->
+                <img src="https://anlucas.neocities.org/face.gif" alt="Face">
+                <img src="https://anlucas.neocities.org/hash_now.gif" alt="Hash Now">
+                <img src="https://anlucas.neocities.org/prod_625_17265.gif" alt="Free Speach">
+                <img src="https://anlucas.neocities.org/Winamp.gif" alt="Winamp">
             </div>
-        Marea</div>
+        </div>
 
         <footer>© 2026 SMUKLY NETWORK - NIE BŁĄDŹ W ŚWIECIE</footer>
     </div>
