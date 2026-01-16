@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Sekcja content jest teraz przezroczysta, więc używa tła ze style.css */
+        .content {
+            background: transparent;
+            padding: 20px;
+        }
+
         /* Nagłówek albumu */
         .album-header {
             text-align: center;
@@ -20,7 +26,7 @@
             font-family: 'VT323', monospace;
         }
 
-        /* Galeria - mniejsze obrazy obok siebie */
+        /* Galeria - obrazy obok siebie */
         .covers-container {
             display: flex;
             justify-content: center;
@@ -29,7 +35,7 @@
         }
 
         .cover-art {
-            width: 150px; /* Mniejsze obrazy */
+            width: 150px;
             height: auto;
             border: 2px solid #00aaff;
             cursor: pointer;
@@ -42,7 +48,7 @@
             box-shadow: 0 0 15px #00d4ff;
         }
 
-        /* Przywrócone linie neonowe */
+        /* Linie neonowe */
         .neon-divider {
             height: 3px;
             background: linear-gradient(to right, transparent, #00d4ff, transparent);
@@ -102,7 +108,7 @@
         /* Niebieski retro przycisk Spotify */
         .spotify-btn {
             display: inline-block;
-            background: #001122;
+            background: rgba(0, 17, 34, 0.6);
             color: #00d4ff;
             padding: 10px 25px;
             text-decoration: none;
