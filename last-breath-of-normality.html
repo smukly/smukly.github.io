@@ -8,18 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"/>
 
   <style>
-    :root {
-      --purple-dark: #2a004c;
-      --purple-mid: #4a008c;
-      --yellow-neon: #ffff00;
-      --pink-neon: #ff00ff;
-      --green-neon: #00ff9d;
-    }
-
     body {
       margin: 0;
       padding: 0;
-      background: #000 url('https://files.catbox.moe/5q3z1k.png') repeat; /* zielony grid z Twojej strony */
+      background: #000 url('https://files.catbox.moe/5q3z1k.png') repeat;
       background-size: 48px 48px;
       font-family: 'VT323', monospace;
       color: #e0e0ff;
@@ -27,15 +19,11 @@
       image-rendering: pixelated;
     }
 
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 15px; }
 
     header {
       background: linear-gradient(to bottom, #5e00b3, #3c0080);
-      border: 5px solid var(--yellow-neon);
+      border: 5px solid #ffff00;
       border-bottom: none;
       padding: 20px 0;
       text-align: center;
@@ -44,20 +32,20 @@
 
     header h1 {
       font-size: 4.2rem;
-      color: var(--yellow-neon);
-      text-shadow: 0 0 14px var(--yellow-neon), 0 0 28px var(--pink-neon);
+      color: #ffff00;
+      text-shadow: 0 0 14px #ffff00, 0 0 28px #ff00ff;
       letter-spacing: 12px;
     }
 
     .ticker-wrapper {
       background: #000;
-      border-bottom: 5px solid var(--green-neon);
+      border-bottom: 5px solid #00ff9d;
       padding: 12px 0;
       text-align: center;
-      color: var(--green-neon);
+      color: #00ff9d;
       font-size: 1.55rem;
       letter-spacing: 5px;
-      text-shadow: 0 0 12px var(--green-neon);
+      text-shadow: 0 0 12px #00ff9d;
     }
 
     .main {
@@ -70,7 +58,7 @@
       width: 260px;
       flex-shrink: 0;
       background: rgba(60,0,128,0.75);
-      border: 5px solid var(--yellow-neon);
+      border: 5px solid #ffff00;
       border-radius: 12px;
       padding: 25px 15px;
       box-shadow: 0 0 25px rgba(255,255,0,0.3);
@@ -78,7 +66,7 @@
 
     .menu a {
       display: block;
-      background: var(--yellow-neon);
+      background: #ffff00;
       color: #000;
       font-size: 1.45rem;
       padding: 16px 12px;
@@ -91,36 +79,36 @@
     }
 
     .menu a:hover {
-      background: var(--pink-neon);
-      color: var(--yellow-neon);
+      background: #ff00ff;
+      color: #ffff00;
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(255,0,255,0.7);
     }
 
     .menu hr {
       border: 0;
-      border-top: 3px solid var(--green-neon);
+      border-top: 3px solid #00ff9d;
       margin: 20px 0;
       opacity: 0.55;
     }
 
     .menu .back-btn {
       background: #6600cc;
-      color: var(--yellow-neon);
-      border: 4px solid var(--yellow-neon);
+      color: #ffff00;
+      border: 4px solid #ffff00;
       margin-top: 20px;
       font-size: 1.35rem;
     }
 
     .menu .back-btn:hover {
-      background: var(--pink-neon);
+      background: #ff00ff;
     }
 
-    /* ŚRODEK STRONY – to właśnie wklejamy i dopasowujemy */
+    /* ŚRODEK STRONY – tu wklejasz/zmieniasz treść na każdej podstronie */
     .content {
       flex: 1;
-      background: #8b0000; /* czerwony kolor z Twojego screena */
-      border: 6px solid var(--yellow-neon);
+      background: rgba(20,0,60,0.85);
+      border: 6px solid #ffff00;
       border-radius: 12px;
       padding: 45px 40px;
       box-shadow: inset 0 0 35px rgba(0,0,0,0.75);
@@ -131,15 +119,9 @@
       font-size: 5rem;
       color: #ff00ff;
       text-align: center;
-      text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff1493, 0 0 60px #c71585;
+      text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff1493;
       letter-spacing: 10px;
       margin: 0 0 60px;
-      animation: pulse-glow 4s infinite alternate;
-    }
-
-    @keyframes pulse-glow {
-      from { text-shadow: 0 0 20px #ff00ff; }
-      to   { text-shadow: 0 0 45px #ff00ff, 0 0 70px #ff1493; }
     }
 
     .covers-container {
@@ -152,7 +134,7 @@
 
     .cover-art {
       width: 380px;
-      border: 6px solid var(--yellow-neon);
+      border: 6px solid #ffff00;
       box-shadow: 0 0 30px rgba(255,255,0,0.7);
       image-rendering: pixelated;
       transition: all 0.3s;
@@ -160,24 +142,22 @@
 
     .cover-art:hover {
       transform: scale(1.07);
-      box-shadow: 0 0 60px rgba(255,255,0,1);
     }
 
     .neon-divider {
       height: 6px;
-      background: linear-gradient(to right, transparent, var(--yellow-neon), transparent);
-      box-shadow: 0 0 30px var(--yellow-neon);
+      background: linear-gradient(to right, transparent, #ffff00, transparent);
+      box-shadow: 0 0 30px #ffff00;
       margin: 60px auto;
       width: 85%;
     }
 
     .section-title {
       font-size: 3.5rem;
-      color: var(--yellow-neon);
+      color: #ffff00;
       text-align: center;
-      text-shadow: 0 0 20px var(--yellow-neon);
+      text-shadow: 0 0 20px #ffff00;
       margin: 60px 0 30px;
-      letter-spacing: 6px;
     }
 
     .history-text {
@@ -213,7 +193,7 @@
       content: "0" counter(track);
       position: absolute;
       left: 0;
-      color: var(--yellow-neon);
+      color: #ffff00;
       font-size: 1.9rem;
       opacity: 0.9;
     }
@@ -234,7 +214,7 @@
       font-size: 2rem;
       text-align: center;
       text-decoration: none;
-      border: 5px solid var(--yellow-neon);
+      border: 5px solid #ffff00;
       border-radius: 14px;
       box-shadow: 0 0 35px rgba(255,0,255,0.7);
       transition: 0.3s;
@@ -257,7 +237,7 @@
     .sidebar img {
       width: 100%;
       max-width: 200px;
-      border: 4px solid var(--yellow-neon);
+      border: 4px solid #ffff00;
       border-radius: 8px;
       box-shadow: 0 0 18px rgba(255,255,0,0.5);
       image-rendering: pixelated;
@@ -266,10 +246,10 @@
     footer {
       text-align: center;
       padding: 35px 0;
-      color: var(--green-neon);
+      color: #00ff9d;
       font-size: 1.5rem;
-      text-shadow: 0 0 12px var(--green-neon);
-      border-top: 6px solid var(--yellow-neon);
+      text-shadow: 0 0 12px #00ff9d;
+      border-top: 6px solid #ffff00;
     }
   </style>
 </head>
@@ -301,7 +281,7 @@
       <a href="lista.html" class="back-btn">POWRÓT DO LISTY</a>
     </div>
 
-    <!-- ŚRODEK – dokładnie to, co chciałeś wkleić i dopasować -->
+    <!-- Tylko to zmieniasz na każdej podstronie – reszta zostaje taka sama -->
     <div class="content">
       <h1 class="album-header">LAST BREATHS OF NORMALITY</h1>
 
@@ -354,11 +334,11 @@
     </div>
 
     <div class="sidebar">
-      <!-- tu Twoje gify z listy projektów -->
+      <!-- Twoje gify – takie same jak na liście projektów -->
       <img src="https://anlucas.neocities.org/face.gif" alt="">
       <img src="https://anlucas.neocities.org/hash_now.gif" alt="">
       <img src="https://anlucas.neocities.org/prod_625_17265.gif" alt="">
-      <!-- ...dodaj resztę -->
+      <!-- ...dodaj resztę gifów -->
     </div>
   </div>
 
